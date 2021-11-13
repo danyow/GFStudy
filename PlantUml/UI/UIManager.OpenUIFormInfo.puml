@@ -1,0 +1,21 @@
+@startuml
+class UIManager <<sealed>> <<partial>> {
+}
+class OpenUIFormInfo <<sealed>> {
+    - m_SerialId : int
+    - m_UIGroup : UIGroup
+    - m_PauseCoveredUIForm : bool
+    - m_UserData : object
+    + OpenUIFormInfo()
+    + SerialId : int <<get>>
+    + UIGroup : UIGroup <<get>>
+    + PauseCoveredUIForm : bool <<get>>
+    + UserData : object <<get>>
+    + {static} Create(serialId:int, uiGroup:UIGroup, pauseCoveredUIForm:bool, userData:object) : OpenUIFormInfo
+    + Clear() : void
+}
+GameFrameworkModule <|-- UIManager
+IUIManager <|-- UIManager
+UIManager +-- OpenUIFormInfo
+IReference <|-- OpenUIFormInfo
+@enduml

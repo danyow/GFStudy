@@ -1,0 +1,15 @@
+@startuml
+class TypeNamePair <<struct>> {
+    - <<readonly>> m_Type : Type
+    - <<readonly>> m_Name : string
+    + TypeNamePair(type:Type)
+    + TypeNamePair(type:Type, name:string)
+    + Type : Type <<get>>
+    + Name : string <<get>>
+    + <<override>> ToString() : string
+    + <<override>> GetHashCode() : int
+    + <<override>> Equals(obj:object) : bool
+    + Equals(value:TypeNamePair) : bool
+}
+"IEquatable`1" "<TypeNamePair>" <|-- TypeNamePair
+@enduml

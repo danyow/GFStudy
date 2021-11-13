@@ -1,0 +1,17 @@
+@startuml
+interface IEntity {
+    Id : int <<get>>
+    EntityAssetName : string <<get>>
+    Handle : object <<get>>
+    EntityGroup : IEntityGroup <<get>>
+    OnInit(entityId:int, entityAssetName:string, entityGroup:IEntityGroup, isNewInstance:bool, userData:object) : void
+    OnRecycle() : void
+    OnShow(userData:object) : void
+    OnHide(isShutdown:bool, userData:object) : void
+    OnAttached(childEntity:IEntity, userData:object) : void
+    OnDetached(childEntity:IEntity, userData:object) : void
+    OnAttachTo(parentEntity:IEntity, userData:object) : void
+    OnDetachFrom(parentEntity:IEntity, userData:object) : void
+    OnUpdate(elapseSeconds:float, realElapseSeconds:float) : void
+}
+@enduml

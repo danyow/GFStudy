@@ -1,0 +1,22 @@
+@startuml
+class NetworkManager <<sealed>> <<partial>> {
+}
+class ReceiveState <<sealed>> {
+    - <<const>> DefaultBufferLength : int
+    - m_Stream : MemoryStream
+    - m_PacketHeader : IPacketHeader
+    - m_Disposed : bool
+    + ReceiveState()
+    + Stream : MemoryStream <<get>>
+    + PacketHeader : IPacketHeader <<get>>
+    + PrepareForPacketHeader(packetHeaderLength:int) : void
+    + PrepareForPacket(packetHeader:IPacketHeader) : void
+    + Dispose() : void
+    - Dispose(disposing:bool) : void
+    - Reset(targetLength:int, packetHeader:IPacketHeader) : void
+}
+GameFrameworkModule <|-- NetworkManager
+INetworkManager <|-- NetworkManager
+NetworkManager +-- ReceiveState
+IDisposable <|-- ReceiveState
+@enduml

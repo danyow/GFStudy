@@ -1,0 +1,12 @@
+@startuml
+class FileInfo <<struct>> {
+    - <<readonly>> m_Name : string
+    - <<readonly>> m_Offset : long
+    - <<readonly>> m_Length : int
+    + FileInfo(name:string, offset:long, length:int)
+    + IsValid : bool <<get>>
+    + Name : string <<get>>
+    + Offset : long <<get>>
+    + Length : int <<get>>
+}
+@enduml

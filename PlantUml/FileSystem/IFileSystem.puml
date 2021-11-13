@@ -1,0 +1,35 @@
+@startuml
+interface IFileSystem {
+    FullPath : string <<get>>
+    Access : FileSystemAccess <<get>>
+    FileCount : int <<get>>
+    MaxFileCount : int <<get>>
+    GetFileInfo(name:string) : FileInfo
+    GetAllFileInfos() : FileInfo[]
+    GetAllFileInfos(results:List<FileInfo>) : void
+    HasFile(name:string) : bool
+    ReadFile(name:string) : byte[]
+    ReadFile(name:string, buffer:byte[]) : int
+    ReadFile(name:string, buffer:byte[], startIndex:int) : int
+    ReadFile(name:string, buffer:byte[], startIndex:int, length:int) : int
+    ReadFile(name:string, stream:Stream) : int
+    ReadFileSegment(name:string, length:int) : byte[]
+    ReadFileSegment(name:string, offset:int, length:int) : byte[]
+    ReadFileSegment(name:string, buffer:byte[]) : int
+    ReadFileSegment(name:string, buffer:byte[], length:int) : int
+    ReadFileSegment(name:string, buffer:byte[], startIndex:int, length:int) : int
+    ReadFileSegment(name:string, offset:int, buffer:byte[]) : int
+    ReadFileSegment(name:string, offset:int, buffer:byte[], length:int) : int
+    ReadFileSegment(name:string, offset:int, buffer:byte[], startIndex:int, length:int) : int
+    ReadFileSegment(name:string, stream:Stream, length:int) : int
+    ReadFileSegment(name:string, offset:int, stream:Stream, length:int) : int
+    WriteFile(name:string, buffer:byte[]) : bool
+    WriteFile(name:string, buffer:byte[], startIndex:int) : bool
+    WriteFile(name:string, buffer:byte[], startIndex:int, length:int) : bool
+    WriteFile(name:string, stream:Stream) : bool
+    WriteFile(name:string, filePath:string) : bool
+    SaveAsFile(name:string, filePath:string) : bool
+    RenameFile(oldName:string, newName:string) : bool
+    DeleteFile(name:string) : bool
+}
+@enduml

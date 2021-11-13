@@ -1,0 +1,13 @@
+@startuml
+class ShowEntityFailureEventArgs <<sealed>> {
+    + ShowEntityFailureEventArgs()
+    + EntityId : int <<get>>
+    + EntityAssetName : string <<get>>
+    + EntityGroupName : string <<get>>
+    + ErrorMessage : string <<get>>
+    + UserData : object <<get>>
+    + {static} Create(entityId:int, entityAssetName:string, entityGroupName:string, errorMessage:string, userData:object) : ShowEntityFailureEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- ShowEntityFailureEventArgs
+@enduml

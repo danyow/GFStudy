@@ -1,0 +1,13 @@
+@startuml
+class LoadSceneDependencyAssetEventArgs <<sealed>> {
+    + LoadSceneDependencyAssetEventArgs()
+    + SceneAssetName : string <<get>>
+    + DependencyAssetName : string <<get>>
+    + LoadedCount : int <<get>>
+    + TotalCount : int <<get>>
+    + UserData : object <<get>>
+    + {static} Create(sceneAssetName:string, dependencyAssetName:string, loadedCount:int, totalCount:int, userData:object) : LoadSceneDependencyAssetEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- LoadSceneDependencyAssetEventArgs
+@enduml

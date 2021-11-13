@@ -1,0 +1,8 @@
+@startuml
+class DataProviderCreator <<static>> {
+    + {static} GetCachedBytesSize() : int
+    + {static} EnsureCachedBytesSize(ensureSize:int) : void
+    + {static} FreeCachedBytes() : void
+    + {static} Create(owner:T, resourceManager:IResourceManager, dataProviderHelper:IDataProviderHelper<T>) : IDataProvider<T>
+}
+@enduml

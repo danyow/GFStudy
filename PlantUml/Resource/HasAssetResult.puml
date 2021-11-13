@@ -1,0 +1,10 @@
+@startuml
+enum HasAssetResult {
+    NotExist= 0,
+    NotReady,
+    AssetOnDisk,
+    AssetOnFileSystem,
+    BinaryOnDisk,
+    BinaryOnFileSystem,
+}
+@enduml

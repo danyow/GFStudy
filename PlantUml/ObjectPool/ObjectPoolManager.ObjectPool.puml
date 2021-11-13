@@ -1,0 +1,55 @@
+@startuml
+class ObjectPoolManager <<sealed>> <<partial>> {
+}
+class "ObjectPool`1"<T> <<sealed>> {
+    - <<readonly>> m_Objects : GameFrameworkMultiDictionary<string, Object<T>>
+    - <<readonly>> m_ObjectMap : Dictionary<object, Object<T>>
+    - <<readonly>> m_DefaultReleaseObjectFilterCallback : ReleaseObjectFilterCallback<T>
+    - <<readonly>> m_CachedCanReleaseObjects : List<T>
+    - <<readonly>> m_CachedToReleaseObjects : List<T>
+    - <<readonly>> m_AllowMultiSpawn : bool
+    - m_AutoReleaseInterval : float
+    - m_Capacity : int
+    - m_ExpireTime : float
+    - m_Priority : int
+    - m_AutoReleaseTime : float
+    + ObjectPool(name:string, allowMultiSpawn:bool, autoReleaseInterval:float, capacity:int, expireTime:float, priority:int)
+    + <<override>> ObjectType : Type <<get>>
+    + <<override>> Count : int <<get>>
+    + <<override>> CanReleaseCount : int <<get>>
+    + <<override>> AllowMultiSpawn : bool <<get>>
+    + <<override>> AutoReleaseInterval : float <<get>> <<set>>
+    + <<override>> Capacity : int <<get>> <<set>>
+    + <<override>> ExpireTime : float <<get>> <<set>>
+    + <<override>> Priority : int <<get>> <<set>>
+    + Register(obj:T, spawned:bool) : void
+    + CanSpawn() : bool
+    + CanSpawn(name:string) : bool
+    + Spawn() : T
+    + Spawn(name:string) : T
+    + Unspawn(obj:T) : void
+    + Unspawn(target:object) : void
+    + SetLocked(obj:T, locked:bool) : void
+    + SetLocked(target:object, locked:bool) : void
+    + SetPriority(obj:T, priority:int) : void
+    + SetPriority(target:object, priority:int) : void
+    + ReleaseObject(obj:T) : bool
+    + ReleaseObject(target:object) : bool
+    + <<override>> Release() : void
+    + <<override>> Release(toReleaseCount:int) : void
+    + Release(releaseObjectFilterCallback:ReleaseObjectFilterCallback<T>) : void
+    + Release(toReleaseCount:int, releaseObjectFilterCallback:ReleaseObjectFilterCallback<T>) : void
+    + <<override>> ReleaseAllUnused() : void
+    + <<override>> GetAllObjectInfos() : ObjectInfo[]
+    <<internal>> <<override>> Update(elapseSeconds:float, realElapseSeconds:float) : void
+    <<internal>> <<override>> Shutdown() : void
+    - GetObject(target:object) : Object<T>
+    - GetCanReleaseObjects(results:List<T>) : void
+    - DefaultReleaseObjectFilterCallback(candidateObjects:List<T>, toReleaseCount:int, expireTime:DateTime) : List<T>
+}
+GameFrameworkModule <|-- ObjectPoolManager
+IObjectPoolManager <|-- ObjectPoolManager
+ObjectPoolManager +-- "ObjectPool`1"
+ObjectPoolBase <|-- "ObjectPool`1"
+"IObjectPool`1" "<T>" <|-- "ObjectPool`1"
+@enduml

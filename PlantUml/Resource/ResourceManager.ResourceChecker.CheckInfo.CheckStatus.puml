@@ -1,0 +1,21 @@
+@startuml
+class ResourceManager <<sealed>> <<partial>> {
+}
+class ResourceChecker <<sealed>> <<partial>> {
+}
+class CheckInfo <<sealed>> <<partial>> {
+}
+enum CheckStatus {
+    Unknown= 0,
+    StorageInReadOnly,
+    StorageInReadWrite,
+    Unavailable,
+    Update,
+    Disuse,
+}
+GameFrameworkModule <|-- ResourceManager
+IResourceManager <|-- ResourceManager
+ResourceManager +-- ResourceChecker
+ResourceChecker +-- CheckInfo
+CheckInfo +-- CheckStatus
+@enduml

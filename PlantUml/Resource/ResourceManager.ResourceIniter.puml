@@ -1,0 +1,18 @@
+@startuml
+class ResourceManager <<sealed>> <<partial>> {
+}
+class ResourceIniter <<sealed>> {
+    - <<readonly>> m_ResourceManager : ResourceManager
+    - <<readonly>> m_CachedFileSystemNames : Dictionary<ResourceName, string>
+    - m_CurrentVariant : string
+    + ResourceInitComplete : GameFrameworkAction
+    + ResourceIniter(resourceManager:ResourceManager)
+    + Shutdown() : void
+    + InitResources(currentVariant:string) : void
+    - OnLoadPackageVersionListSuccess(fileUri:string, bytes:byte[], duration:float, userData:object) : void
+    - OnLoadPackageVersionListFailure(fileUri:string, errorMessage:string, userData:object) : void
+}
+GameFrameworkModule <|-- ResourceManager
+IResourceManager <|-- ResourceManager
+ResourceManager +-- ResourceIniter
+@enduml

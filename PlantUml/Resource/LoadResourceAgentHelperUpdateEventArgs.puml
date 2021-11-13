@@ -1,0 +1,10 @@
+@startuml
+class LoadResourceAgentHelperUpdateEventArgs <<sealed>> {
+    + LoadResourceAgentHelperUpdateEventArgs()
+    + Type : LoadResourceProgress <<get>>
+    + Progress : float <<get>>
+    + {static} Create(type:LoadResourceProgress, progress:float) : LoadResourceAgentHelperUpdateEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- LoadResourceAgentHelperUpdateEventArgs
+@enduml

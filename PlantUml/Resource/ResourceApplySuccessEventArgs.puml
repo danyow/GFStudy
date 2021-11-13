@@ -1,0 +1,13 @@
+@startuml
+class ResourceApplySuccessEventArgs <<sealed>> {
+    + ResourceApplySuccessEventArgs()
+    + Name : string <<get>>
+    + ApplyPath : string <<get>>
+    + ResourcePackPath : string <<get>>
+    + Length : int <<get>>
+    + CompressedLength : int <<get>>
+    + {static} Create(name:string, applyPath:string, resourcePackPath:string, length:int, compressedLength:int) : ResourceApplySuccessEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- ResourceApplySuccessEventArgs
+@enduml

@@ -1,0 +1,18 @@
+@startuml
+class NetworkManager <<sealed>> <<partial>> {
+}
+class SendState <<sealed>> {
+    - <<const>> DefaultBufferLength : int
+    - m_Stream : MemoryStream
+    - m_Disposed : bool
+    + SendState()
+    + Stream : MemoryStream <<get>>
+    + Reset() : void
+    + Dispose() : void
+    - Dispose(disposing:bool) : void
+}
+GameFrameworkModule <|-- NetworkManager
+INetworkManager <|-- NetworkManager
+NetworkManager +-- SendState
+IDisposable <|-- SendState
+@enduml

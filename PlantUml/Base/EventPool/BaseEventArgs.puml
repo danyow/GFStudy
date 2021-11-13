@@ -1,0 +1,6 @@
+@startuml
+abstract class BaseEventArgs {
+    + {abstract} Id : int <<get>>
+}
+GameFrameworkEventArgs <|-- BaseEventArgs
+@enduml

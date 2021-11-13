@@ -1,0 +1,5 @@
+@startuml
+interface IFileSystemHelper {
+    CreateFileSystemStream(fullPath:string, access:FileSystemAccess, createNew:bool) : FileSystemStream
+}
+@enduml

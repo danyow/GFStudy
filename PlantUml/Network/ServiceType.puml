@@ -1,0 +1,6 @@
+@startuml
+enum ServiceType {
+    Tcp= 0,
+    TcpWithSyncReceive,
+}
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+abstract class "GameFrameworkSerializer`1"<T> {
+    - <<readonly>> m_SerializeCallbacks : Dictionary<byte, SerializeCallback>
+    - <<readonly>> m_DeserializeCallbacks : Dictionary<byte, DeserializeCallback>
+    - <<readonly>> m_TryGetValueCallbacks : Dictionary<byte, TryGetValueCallback>
+    - m_LatestSerializeCallbackVersion : byte
+    + GameFrameworkSerializer()
+    + RegisterSerializeCallback(version:byte, callback:SerializeCallback) : void
+    + RegisterDeserializeCallback(version:byte, callback:DeserializeCallback) : void
+    + RegisterTryGetValueCallback(version:byte, callback:TryGetValueCallback) : void
+    + Serialize(stream:Stream, data:T) : bool
+    + Serialize(stream:Stream, data:T, version:byte) : bool
+    + Deserialize(stream:Stream) : T
+    + TryGetValue(stream:Stream, key:string, value:object) : bool
+    # {abstract} GetHeader() : byte[]
+}
+@enduml

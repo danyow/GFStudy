@@ -1,0 +1,10 @@
+@startuml
+class DownloadAgentHelperErrorEventArgs <<sealed>> {
+    + DownloadAgentHelperErrorEventArgs()
+    + DeleteDownloading : bool <<get>>
+    + ErrorMessage : string <<get>>
+    + {static} Create(deleteDownloading:bool, errorMessage:string) : DownloadAgentHelperErrorEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- DownloadAgentHelperErrorEventArgs
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class NetworkClosedEventArgs <<sealed>> {
+    + NetworkClosedEventArgs()
+    + NetworkChannel : INetworkChannel <<get>>
+    + {static} Create(networkChannel:INetworkChannel) : NetworkClosedEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- NetworkClosedEventArgs
+@enduml

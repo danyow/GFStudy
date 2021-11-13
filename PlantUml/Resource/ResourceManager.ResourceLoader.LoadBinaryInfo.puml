@@ -1,0 +1,24 @@
+@startuml
+class ResourceManager <<sealed>> <<partial>> {
+}
+class ResourceLoader <<sealed>> <<partial>> {
+}
+class LoadBinaryInfo <<sealed>> {
+    - m_BinaryAssetName : string
+    - m_ResourceInfo : ResourceInfo
+    - m_LoadBinaryCallbacks : LoadBinaryCallbacks
+    - m_UserData : object
+    + LoadBinaryInfo()
+    + BinaryAssetName : string <<get>>
+    + ResourceInfo : ResourceInfo <<get>>
+    + LoadBinaryCallbacks : LoadBinaryCallbacks <<get>>
+    + UserData : object <<get>>
+    + {static} Create(binaryAssetName:string, resourceInfo:ResourceInfo, loadBinaryCallbacks:LoadBinaryCallbacks, userData:object) : LoadBinaryInfo
+    + Clear() : void
+}
+GameFrameworkModule <|-- ResourceManager
+IResourceManager <|-- ResourceManager
+ResourceManager +-- ResourceLoader
+ResourceLoader +-- LoadBinaryInfo
+IReference <|-- LoadBinaryInfo
+@enduml

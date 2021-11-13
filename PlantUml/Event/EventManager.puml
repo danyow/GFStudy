@@ -1,0 +1,20 @@
+@startuml
+class EventManager <<sealed>> {
+    - <<readonly>> m_EventPool : EventPool<GameEventArgs>
+    + EventManager()
+    + EventHandlerCount : int <<get>>
+    + EventCount : int <<get>>
+    <<internal>> <<override>> Priority : int <<get>>
+    <<internal>> <<override>> Update(elapseSeconds:float, realElapseSeconds:float) : void
+    <<internal>> <<override>> Shutdown() : void
+    + Count(id:int) : int
+    + Check(id:int, handler:EventHandler<GameEventArgs>) : bool
+    + Subscribe(id:int, handler:EventHandler<GameEventArgs>) : void
+    + Unsubscribe(id:int, handler:EventHandler<GameEventArgs>) : void
+    + SetDefaultHandler(handler:EventHandler<GameEventArgs>) : void
+    + Fire(sender:object, e:GameEventArgs) : void
+    + FireNow(sender:object, e:GameEventArgs) : void
+}
+GameFrameworkModule <|-- EventManager
+IEventManager <|-- EventManager
+@enduml

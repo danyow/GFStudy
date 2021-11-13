@@ -1,0 +1,1906 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GameFramework.DataProvider&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="154" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACCGACIAAABAAEAAwRCICEAIAhAAgAQgAQBACCAAQA=</HashCode>
+      <FileName>Assets\Scripts\Base\DataProvider\DataProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GameFramework.DataProviderCreator" Collapsed="true">
+    <Position X="155.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEACAAAAAAAAAAAAAAAAAIAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Base\DataProvider\DataProviderCreator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.ReadDataDependencyAssetEventArgs" Collapsed="true">
+    <Position X="50" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAABAAAAAAAABAAAAAAAEAAAAAAAgBIAAA=</HashCode>
+      <FileName>Assets\Scripts\Base\DataProvider\ReadDataDependencyAssetEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.ReadDataFailureEventArgs" Collapsed="true">
+    <Position X="63.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAACAAAAAAAAAAAAAAAAAAAEAAAAAAAABIAAA=</HashCode>
+      <FileName>Assets\Scripts\Base\DataProvider\ReadDataFailureEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.ReadDataSuccessEventArgs" Collapsed="true">
+    <Position X="74.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACACAAAAAAAAAAAAAAAAAEAAAAAAAABIAAA=</HashCode>
+      <FileName>Assets\Scripts\Base\DataProvider\ReadDataSuccessEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.ReadDataUpdateEventArgs" Collapsed="true">
+    <Position X="88.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAEAAAAAAAADIAAA=</HashCode>
+      <FileName>Assets\Scripts\Base\DataProvider\ReadDataUpdateEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.BaseEventArgs" Collapsed="true">
+    <Position X="107.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Base\EventPool\BaseEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.EventPool&lt;T&gt;" Collapsed="true">
+    <Position X="159.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAgCAAAAAACAACAUAUSAAAAmAAAAQCAAAABAACQ=</HashCode>
+      <FileName>Assets\Scripts\Base\EventPool\EventPool.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.GameFrameworkEntry" Collapsed="true">
+    <Position X="148.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAgAAAAAAAACAAAQIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkEntry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.GameFrameworkEventArgs" Collapsed="true">
+    <Position X="76" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkEventArgs.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameFramework.GameFrameworkException" Collapsed="true">
+    <Position X="150.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.GameFrameworkLinkedList&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="152.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IgCIABAAABCAAZAQACAANAQAIAAYAAAEAAECAABQIRA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkLinkedList.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GameFramework.GameFrameworkModule" Collapsed="true">
+    <Position X="22.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAEAAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkModule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.GameFrameworkMultiDictionary&lt;TKey, TValue&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="155.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAIAAAAAABAAABAACAAAJAQAAAQAAAAEIAAAAABQAAA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkMultiDictionary.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GameFramework.GameFrameworkSerializer&lt;T&gt;" Collapsed="true">
+    <Position X="5.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAEAAAEAAEAAAAAAgEAAAAIAACBAAAAAABAAgAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkSerializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.GameFrameworkLog" Collapsed="true">
+    <Position X="154" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAYAAAAAAABABAAAAAAAAAAAAAEAkAAA=</HashCode>
+      <FileName>Assets\Scripts\Base\Log\GameFrameworkLog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.ReferencePool" Collapsed="true">
+    <Position X="155.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAICAAACAAAAAABAAgAgBAQAAAAAAACAIAAAABQAAAA=</HashCode>
+      <FileName>Assets\Scripts\Base\ReferencePool\ReferencePool.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.TaskBase" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="157.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIBAAAAAIAAgAUAEAAAAAAAQAABAAAAAAAAAAABICBA=</HashCode>
+      <FileName>Assets\Scripts\Base\TaskPool\TaskBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GameFramework.TaskPool&lt;T&gt;" Collapsed="true">
+    <Position X="159.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQgDCCSAAIAAEAAEIQAAQAAAAgIAABgAAAAAAAAgAA=</HashCode>
+      <FileName>Assets\Scripts\Base\TaskPool\TaskPool.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Variable&lt;T&gt;" Collapsed="true">
+    <Position X="0.5" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAgAEAAAAAAAAAAQAAAAAAQAgAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\Base\Variable\GenericVariable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Variable" Collapsed="true">
+    <Position X="0.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAgAAAAAAAAAAAAAAAAAAAQAAAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\Base\Variable\Variable.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameFramework.Version" Collapsed="true">
+    <Position X="152.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIBgAAAAAAAAAAAAAACAAAAAAAAABAAAAACAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Base\Version\Version.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Utility" Collapsed="true">
+    <Position X="150.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Utility\Utility.Assembly.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Config.ConfigManager" Collapsed="true">
+    <Position X="2.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IISCEACACDABAIEAAQQAhQQAIAAAAgAQICAAAADAAAA=</HashCode>
+      <FileName>Assets\Scripts\Config\ConfigManager.ConfigData.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameFramework.DataNode.DataNodeManager" Collapsed="true">
+    <Position X="11.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACQAAAABEAAAACEAAQAIAQAIEAAAAAAAAAARAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\DataNode\DataNodeManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameFramework.DataTable.DataTableBase" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="157.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EACDIAAAAAABAIEAAUQAAQQAAAAAAgAQASAIAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\DataTable\DataTableBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GameFramework.DataTable.DataTableManager" Collapsed="true">
+    <Position X="22.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BA0AEACAAAAhAAAABAQCAQQAIAAEAAAQgAAAAGgCAAA=</HashCode>
+      <FileName>Assets\Scripts\DataTable\DataTableManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameFramework.Debugger.DebuggerManager" Collapsed="true">
+    <Position X="38.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAgAAEAABAAAEAAAAAQgAAAAACAAAABAICAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Debugger\DebuggerManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameFramework.Download.Constant" Collapsed="true">
+    <Position X="152.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Download\Constant.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Download.DownloadAgentHelperCompleteEventArgs" Collapsed="true">
+    <Position X="14" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABAAAAAAEAAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\Download\DownloadAgentHelperCompleteEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Download.DownloadAgentHelperErrorEventArgs" Collapsed="true">
+    <Position X="27.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAIAAAAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\Download\DownloadAgentHelperErrorEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Download.DownloadAgentHelperUpdateBytesEventArgs" Collapsed="true">
+    <Position X="38.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAEAAABAAAAAAEAAAAAAAABAgAA=</HashCode>
+      <FileName>Assets\Scripts\Download\DownloadAgentHelperUpdateBytesEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Download.DownloadAgentHelperUpdateLengthEventArgs" Collapsed="true">
+    <Position X="52.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAgBAAAA=</HashCode>
+      <FileName>Assets\Scripts\Download\DownloadAgentHelperUpdateLengthEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Download.DownloadFailureEventArgs" Collapsed="true">
+    <Position X="65.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AYAAAAAAAAAAAAgAAAAAAAAAACAAAEAAAAAAAABIAAA=</HashCode>
+      <FileName>Assets\Scripts\Download\DownloadFailureEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Download.DownloadManager" Collapsed="true">
+    <Position X="18.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAwoAigQCIAAAQIEEBEQAUAAkAGIACICCQCAAAAAwQE=</HashCode>
+      <FileName>Assets\Scripts\Download\DownloadManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameFramework.Download.DownloadStartEventArgs" Collapsed="true">
+    <Position X="90.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAgAAAAAABAAACAAAEAAAAAAAABIAAA=</HashCode>
+      <FileName>Assets\Scripts\Download\DownloadStartEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Download.DownloadSuccessEventArgs" Collapsed="true">
+    <Position X="99.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAgAAAAAABAAACAAAEAAAAAAAABIAAA=</HashCode>
+      <FileName>Assets\Scripts\Download\DownloadSuccessEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Download.DownloadUpdateEventArgs" Collapsed="true">
+    <Position X="110.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAgAAAAAABAAACAAAEAAAAAAAABIAAA=</HashCode>
+      <FileName>Assets\Scripts\Download\DownloadUpdateEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Entity.EntityManager" Collapsed="true">
+    <Position X="34" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>KQQBAhgIQ4iIAYCAAmDTkwBBkAChAwAQACBAEAEZAyU=</HashCode>
+      <FileName>Assets\Scripts\Entity\EntityManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameFramework.Entity.HideEntityCompleteEventArgs" Collapsed="true">
+    <Position X="135.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAIAAAAAAAAAAAAAAAAACEAAAAAAAABIAAA=</HashCode>
+      <FileName>Assets\Scripts\Entity\HideEntityCompleteEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Entity.ShowEntityDependencyAssetEventArgs" Collapsed="true">
+    <Position X="29.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIABAAAAAAAABAAAAAACEAAAAAAAgBMAAA=</HashCode>
+      <FileName>Assets\Scripts\Entity\ShowEntityDependencyAssetEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Entity.ShowEntityFailureEventArgs" Collapsed="true">
+    <Position X="41" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAIAAAAAAAAAAAAAAAAACEAAAAAAAABMAAA=</HashCode>
+      <FileName>Assets\Scripts\Entity\ShowEntityFailureEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Entity.ShowEntitySuccessEventArgs" Collapsed="true">
+    <Position X="54.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAACAAAAAAAAAAAAAAAAAEAAAAAAAABIAAA=</HashCode>
+      <FileName>Assets\Scripts\Entity\ShowEntitySuccessEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Entity.ShowEntityUpdateEventArgs" Collapsed="true">
+    <Position X="68" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAACEAAAAAAAADMAAA=</HashCode>
+      <FileName>Assets\Scripts\Entity\ShowEntityUpdateEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Event.EventManager" Collapsed="true">
+    <Position X="20.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABQAAAgAAAAAAACEAAAEAQSAAAAmAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Event\EventManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameFramework.Event.GameEventArgs" Collapsed="true">
+    <Position X="106.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Event\GameEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.FileSystem.CommonFileSystemStream" Collapsed="true">
+    <Position X="6.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAQAAkCAAAAABgAAAAAEAgAAAAAAGIAAA=</HashCode>
+      <FileName>Assets\Scripts\FileSystem\CommonFileSystemStream.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameFramework.FileSystem.FileSystem" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="147" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CCAWiAAAGgAAQEEAAA2YIQABAQDgIERBUAkAKAQAQgI=</HashCode>
+      <FileName>Assets\Scripts\FileSystem\FileSystem.BlockData.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GameFramework.FileSystem.FileSystemManager" Collapsed="true">
+    <Position X="40.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>hAQBACgAAQAgAAAEAAAAAQQAAACAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FileSystem\FileSystemManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameFramework.FileSystem.FileSystemStream" Collapsed="true">
+    <Position X="6.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAQAAgCAAAAABgAAAAAEAgAAAAAAGIAAI=</HashCode>
+      <FileName>Assets\Scripts\FileSystem\FileSystemStream.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Fsm.Fsm&lt;T&gt;" Collapsed="true">
+    <Position X="3.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQAAEKBESACBAAUBAIAQSEgAAEAAEAAAACAAADAIAI=</HashCode>
+      <FileName>Assets\Scripts\Fsm\Fsm.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameFramework.Fsm.FsmBase" Collapsed="true">
+    <Position X="3.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAQAAAAAAAAAAIAUAAIAQQQAAAAAAAAAAACAAAAAAAI=</HashCode>
+      <FileName>Assets\Scripts\Fsm\FsmBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Fsm.FsmManager" Collapsed="true">
+    <Position X="9.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SIQQAAAAAAAAAAAEAAACASQAAAAAAAAAAAACAAAABAg=</HashCode>
+      <FileName>Assets\Scripts\Fsm\FsmManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameFramework.Fsm.FsmState&lt;T&gt;" Collapsed="true">
+    <Position X="0.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAABAAAAAAAABAAAAAAAAQAAIAAAAEAAAA=</HashCode>
+      <FileName>Assets\Scripts\Fsm\FsmState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Localization.LocalizationManager" Collapsed="true">
+    <Position X="29.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AISCEACACECBAAEAAYQAJQACZAAAAgAQEKAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Localization\LocalizationManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameFramework.Network.NetworkClosedEventArgs" Collapsed="true">
+    <Position X="7.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAAAAAAEAAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\Network\NetworkClosedEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Network.NetworkConnectedEventArgs" Collapsed="true">
+    <Position X="16.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAAAAAAEAAAAAAAABIAAA=</HashCode>
+      <FileName>Assets\Scripts\Network\NetworkConnectedEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Network.NetworkCustomErrorEventArgs" Collapsed="true">
+    <Position X="32" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAAAAAAEEAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\Network\NetworkCustomErrorEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Network.NetworkErrorEventArgs" Collapsed="true">
+    <Position X="56.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAIAAAAgAAEAAAAAAAABAAgA=</HashCode>
+      <FileName>Assets\Scripts\Network\NetworkErrorEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Network.NetworkManager" Collapsed="true">
+    <Position X="13.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AwQAAIAAIAAAEANABVICAQAAAAkAGAABEAAABIAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Network\NetworkManager.ConnectState.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameFramework.Network.NetworkMissHeartBeatEventArgs" Collapsed="true">
+    <Position X="77" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAgAAAAAEAAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\Network\NetworkMissHeartBeatEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Network.Packet" Collapsed="true">
+    <Position X="108.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Network\Packet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.ObjectPool.ObjectBase" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="150.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAgAAAAgAQAAEQgEAAAAACQCAAAAAQAAAAAABBBACAA=</HashCode>
+      <FileName>Assets\Scripts\ObjectPool\ObjectBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GameFramework.ObjectPool.ObjectPoolBase" Collapsed="true">
+    <Position X="152.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAQAAAAEAAAQAIAEAAAAEQQCAAAAAAAAAIAAABYAAAE=</HashCode>
+      <FileName>Assets\Scripts\ObjectPool\ObjectPoolBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.ObjectPool.ObjectPoolManager" Collapsed="true">
+    <Position X="43" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABQAAAAACAAAkEgEEAAQJQwAAASAAAAAQAAACBAAUCE=</HashCode>
+      <FileName>Assets\Scripts\ObjectPool\ObjectPoolManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameFramework.Procedure.ProcedureBase" Collapsed="true">
+    <Position X="0.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAABAAAAAAAAQAAIAAAAEAAAA=</HashCode>
+      <FileName>Assets\Scripts\Procedure\ProcedureBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Procedure.ProcedureManager" Collapsed="true">
+    <Position X="4.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASAAAAAAAAAAQAMAAEAIQAAAQAAIAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Procedure\ProcedureManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameFramework.Resource.Constant" Collapsed="true">
+    <Position X="150.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\Constant.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Resource.LoadAssetCallbacks" Collapsed="true">
+    <Position X="157.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAgACAQgBAAAAAAAAAAAgAAAAAAAAAAQA=</HashCode>
+      <FileName>Assets\Scripts\Resource\LoadAssetCallbacks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Resource.LoadBinaryCallbacks" Collapsed="true">
+    <Position X="159.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAACAAAAAAAEAAAAAAAAEAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\LoadBinaryCallbacks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Resource.LoadBytesCallbacks" Collapsed="true">
+    <Position X="147" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAQAAAAAAAAAAAAAAAAAAAAAAAABAQAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\LoadBytesCallbacks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Resource.LoadResourceAgentHelperErrorEventArgs" Collapsed="true">
+    <Position X="101.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAEAAAAAAAAAAAAAAAAAAAAAEAAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\LoadResourceAgentHelperErrorEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Resource.LoadResourceAgentHelperLoadCompleteEventArgs" Collapsed="true">
+    <Position X="113" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAgAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\LoadResourceAgentHelperLoadCompleteEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Resource.LoadResourceAgentHelperParseBytesCompleteEventArgs" Collapsed="true">
+    <Position X="119.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\LoadResourceAgentHelperParseBytesCompleteEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Resource.LoadResourceAgentHelperReadBytesCompleteEventArgs" Collapsed="true">
+    <Position X="126.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAEAAAAAAAAAAEAAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\LoadResourceAgentHelperReadBytesCompleteEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Resource.LoadResourceAgentHelperReadFileCompleteEventArgs" Collapsed="true">
+    <Position X="133.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\LoadResourceAgentHelperReadFileCompleteEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Resource.LoadResourceAgentHelperUpdateEventArgs" Collapsed="true">
+    <Position X="137.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAQAAAADAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\LoadResourceAgentHelperUpdateEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Resource.LoadSceneCallbacks" Collapsed="true">
+    <Position X="148.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAECAAAAACAACAAAAAAAAAAACAAAAAAIAQAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\LoadSceneCallbacks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Resource.PackageVersionListSerializer" Collapsed="true">
+    <Position X="0.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\PackageVersionListSerializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Resource.ReadOnlyVersionListSerializer" Collapsed="true">
+    <Position X="3" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\ReadOnlyVersionListSerializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Resource.ReadWriteVersionListSerializer" Collapsed="true">
+    <Position X="5.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\ReadWriteVersionListSerializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Resource.ResourceApplyFailureEventArgs" Collapsed="true">
+    <Position X="115.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAABAAAAAAAAAAAAQAAAAAAEAAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\ResourceApplyFailureEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Resource.ResourceApplyStartEventArgs" Collapsed="true">
+    <Position X="122" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAgAAAAQAAAAAAEAAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\ResourceApplyStartEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Resource.ResourceApplySuccessEventArgs" Collapsed="true">
+    <Position X="128.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAABACAAAAAAAAAARAAAAAAEAAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\ResourceApplySuccessEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Resource.ResourceManager" Collapsed="true">
+    <Position X="36.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>Jzcybmc9GH+IOjVsGRnK6QhIChBHdd+CmLKVo2h5O4s=</HashCode>
+      <FileName>Assets\Scripts\Resource\ResourceManager.AssetInfo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameFramework.Resource.ResourcePackVersionListSerializer" Collapsed="true">
+    <Position X="9.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\ResourcePackVersionListSerializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Resource.ResourceUpdateAllCompleteEventArgs" Collapsed="true">
+    <Position X="142.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\ResourceUpdateAllCompleteEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Resource.ResourceUpdateChangedEventArgs" Collapsed="true">
+    <Position X="9.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAgAAAAAABQAACAAAEAAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\ResourceUpdateChangedEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Resource.ResourceUpdateFailureEventArgs" Collapsed="true">
+    <Position X="18.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QQAAAAAAAAAAAAgAAAAAAAQAAAAAAEAAAAAAAABAEAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\ResourceUpdateFailureEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Resource.ResourceUpdateStartEventArgs" Collapsed="true">
+    <Position X="34.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>wAAAAAAAAAAAAAgAAAAAABQAACAAAEAAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\ResourceUpdateStartEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Resource.ResourceUpdateSuccessEventArgs" Collapsed="true">
+    <Position X="43.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAgAAAAAAARAACAAAEAAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\ResourceUpdateSuccessEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Resource.ResourceVerifyFailureEventArgs" Collapsed="true">
+    <Position X="59" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAEAAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\ResourceVerifyFailureEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Resource.ResourceVerifyStartEventArgs" Collapsed="true">
+    <Position X="70.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAQAAAAAAEAAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\ResourceVerifyStartEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Resource.ResourceVerifySuccessEventArgs" Collapsed="true">
+    <Position X="79.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAARAAAAAAEAAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\ResourceVerifySuccessEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Resource.UnloadSceneCallbacks" Collapsed="true">
+    <Position X="147" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAgAAAAAAgAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\UnloadSceneCallbacks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Resource.UpdatableVersionListSerializer" Collapsed="true">
+    <Position X="7.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\UpdatableVersionListSerializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Resource.UpdateVersionListCallbacks" Collapsed="true">
+    <Position X="148.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAIAAAAQCAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\UpdateVersionListCallbacks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Scene.LoadSceneDependencyAssetEventArgs" Collapsed="true">
+    <Position X="20.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAABAAAAAAAEAAAAAAAoBIAAA=</HashCode>
+      <FileName>Assets\Scripts\Scene\LoadSceneDependencyAssetEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Scene.LoadSceneFailureEventArgs" Collapsed="true">
+    <Position X="36.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAIBIAAA=</HashCode>
+      <FileName>Assets\Scripts\Scene\LoadSceneFailureEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Scene.LoadSceneSuccessEventArgs" Collapsed="true">
+    <Position X="45.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAAAEAAAAAAAIBIAAA=</HashCode>
+      <FileName>Assets\Scripts\Scene\LoadSceneSuccessEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Scene.LoadSceneUpdateEventArgs" Collapsed="true">
+    <Position X="61.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAIDIAAA=</HashCode>
+      <FileName>Assets\Scripts\Scene\LoadSceneUpdateEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Scene.SceneManager" Collapsed="true">
+    <Position X="16" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQYgAAECAMgDARgECABjCQggBAQkGAAQBAAAAAIAAAA=</HashCode>
+      <FileName>Assets\Scripts\Scene\SceneManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameFramework.Scene.UnloadSceneFailureEventArgs" Collapsed="true">
+    <Position X="81.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAIBIAAA=</HashCode>
+      <FileName>Assets\Scripts\Scene\UnloadSceneFailureEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Scene.UnloadSceneSuccessEventArgs" Collapsed="true">
+    <Position X="92.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAIBIAAA=</HashCode>
+      <FileName>Assets\Scripts\Scene\UnloadSceneSuccessEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Setting.SettingManager" Collapsed="true">
+    <Position X="31.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASggJgAECAgIgAIAkAABQQAAAAAAAAEAAAAAADAAAA=</HashCode>
+      <FileName>Assets\Scripts\Setting\SettingManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameFramework.Sound.Constant" Collapsed="true">
+    <Position X="148.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQAAgAAAiAAAEARAAAAAAAAAAACACAAACEAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Sound\Constant.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Sound.PlaySoundDependencyAssetEventArgs" Collapsed="true">
+    <Position X="23" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAABAAAAACAABAAAAAAAEAAAQAAAgBIAAA=</HashCode>
+      <FileName>Assets\Scripts\Sound\PlaySoundDependencyAssetEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Sound.PlaySoundFailureEventArgs" Collapsed="true">
+    <Position X="47.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AYAAAAAAAAAAAAAAAACAAAAAAAgAAEAAAQAAAABIAAA=</HashCode>
+      <FileName>Assets\Scripts\Sound\PlaySoundFailureEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Sound.PlaySoundParams" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="154" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BBAAAAFIAAAAAAAEAIAAAgogAIABIUAACADBAABACQk=</HashCode>
+      <FileName>Assets\Scripts\Sound\PlaySoundParams.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GameFramework.Sound.PlaySoundSuccessEventArgs" Collapsed="true">
+    <Position X="72.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAACAAAAAAAAQAAAAAAAAEAAAQAAAABIAAA=</HashCode>
+      <FileName>Assets\Scripts\Sound\PlaySoundSuccessEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Sound.PlaySoundUpdateEventArgs" Collapsed="true">
+    <Position X="83.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAACAAAAAAAAAAEAAAQAAAADIAAA=</HashCode>
+      <FileName>Assets\Scripts\Sound\PlaySoundUpdateEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Sound.ResetSoundAgentEventArgs" Collapsed="true">
+    <Position X="95" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\Sound\ResetSoundAgentEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.Sound.SoundManager" Collapsed="true">
+    <Position X="25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAwABAHMUQIAACAgAgBmFQiAIAABABEQAAAAQAiAAQA=</HashCode>
+      <FileName>Assets\Scripts\Sound\SoundManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameFramework.UI.CloseUIFormCompleteEventArgs" Collapsed="true">
+    <Position X="117.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAQAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAJIAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\CloseUIFormCompleteEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.UI.OpenUIFormDependencyAssetEventArgs" Collapsed="true">
+    <Position X="140" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAQgBAAAAABAAAAAAAABAAAAAAAEAAAAAAAgBIAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\OpenUIFormDependencyAssetEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.UI.OpenUIFormFailureEventArgs" Collapsed="true">
+    <Position X="144.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AYAAQgBAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAABIAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\OpenUIFormFailureEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.UI.OpenUIFormSuccessEventArgs" Collapsed="true">
+    <Position X="11.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAgAAAAAAAAAEAAAAAAAABIAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\OpenUIFormSuccessEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.UI.OpenUIFormUpdateEventArgs" Collapsed="true">
+    <Position X="25.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAQgBAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAADIAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\OpenUIFormUpdateEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.UI.UIManager" Collapsed="true">
+    <Position X="7" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QEQAIFAoQAhBcAAgYihSA4QEAJAFACwQCFKIDgAACyk=</HashCode>
+      <FileName>Assets\Scripts\UI\UIManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameFramework.WebRequest.Constant" Collapsed="true">
+    <Position X="147" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\WebRequest\Constant.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.WebRequest.WebRequestAgentHelperCompleteEventArgs" Collapsed="true">
+    <Position X="86" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAEAAAAAAEAAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\WebRequest\WebRequestAgentHelperCompleteEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.WebRequest.WebRequestAgentHelperErrorEventArgs" Collapsed="true">
+    <Position X="97.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\WebRequest\WebRequestAgentHelperErrorEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.WebRequest.WebRequestFailureEventArgs" Collapsed="true">
+    <Position X="104" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AYAAAAAAAAAAAAAAAAAAAAAAAAAAAEIAAAAAAABIAAA=</HashCode>
+      <FileName>Assets\Scripts\WebRequest\WebRequestFailureEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.WebRequest.WebRequestManager" Collapsed="true">
+    <Position X="27.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIQAISCQCAIAAQAAEBAAAQIEAAAJEAIIAAAAABgAgAg=</HashCode>
+      <FileName>Assets\Scripts\WebRequest\WebRequestManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameFramework.WebRequest.WebRequestStartEventArgs" Collapsed="true">
+    <Position X="124.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAEIAAAAAAABIAAA=</HashCode>
+      <FileName>Assets\Scripts\WebRequest\WebRequestStartEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFramework.WebRequest.WebRequestSuccessEventArgs" Collapsed="true">
+    <Position X="131" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAEAAAAAEAAAAAAEIAAAAAAABIAAA=</HashCode>
+      <FileName>Assets\Scripts\WebRequest\WebRequestSuccessEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="GameFramework.TypeNamePair" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="147" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAIAAAAAAAAAAEgAAAAAQAAAAAAIAAAQAAAAAAAiA=</HashCode>
+      <FileName>Assets\Scripts\Base\DataStruct\TypeNamePair.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Struct>
+  <Struct Name="GameFramework.GameFrameworkLinkedListRange&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="148.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAABRAAAAgAAAQAAAAAAAAEQAAAAAAQAQA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkLinkedListRange.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Struct>
+  <Struct Name="GameFramework.ReferencePoolInfo" Collapsed="true">
+    <Position X="155.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAEAAAEAAEBBIgAIAAEQAEAAAASAA=</HashCode>
+      <FileName>Assets\Scripts\Base\ReferencePool\ReferencePoolInfo.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="GameFramework.TaskInfo" Collapsed="true">
+    <Position X="159.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIABAAAEAgAgAAAEAAgAAAAQAABAAAAAAAAAAABICBA=</HashCode>
+      <FileName>Assets\Scripts\Base\TaskPool\TaskInfo.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="GameFramework.FileSystem.FileInfo" Collapsed="true">
+    <Position X="147" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAgAAARAAAgAIAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Assets\Scripts\FileSystem\FileInfo.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="GameFramework.ObjectPool.ObjectInfo" Collapsed="true">
+    <Position X="152.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAhCAAAgAAAAEAgEAAAAAAQCAAAAAAAAAQAAAAAACAA=</HashCode>
+      <FileName>Assets\Scripts\ObjectPool\ObjectInfo.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="GameFramework.Resource.LocalVersionList" Collapsed="true">
+    <Position X="150.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAgACAAAAACAEAAAAAAAKAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\LocalVersionList.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="GameFramework.Resource.PackageVersionList" Collapsed="true">
+    <Position X="154" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABgBAAAAAAAAAgAAAAgACAAIAACAEIYAAAAAKABAAAg=</HashCode>
+      <FileName>Assets\Scripts\Resource\PackageVersionList.Asset.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="GameFramework.Resource.ResourcePackVersionList" Collapsed="true">
+    <Position X="157.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACABAAAIAAAAAAAAAAgACABAAAgAIAAAAAAAKAAAgAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\ResourcePackVersionList.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="GameFramework.Resource.UpdatableVersionList" Collapsed="true">
+    <Position X="148.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABgBAAAAAAAAAgAAAAgACAAIAACAEIYAAAAAKABAAAg=</HashCode>
+      <FileName>Assets\Scripts\Resource\UpdatableVersionList.Asset.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="GameFramework.IDataProvider&lt;T&gt;" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACCAAAAAAABAAEAAQAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Base\DataProvider\IDataProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.IDataProviderHelper&lt;T&gt;" Collapsed="true">
+    <Position X="152.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAEAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Base\DataProvider\IDataProviderHelper.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.IReference" Collapsed="true">
+    <Position X="147" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\Base\ReferencePool\IReference.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.ITaskAgent&lt;T&gt;" Collapsed="true">
+    <Position X="157.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAABQAAAAAAAQAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Base\TaskPool\ITaskAgent.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.Config.IConfigHelper" Collapsed="true">
+    <Position X="147" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Config\IConfigHelper.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.Config.IConfigManager" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAEACACDAAAIAAAAQABAQAIAAAAAAQIAAAAADAAAA=</HashCode>
+      <FileName>Assets\Scripts\Config\IConfigManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.DataNode.IDataNode" Collapsed="true">
+    <Position X="148.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAABEAAJAIAEAAIAQAQAAAIAAAAAAAQAQABAAAA=</HashCode>
+      <FileName>Assets\Scripts\DataNode\IDataNode.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.DataNode.IDataNodeManager" Collapsed="true">
+    <Position X="150.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABEAAAACEAAQAAAAAAEAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\DataNode\IDataNodeManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.DataTable.IDataRow" Collapsed="true">
+    <Position X="154" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\DataTable\IDataRow.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.DataTable.IDataTable&lt;T&gt;" Collapsed="true">
+    <Position X="155.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABIAAAAACAgIAACEAAAAQAAgAAAAAAASAJAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\DataTable\IDataTable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.DataTable.IDataTableHelper" Collapsed="true">
+    <Position X="157.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\DataTable\IDataTableHelper.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.DataTable.IDataTableManager" Collapsed="true">
+    <Position X="159.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEACAAAAhAAAABAQAAAQAIAAEAAAQAAAAAGAAAAA=</HashCode>
+      <FileName>Assets\Scripts\DataTable\IDataTableManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.Debugger.IDebuggerManager" Collapsed="true">
+    <Position X="147" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAEAAAAAAAAAAAAAgAAAAAAAAAABAICAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Debugger\IDebuggerManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.Debugger.IDebuggerWindow" Collapsed="true">
+    <Position X="9.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAABAARAAAAAAAAAAAIAAAAEAAAA=</HashCode>
+      <FileName>Assets\Scripts\Debugger\IDebuggerWindow.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.Debugger.IDebuggerWindowGroup" Collapsed="true">
+    <Position X="9.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAgAAABAAAAAAIAACAAEAAA=</HashCode>
+      <FileName>Assets\Scripts\Debugger\IDebuggerWindowGroup.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.Download.IDownloadAgentHelper" Collapsed="true">
+    <Position X="148.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAABAQAAAAAIAAAAAQAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Download\IDownloadAgentHelper.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.Download.IDownloadManager" Collapsed="true">
+    <Position X="150.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAggQCAAAAAAAEBEAAAAAkAEIAAICCQCAAAAAwAA=</HashCode>
+      <FileName>Assets\Scripts\Download\IDownloadManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.Entity.IEntity" Collapsed="true">
+    <Position X="152.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAACAAAAEAgAAAAAAABAAAEABAAACAYAAAAAAAEEAAA=</HashCode>
+      <FileName>Assets\Scripts\Entity\IEntity.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.Entity.IEntityGroup" Collapsed="true">
+    <Position X="154" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAgAAAAAIQAAAACBAAQBAAAAACgAAEAAAAAAAIE=</HashCode>
+      <FileName>Assets\Scripts\Entity\IEntityGroup.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.Entity.IEntityGroupHelper" Collapsed="true">
+    <Position X="155.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Entity\IEntityGroupHelper.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.Entity.IEntityHelper" Collapsed="true">
+    <Position X="157.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAQAAgAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Entity\IEntityHelper.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.Entity.IEntityManager" Collapsed="true">
+    <Position X="159.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAABAhgAAYgIAQAAAECRkAABgACgAwAQACBAEAEIAgU=</HashCode>
+      <FileName>Assets\Scripts\Entity\IEntityManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.Event.IEventManager" Collapsed="true">
+    <Position X="147" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAACAAAAEAASAAAAmAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Event\IEventManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.FileSystem.IFileSystem" Collapsed="true">
+    <Position X="148.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAWAAAAAAAAQEAAAAiAAAABAAAAAABAAAEACAAAAgA=</HashCode>
+      <FileName>Assets\Scripts\FileSystem\IFileSystem.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.FileSystem.IFileSystemHelper" Collapsed="true">
+    <Position X="150.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FileSystem\IFileSystemHelper.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.FileSystem.IFileSystemManager" Collapsed="true">
+    <Position X="152.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>hAAAACgAAQAgAAAAAAAAAAQAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FileSystem\IFileSystemManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.Fsm.IFsm&lt;T&gt;" Collapsed="true">
+    <Position X="154" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEKBESAAAIAQAAAAQCQgAAAAAAAAAACAAAAAIAI=</HashCode>
+      <FileName>Assets\Scripts\Fsm\IFsm.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.Fsm.IFsmManager" Collapsed="true">
+    <Position X="155.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAAAACACQAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Fsm\IFsmManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.Localization.ILocalizationHelper" Collapsed="true">
+    <Position X="159.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Localization\ILocalizationHelper.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.Localization.ILocalizationManager" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAEACACACAAAAAAYQABAAAZAAAAAAQEIAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Localization\ILocalizationManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.Network.INetworkChannel" Collapsed="true">
+    <Position X="147" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAKAAIAAQAAQQAIAGAEQIQAAAAAAQAAAAAAAACAAQE=</HashCode>
+      <FileName>Assets\Scripts\Network\INetworkChannel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.Network.INetworkChannelHelper" Collapsed="true">
+    <Position X="148.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACQAABAwAAAAAAAQAAACAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Network\INetworkChannelHelper.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.Network.INetworkManager" Collapsed="true">
+    <Position X="150.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAABVICAAAAAAEACAAAAAAABIAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Network\INetworkManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.Network.IPacketHandler" Collapsed="true">
+    <Position X="155.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Network\IPacketHandler.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.Network.IPacketHeader" Collapsed="true">
+    <Position X="157.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Network\IPacketHeader.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.ObjectPool.IObjectPool&lt;T&gt;" Collapsed="true">
+    <Position X="152.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAARAIAEAAEAEAQCAAAJAAAAAIAABBUAAAE=</HashCode>
+      <FileName>Assets\Scripts\ObjectPool\IObjectPool.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.ObjectPool.IObjectPoolManager" Collapsed="true">
+    <Position X="154" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAgAAAAAAAAAQAAASAAAAAQAAACBAAQAE=</HashCode>
+      <FileName>Assets\Scripts\ObjectPool\IObjectPoolManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.Procedure.IProcedureManager" Collapsed="true">
+    <Position X="159.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAEAIAAAAQAAIAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Procedure\IProcedureManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.Resource.ILoadResourceAgentHelper" Collapsed="true">
+    <Position X="157.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAiAAAAABATgAEAAAAAAAAAAAAAEAAEAAAgAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\ILoadResourceAgentHelper.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.Resource.IResourceGroup" Collapsed="true">
+    <Position X="148.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAEAAgAAAAQAABQAgIAAAAAAIACAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\IResourceGroup.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.Resource.IResourceGroupCollection" Collapsed="true">
+    <Position X="150.5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAABAEAAgAAAAAAABQAgIAAAAAAIACAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\IResourceGroupCollection.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.Resource.IResourceHelper" Collapsed="true">
+    <Position X="152.25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAQAAAABAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\IResourceHelper.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.Resource.IResourceManager" Collapsed="true">
+    <Position X="154" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AhMgJkc9CAmAOAUgGBAIiQhACBAHVF2AEJIEo2ARIgg=</HashCode>
+      <FileName>Assets\Scripts\Resource\IResourceManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.Scene.ISceneManager" Collapsed="true">
+    <Position X="155.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQIAAAAAAEgCABAAAABACAAgBAQkEAAQAAAAAAIAAAA=</HashCode>
+      <FileName>Assets\Scripts\Scene\ISceneManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.Setting.ISettingHelper" Collapsed="true">
+    <Position X="157.5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACggIgAACAgIgAIAkAABAQAAAAAAAAEAAAAAADAAAA=</HashCode>
+      <FileName>Assets\Scripts\Setting\ISettingHelper.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.Setting.ISettingManager" Collapsed="true">
+    <Position X="159.25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACggIgAECAgIgAIAkAABAQAAAAAAAAEAAAAAADAAAA=</HashCode>
+      <FileName>Assets\Scripts\Setting\ISettingManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.Sound.ISoundAgent" Collapsed="true">
+    <Position X="147" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIBgAAEIAIAABAAECIAAAAhAAAQAAAAAqAJAAAgAAQk=</HashCode>
+      <FileName>Assets\Scripts\Sound\ISoundAgent.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.Sound.ISoundAgentHelper" Collapsed="true">
+    <Position X="148.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAEIAAAABAAEGAAAAAhAAAQAAAAAoAJAAAwAAQk=</HashCode>
+      <FileName>Assets\Scripts\Sound\ISoundAgentHelper.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.Sound.ISoundGroup" Collapsed="true">
+    <Position X="150.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAEAAAAAAAAAAACAAAAAQAABAAAAAAAAIAQAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Sound\ISoundGroup.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.Sound.ISoundGroupHelper" Collapsed="true">
+    <Position X="152.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Sound\ISoundGroupHelper.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.Sound.ISoundHelper" Collapsed="true">
+    <Position X="154" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Sound\ISoundHelper.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.Sound.ISoundManager" Collapsed="true">
+    <Position X="155.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAgAAAHEEAIAAAAgAAAGAAiAIAAAABAQAAAAQAiAAAA=</HashCode>
+      <FileName>Assets\Scripts\Sound\ISoundManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.UI.IUIForm" Collapsed="true">
+    <Position X="159.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAYAFAABAAAAgAAAAAIAEAAAAAAAYRAAIAABMAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\IUIForm.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.UI.IUIFormHelper" Collapsed="true">
+    <Position X="147" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIBAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\IUIFormHelper.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.UI.IUIGroup" Collapsed="true">
+    <Position X="148.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABgIAAAAAAAQAAAAAAAAAQAAIAAAAQgAAAAAAAEAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\IUIGroup.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.UI.IUIGroupHelper" Collapsed="true">
+    <Position X="150.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\IUIGroupHelper.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.UI.IUIManager" Collapsed="true">
+    <Position X="152.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QEAAIFAgAAhBYAAAIAgCAAQEAIAAACwQAFAIDgAACgE=</HashCode>
+      <FileName>Assets\Scripts\UI\IUIManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.WebRequest.IWebRequestAgentHelper" Collapsed="true">
+    <Position X="154" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAQAAAAACgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\WebRequest\IWebRequestAgentHelper.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFramework.WebRequest.IWebRequestManager" Collapsed="true">
+    <Position X="155.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACCQAAIAAAAAEBAAAAAAAAAJEAIIAAAAABAAgAg=</HashCode>
+      <FileName>Assets\Scripts\WebRequest\IWebRequestManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="GameFramework.EventPoolMode" Collapsed="true">
+    <Position X="150.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAIAAAAAAAAIAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Base\EventPool\EventPoolMode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GameFramework.GameFrameworkLogLevel" Collapsed="true">
+    <Position X="154" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAYAAAAAAABAAAAAAAAAAAAAAAEAEAAA=</HashCode>
+      <FileName>Assets\Scripts\Base\Log\GameFrameworkLogLevel.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GameFramework.StartTaskStatus" Collapsed="true">
+    <Position X="155.75" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAEAAAAAgAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Base\TaskPool\StartTaskStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GameFramework.TaskStatus" Collapsed="true">
+    <Position X="157.5" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Base\TaskPool\TaskStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GameFramework.FileSystem.FileSystemAccess" Collapsed="true">
+    <Position X="152.25" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAgAAAAAgAAAAAAAAEAAAA=</HashCode>
+      <FileName>Assets\Scripts\FileSystem\FileSystemAccess.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GameFramework.Localization.Language" Collapsed="true">
+    <Position X="157.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>Ys0IA4CRRFKAAEACQMGAAEAIBpQAhAgUQIYAACQAAEA=</HashCode>
+      <FileName>Assets\Scripts\Localization\Language.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GameFramework.Network.AddressFamily" Collapsed="true">
+    <Position X="147" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Assets\Scripts\Network\AddressFamily.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GameFramework.Network.NetworkErrorCode" Collapsed="true">
+    <Position X="148.75" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEgAAAAAAAAAADAACAQAABAAAAAAAAAAAAAAQABA=</HashCode>
+      <FileName>Assets\Scripts\Network\NetworkErrorCode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GameFramework.Network.ServiceType" Collapsed="true">
+    <Position X="154" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\Scripts\Network\ServiceType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GameFramework.Resource.CheckVersionListResult" Collapsed="true">
+    <Position X="148.75" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAEAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\CheckVersionListResult.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GameFramework.Resource.HasAssetResult" Collapsed="true">
+    <Position X="155.75" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAQAAAAAAAAAIAgAAgAAAACAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\HasAssetResult.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GameFramework.Resource.LoadResourceProgress" Collapsed="true">
+    <Position X="159.25" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAACAABAAAAAAAAEAAAAAAAABA=</HashCode>
+      <FileName>Assets\Scripts\Resource\LoadResourceProgress.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GameFramework.Resource.LoadResourceStatus" Collapsed="true">
+    <Position X="147" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAACIAAAAQAAAAAgAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\LoadResourceStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GameFramework.Resource.ResourceMode" Collapsed="true">
+    <Position X="152.25" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAEQAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\ResourceMode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GameFramework.Sound.PlaySoundErrorCode" Collapsed="true">
+    <Position X="150.5" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAJAAAAABAAAAgABA=</HashCode>
+      <FileName>Assets\Scripts\Sound\PlaySoundErrorCode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Delegate Name="GameFramework.GameFrameworkAction" Collapsed="true">
+    <Position X="152.25" Y="14.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkAction.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.GameFrameworkAction&lt;T&gt;" Collapsed="true">
+    <Position X="150.5" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkAction.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.GameFrameworkAction&lt;T1, T2&gt;" Collapsed="true">
+    <Position X="148.75" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkAction.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.GameFrameworkAction&lt;T1, T2, T3&gt;" Collapsed="true">
+    <Position X="147" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAEAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkAction.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.GameFrameworkAction&lt;T1, T2, T3, T4&gt;" Collapsed="true">
+    <Position X="159.25" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAEAAAAAEAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkAction.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.GameFrameworkAction&lt;T1, T2, T3, T4, T5&gt;" Collapsed="true">
+    <Position X="157.5" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAEAAAAAEAAAAABAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkAction.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.GameFrameworkAction&lt;T1, T2, T3, T4, T5, T6&gt;" Collapsed="true">
+    <Position X="155.75" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAABAEAAAAAEAAAAABAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkAction.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.GameFrameworkAction&lt;T1, T2, T3, T4, T5, T6, T7&gt;" Collapsed="true">
+    <Position X="154" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAABBAEAAAAAEAAAAABAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkAction.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.GameFrameworkAction&lt;T1, T2, T3, T4, T5, T6, T7, T8&gt;" Collapsed="true">
+    <Position X="152.25" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAABBAEAAAAAEAAAAABAAAAAAAAAAEAAEAA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkAction.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.GameFrameworkAction&lt;T1, T2, T3, T4, T5, T6, T7, T8, T9&gt;" Collapsed="true">
+    <Position X="152.25" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAABFAEAAAAAEAAAAABAAAAAAAAAAEAAEAA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkAction.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.GameFrameworkAction&lt;T1, T2, T3, T4, T5, T6, T7, T8, T9, T10&gt;" Collapsed="true">
+    <Position X="148.75" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAEAAABFAEAAAAAEAAAAABAAAAAAAAAAEAAEAA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkAction.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.GameFrameworkAction&lt;T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11&gt;" Collapsed="true">
+    <Position X="147" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAEAAABFAEAAAAAEAAAAABAAAAAAAAAAEAAEAA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkAction.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.GameFrameworkAction&lt;T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12&gt;" Collapsed="true">
+    <Position X="150.5" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAEAAABFAEAAAAAEAAAAABAAAAAAAAAAEAAEAA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkAction.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.GameFrameworkAction&lt;T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13&gt;" Collapsed="true">
+    <Position X="159.25" Y="14.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAEAAABFAEAAAAAEAAAAABAAAAAAAAAAEAAEAA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkAction.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.GameFrameworkAction&lt;T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14&gt;" Collapsed="true">
+    <Position X="157.5" Y="14.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAEAAABFAEAAAAAEAAAAABAAAAAAAAAAEAAEAA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkAction.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.GameFrameworkAction&lt;T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15&gt;" Collapsed="true">
+    <Position X="155.75" Y="14.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAEAAABFAEAAAAAEAAAAABAAAAAAAAAAEAAEAA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkAction.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.GameFrameworkAction&lt;T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16&gt;" Collapsed="true">
+    <Position X="154" Y="14.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAEAAABFAEAAAAAEAAAAABAAAAAAAAAAEAAEAA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkAction.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.GameFrameworkFunc&lt;TResult&gt;" Collapsed="true">
+    <Position X="154" Y="17.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkFunc.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.GameFrameworkFunc&lt;T, TResult&gt;" Collapsed="true">
+    <Position X="152.25" Y="17.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkFunc.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.GameFrameworkFunc&lt;T1, T2, TResult&gt;" Collapsed="true">
+    <Position X="150.5" Y="17.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkFunc.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.GameFrameworkFunc&lt;T1, T2, T3, TResult&gt;" Collapsed="true">
+    <Position X="148.75" Y="17.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAEAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkFunc.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.GameFrameworkFunc&lt;T1, T2, T3, T4, TResult&gt;" Collapsed="true">
+    <Position X="147" Y="17.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAEAAAAAEAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkFunc.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.GameFrameworkFunc&lt;T1, T2, T3, T4, T5, TResult&gt;" Collapsed="true">
+    <Position X="159.25" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAEAAAAAEAAAAABAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkFunc.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.GameFrameworkFunc&lt;T1, T2, T3, T4, T5, T6, TResult&gt;" Collapsed="true">
+    <Position X="157.5" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAABAEAAAAAEAAAAABAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkFunc.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.GameFrameworkFunc&lt;T1, T2, T3, T4, T5, T6, T7, TResult&gt;" Collapsed="true">
+    <Position X="155.75" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAABBAEAAAAAEAAAAABAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkFunc.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.GameFrameworkFunc&lt;T1, T2, T3, T4, T5, T6, T7, T8, TResult&gt;" Collapsed="true">
+    <Position X="152.25" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAABBAEAAAAAEAAAAABAAAAAAAAAAEAAEAA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkFunc.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.GameFrameworkFunc&lt;T1, T2, T3, T4, T5, T6, T7, T8, T9, TResult&gt;" Collapsed="true">
+    <Position X="154" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAABFAEAAAAAEAAAAABAAAAAAAAAAEAAEAA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkFunc.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.GameFrameworkFunc&lt;T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, TResult&gt;" Collapsed="true">
+    <Position X="148.75" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAEAAABFAEAAAAAEAAAAABAAAAAAAAAAEAAEAA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkFunc.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.GameFrameworkFunc&lt;T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, TResult&gt;" Collapsed="true">
+    <Position X="150.5" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAEAAABFAEAAAAAEAAAAABAAAAAAAAAAEAAEAA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkFunc.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.GameFrameworkFunc&lt;T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, TResult&gt;" Collapsed="true">
+    <Position X="154" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAEAAABFAEAAAAAEAAAAABAAAAAAAAAAEAAEAA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkFunc.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.GameFrameworkFunc&lt;T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, TResult&gt;" Collapsed="true">
+    <Position X="147" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAEAAABFAEAAAAAEAAAAABAAAAAAAAAAEAAEAA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkFunc.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.GameFrameworkFunc&lt;T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, TResult&gt;" Collapsed="true">
+    <Position X="159.25" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAEAAABFAEAAAAAEAAAAABAAAAAAAAAAEAAEAA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkFunc.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.GameFrameworkFunc&lt;T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, TResult&gt;" Collapsed="true">
+    <Position X="157.5" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAEAAABFAEAAAAAEAAAAABAAAAAAAAAAEAAEAA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkFunc.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.GameFrameworkFunc&lt;T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, TResult&gt;" Collapsed="true">
+    <Position X="155.75" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAEAAABFAEAAAAAEAAAAABAAAAAAAAAAEAAEAA=</HashCode>
+      <FileName>Assets\Scripts\Base\GameFrameworkFunc.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.ObjectPool.ReleaseObjectFilterCallback&lt;T&gt;" Collapsed="true">
+    <Position X="150.5" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ObjectPool\ReleaseObjectFilterCallback.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.Resource.ApplyResourcesCompleteCallback" Collapsed="true">
+    <Position X="147" Y="14.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\ApplyResourcesCompleteCallback.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.Resource.CheckResourcesCompleteCallback" Collapsed="true">
+    <Position X="148.75" Y="14.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAQAAAAAAAEAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\CheckResourcesCompleteCallback.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.Resource.DecryptResourceCallback" Collapsed="true">
+    <Position X="150.5" Y="14.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACABgAABAAAAAAAAAAAEABAEAAAACAAAAAAARAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\DecryptResourceCallback.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.Resource.InitResourcesCompleteCallback" Collapsed="true">
+    <Position X="155.75" Y="17.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\InitResourcesCompleteCallback.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.Resource.LoadAssetDependencyAssetCallback" Collapsed="true">
+    <Position X="157.5" Y="17.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAABAACAABAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\LoadAssetDependencyAssetCallback.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.Resource.LoadAssetFailureCallback" Collapsed="true">
+    <Position X="159.25" Y="17.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAACAAAAAAAAAAAAACAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\LoadAssetFailureCallback.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.Resource.LoadAssetSuccessCallback" Collapsed="true">
+    <Position X="147" Y="18" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAABAAAAAAAAACAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\Scripts\Resource\LoadAssetSuccessCallback.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.Resource.LoadAssetUpdateCallback" Collapsed="true">
+    <Position X="148.75" Y="18" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAACAAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\LoadAssetUpdateCallback.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.Resource.LoadBinaryFailureCallback" Collapsed="true">
+    <Position X="150.5" Y="18" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAACAAAAAAAAAAAAACAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\LoadBinaryFailureCallback.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.Resource.LoadBinarySuccessCallback" Collapsed="true">
+    <Position X="152.25" Y="18" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAABAAAAAAAAACAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\LoadBinarySuccessCallback.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.Resource.LoadBytesFailureCallback" Collapsed="true">
+    <Position X="154" Y="18" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAABAAAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\LoadBytesFailureCallback.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.Resource.LoadBytesSuccessCallback" Collapsed="true">
+    <Position X="155.75" Y="18" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAABAAAAAAAAACAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\LoadBytesSuccessCallback.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.Resource.LoadSceneDependencyAssetCallback" Collapsed="true">
+    <Position X="157.5" Y="18" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAABAACAABAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\LoadSceneDependencyAssetCallback.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.Resource.LoadSceneFailureCallback" Collapsed="true">
+    <Position X="159.25" Y="18" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAACAAAAAAAAAAAAACAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\LoadSceneFailureCallback.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.Resource.LoadSceneSuccessCallback" Collapsed="true">
+    <Position X="147" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAACAAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\LoadSceneSuccessCallback.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.Resource.LoadSceneUpdateCallback" Collapsed="true">
+    <Position X="148.75" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAACAAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\LoadSceneUpdateCallback.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.Resource.UnloadSceneFailureCallback" Collapsed="true">
+    <Position X="152.25" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\Scripts\Resource\UnloadSceneFailureCallback.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.Resource.UnloadSceneSuccessCallback" Collapsed="true">
+    <Position X="154" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\Scripts\Resource\UnloadSceneSuccessCallback.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.Resource.UpdateResourcesCompleteCallback" Collapsed="true">
+    <Position X="155.75" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\UpdateResourcesCompleteCallback.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.Resource.UpdateVersionListFailureCallback" Collapsed="true">
+    <Position X="157.5" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\UpdateVersionListFailureCallback.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.Resource.UpdateVersionListSuccessCallback" Collapsed="true">
+    <Position X="159.25" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\UpdateVersionListSuccessCallback.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GameFramework.Resource.VerifyResourcesCompleteCallback" Collapsed="true">
+    <Position X="147" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Resource\VerifyResourcesCompleteCallback.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

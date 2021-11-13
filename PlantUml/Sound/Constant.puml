@@ -1,0 +1,16 @@
+@startuml
+class Constant <<static>> {
+    <<internal>> <<const>> DefaultTime : float = 0f
+    <<internal>> <<const>> DefaultMute : bool = false
+    <<internal>> <<const>> DefaultLoop : bool = false
+    <<internal>> <<const>> DefaultPriority : int = 0
+    <<internal>> <<const>> DefaultVolume : float = 1f
+    <<internal>> <<const>> DefaultFadeInSeconds : float = 0f
+    <<internal>> <<const>> DefaultFadeOutSeconds : float = 0f
+    <<internal>> <<const>> DefaultPitch : float = 1f
+    <<internal>> <<const>> DefaultPanStereo : float = 0f
+    <<internal>> <<const>> DefaultSpatialBlend : float = 0f
+    <<internal>> <<const>> DefaultMaxDistance : float = 100f
+    <<internal>> <<const>> DefaultDopplerLevel : float = 1f
+}
+@enduml

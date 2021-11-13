@@ -1,0 +1,16 @@
+@startuml
+abstract class FsmBase {
+    - m_Name : string
+    + FsmBase()
+    + Name : string <<get>> <<protected set>>
+    + FullName : string <<get>>
+    + {abstract} OwnerType : Type <<get>>
+    + {abstract} FsmStateCount : int <<get>>
+    + {abstract} IsRunning : bool <<get>>
+    + {abstract} IsDestroyed : bool <<get>>
+    + {abstract} CurrentStateName : string <<get>>
+    + {abstract} CurrentStateTime : float <<get>>
+    <<internal>> {abstract} Update(elapseSeconds:float, realElapseSeconds:float) : void
+    <<internal>> {abstract} Shutdown() : void
+}
+@enduml

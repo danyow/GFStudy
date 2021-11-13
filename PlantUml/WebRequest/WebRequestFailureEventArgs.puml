@@ -1,0 +1,12 @@
+@startuml
+class WebRequestFailureEventArgs <<sealed>> {
+    + WebRequestFailureEventArgs()
+    + SerialId : int <<get>>
+    + WebRequestUri : string <<get>>
+    + ErrorMessage : string <<get>>
+    + UserData : object <<get>>
+    + {static} Create(serialId:int, webRequestUri:string, errorMessage:string, userData:object) : WebRequestFailureEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- WebRequestFailureEventArgs
+@enduml

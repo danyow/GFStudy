@@ -1,0 +1,19 @@
+@startuml
+class CommonFileSystemStream <<sealed>> {
+    - <<readonly>> m_FileStream : FileStream
+    + CommonFileSystemStream(fullPath:string, access:FileSystemAccess, createNew:bool)
+    # <<internal>> <<override>> Position : long <<get>> <<set>>
+    # <<internal>> <<override>> Length : long <<get>>
+    # <<internal>> <<override>> SetLength(length:long) : void
+    # <<internal>> <<override>> Seek(offset:long, origin:SeekOrigin) : void
+    # <<internal>> <<override>> ReadByte() : int
+    # <<internal>> <<override>> Read(buffer:byte[], startIndex:int, length:int) : int
+    # <<internal>> <<override>> WriteByte(value:byte) : void
+    # <<internal>> <<override>> Write(buffer:byte[], startIndex:int, length:int) : void
+    # <<internal>> <<override>> Flush() : void
+    # <<internal>> <<override>> Close() : void
+    + Dispose() : void
+}
+FileSystemStream <|-- CommonFileSystemStream
+IDisposable <|-- CommonFileSystemStream
+@enduml

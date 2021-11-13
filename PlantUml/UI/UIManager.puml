@@ -1,0 +1,76 @@
+@startuml
+class UIManager <<sealed>> <<partial>> {
+    - <<readonly>> m_UIGroups : Dictionary<string, UIGroup>
+    - <<readonly>> m_UIFormsBeingLoaded : Dictionary<int, string>
+    - <<readonly>> m_UIFormsToReleaseOnLoad : HashSet<int>
+    - <<readonly>> m_RecycleQueue : Queue<IUIForm>
+    - <<readonly>> m_LoadAssetCallbacks : LoadAssetCallbacks
+    - m_ObjectPoolManager : IObjectPoolManager
+    - m_ResourceManager : IResourceManager
+    - m_InstancePool : IObjectPool<UIFormInstanceObject>
+    - m_UIFormHelper : IUIFormHelper
+    - m_Serial : int
+    - m_IsShutdown : bool
+    - m_OpenUIFormSuccessEventHandler : EventHandler<OpenUIFormSuccessEventArgs>
+    - m_OpenUIFormFailureEventHandler : EventHandler<OpenUIFormFailureEventArgs>
+    - m_OpenUIFormUpdateEventHandler : EventHandler<OpenUIFormUpdateEventArgs>
+    - m_OpenUIFormDependencyAssetEventHandler : EventHandler<OpenUIFormDependencyAssetEventArgs>
+    - m_CloseUIFormCompleteEventHandler : EventHandler<CloseUIFormCompleteEventArgs>
+    + UIManager()
+    + UIGroupCount : int <<get>>
+    + InstanceAutoReleaseInterval : float <<get>> <<set>>
+    + InstanceCapacity : int <<get>> <<set>>
+    + InstanceExpireTime : float <<get>> <<set>>
+    + InstancePriority : int <<get>> <<set>>
+    <<internal>> <<override>> Update(elapseSeconds:float, realElapseSeconds:float) : void
+    <<internal>> <<override>> Shutdown() : void
+    + SetObjectPoolManager(objectPoolManager:IObjectPoolManager) : void
+    + SetResourceManager(resourceManager:IResourceManager) : void
+    + SetUIFormHelper(uiFormHelper:IUIFormHelper) : void
+    + HasUIGroup(uiGroupName:string) : bool
+    + GetUIGroup(uiGroupName:string) : IUIGroup
+    + GetAllUIGroups() : IUIGroup[]
+    + GetAllUIGroups(results:List<IUIGroup>) : void
+    + AddUIGroup(uiGroupName:string, uiGroupHelper:IUIGroupHelper) : bool
+    + AddUIGroup(uiGroupName:string, uiGroupDepth:int, uiGroupHelper:IUIGroupHelper) : bool
+    + HasUIForm(serialId:int) : bool
+    + HasUIForm(uiFormAssetName:string) : bool
+    + GetUIForm(serialId:int) : IUIForm
+    + GetUIForm(uiFormAssetName:string) : IUIForm
+    + GetUIForms(uiFormAssetName:string) : IUIForm[]
+    + GetUIForms(uiFormAssetName:string, results:List<IUIForm>) : void
+    + GetAllLoadedUIForms() : IUIForm[]
+    + GetAllLoadedUIForms(results:List<IUIForm>) : void
+    + GetAllLoadingUIFormSerialIds() : int[]
+    + GetAllLoadingUIFormSerialIds(results:List<int>) : void
+    + IsLoadingUIForm(serialId:int) : bool
+    + IsLoadingUIForm(uiFormAssetName:string) : bool
+    + IsValidUIForm(uiForm:IUIForm) : bool
+    + OpenUIForm(uiFormAssetName:string, uiGroupName:string) : int
+    + OpenUIForm(uiFormAssetName:string, uiGroupName:string, priority:int) : int
+    + OpenUIForm(uiFormAssetName:string, uiGroupName:string, pauseCoveredUIForm:bool) : int
+    + OpenUIForm(uiFormAssetName:string, uiGroupName:string, userData:object) : int
+    + OpenUIForm(uiFormAssetName:string, uiGroupName:string, priority:int, pauseCoveredUIForm:bool) : int
+    + OpenUIForm(uiFormAssetName:string, uiGroupName:string, priority:int, userData:object) : int
+    + OpenUIForm(uiFormAssetName:string, uiGroupName:string, pauseCoveredUIForm:bool, userData:object) : int
+    + OpenUIForm(uiFormAssetName:string, uiGroupName:string, priority:int, pauseCoveredUIForm:bool, userData:object) : int
+    + CloseUIForm(serialId:int) : void
+    + CloseUIForm(serialId:int, userData:object) : void
+    + CloseUIForm(uiForm:IUIForm) : void
+    + CloseUIForm(uiForm:IUIForm, userData:object) : void
+    + CloseAllLoadedUIForms() : void
+    + CloseAllLoadedUIForms(userData:object) : void
+    + CloseAllLoadingUIForms() : void
+    + RefocusUIForm(uiForm:IUIForm) : void
+    + RefocusUIForm(uiForm:IUIForm, userData:object) : void
+    + SetUIFormInstanceLocked(uiFormInstance:object, locked:bool) : void
+    + SetUIFormInstancePriority(uiFormInstance:object, priority:int) : void
+    - InternalOpenUIForm(serialId:int, uiFormAssetName:string, uiGroup:UIGroup, uiFormInstance:object, pauseCoveredUIForm:bool, isNewInstance:bool, duration:float, userData:object) : void
+    - LoadAssetSuccessCallback(uiFormAssetName:string, uiFormAsset:object, duration:float, userData:object) : void
+    - LoadAssetFailureCallback(uiFormAssetName:string, status:LoadResourceStatus, errorMessage:string, userData:object) : void
+    - LoadAssetUpdateCallback(uiFormAssetName:string, progress:float, userData:object) : void
+    - LoadAssetDependencyAssetCallback(uiFormAssetName:string, dependencyAssetName:string, loadedCount:int, totalCount:int, userData:object) : void
+}
+GameFrameworkModule <|-- UIManager
+IUIManager <|-- UIManager
+@enduml

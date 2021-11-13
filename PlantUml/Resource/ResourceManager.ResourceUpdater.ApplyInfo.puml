@@ -1,0 +1,32 @@
+@startuml
+class ResourceManager <<sealed>> <<partial>> {
+}
+class ResourceUpdater <<sealed>> <<partial>> {
+}
+class ApplyInfo <<struct>> {
+    - <<readonly>> m_ResourceName : ResourceName
+    - <<readonly>> m_FileSystemName : string
+    - <<readonly>> m_LoadType : LoadType
+    - <<readonly>> m_Offset : long
+    - <<readonly>> m_Length : int
+    - <<readonly>> m_HashCode : int
+    - <<readonly>> m_CompressedLength : int
+    - <<readonly>> m_CompressedHashCode : int
+    - <<readonly>> m_ResourcePath : string
+    + ApplyInfo(resourceName:ResourceName, fileSystemName:string, loadType:LoadType, offset:long, length:int, hashCode:int, compressedLength:int, compressedHashCode:int, resourcePath:string)
+    + ResourceName : ResourceName <<get>>
+    + UseFileSystem : bool <<get>>
+    + FileSystemName : string <<get>>
+    + LoadType : LoadType <<get>>
+    + Offset : long <<get>>
+    + Length : int <<get>>
+    + HashCode : int <<get>>
+    + CompressedLength : int <<get>>
+    + CompressedHashCode : int <<get>>
+    + ResourcePath : string <<get>>
+}
+GameFrameworkModule <|-- ResourceManager
+IResourceManager <|-- ResourceManager
+ResourceManager +-- ResourceUpdater
+ResourceUpdater +-- ApplyInfo
+@enduml

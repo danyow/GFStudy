@@ -1,0 +1,13 @@
+@startuml
+class WebRequestSuccessEventArgs <<sealed>> {
+    - m_WebResponseBytes : byte[]
+    + WebRequestSuccessEventArgs()
+    + SerialId : int <<get>>
+    + WebRequestUri : string <<get>>
+    + UserData : object <<get>>
+    + {static} Create(serialId:int, webRequestUri:string, webResponseBytes:byte[], userData:object) : WebRequestSuccessEventArgs
+    + <<override>> Clear() : void
+    + GetWebResponseBytes() : byte[]
+}
+GameFrameworkEventArgs <|-- WebRequestSuccessEventArgs
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+interface ILoadResourceAgentHelper {
+     <<event>> LoadResourceAgentHelperUpdate : EventHandler<LoadResourceAgentHelperUpdateEventArgs> 
+     <<event>> LoadResourceAgentHelperReadFileComplete : EventHandler<LoadResourceAgentHelperReadFileCompleteEventArgs> 
+     <<event>> LoadResourceAgentHelperReadBytesComplete : EventHandler<LoadResourceAgentHelperReadBytesCompleteEventArgs> 
+     <<event>> LoadResourceAgentHelperParseBytesComplete : EventHandler<LoadResourceAgentHelperParseBytesCompleteEventArgs> 
+     <<event>> LoadResourceAgentHelperLoadComplete : EventHandler<LoadResourceAgentHelperLoadCompleteEventArgs> 
+     <<event>> LoadResourceAgentHelperError : EventHandler<LoadResourceAgentHelperErrorEventArgs> 
+    ReadFile(fullPath:string) : void
+    ReadFile(fileSystem:IFileSystem, name:string) : void
+    ReadBytes(fullPath:string) : void
+    ReadBytes(fileSystem:IFileSystem, name:string) : void
+    ParseBytes(bytes:byte[]) : void
+    LoadAsset(resource:object, assetName:string, assetType:Type, isScene:bool) : void
+    Reset() : void
+}
+@enduml

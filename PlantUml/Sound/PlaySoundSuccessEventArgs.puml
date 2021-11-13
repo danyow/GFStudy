@@ -1,0 +1,13 @@
+@startuml
+class PlaySoundSuccessEventArgs <<sealed>> {
+    + PlaySoundSuccessEventArgs()
+    + SerialId : int <<get>>
+    + SoundAssetName : string <<get>>
+    + SoundAgent : ISoundAgent <<get>>
+    + Duration : float <<get>>
+    + UserData : object <<get>>
+    + {static} Create(serialId:int, soundAssetName:string, soundAgent:ISoundAgent, duration:float, userData:object) : PlaySoundSuccessEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- PlaySoundSuccessEventArgs
+@enduml

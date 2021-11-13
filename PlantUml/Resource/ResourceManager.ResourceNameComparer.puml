@@ -1,0 +1,14 @@
+@startuml
+class ResourceManager <<sealed>> <<partial>> {
+}
+class ResourceNameComparer <<sealed>> {
+    + Compare(x:ResourceName, y:ResourceName) : int
+    + Equals(x:ResourceName, y:ResourceName) : bool
+    + GetHashCode(obj:ResourceName) : int
+}
+GameFrameworkModule <|-- ResourceManager
+IResourceManager <|-- ResourceManager
+ResourceManager +-- ResourceNameComparer
+"IComparer`1" "<ResourceName>" <|-- ResourceNameComparer
+"IEqualityComparer`1" "<ResourceName>" <|-- ResourceNameComparer
+@enduml

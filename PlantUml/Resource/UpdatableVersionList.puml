@@ -1,0 +1,23 @@
+@startuml
+class UpdatableVersionList <<struct>> {
+    - {static} <<readonly>> EmptyAssetArray : Asset[]
+    - {static} <<readonly>> EmptyResourceArray : Resource[]
+    - {static} <<readonly>> EmptyFileSystemArray : FileSystem[]
+    - {static} <<readonly>> EmptyResourceGroupArray : ResourceGroup[]
+    - <<readonly>> m_IsValid : bool
+    - <<readonly>> m_ApplicableGameVersion : string
+    - <<readonly>> m_InternalResourceVersion : int
+    - <<readonly>> m_Assets : Asset[]
+    - <<readonly>> m_Resources : Resource[]
+    - <<readonly>> m_FileSystems : FileSystem[]
+    - <<readonly>> m_ResourceGroups : ResourceGroup[]
+    + UpdatableVersionList(applicableGameVersion:string, internalResourceVersion:int, assets:Asset[], resources:Resource[], fileSystems:FileSystem[], resourceGroups:ResourceGroup[])
+    + IsValid : bool <<get>>
+    + ApplicableGameVersion : string <<get>>
+    + InternalResourceVersion : int <<get>>
+    + GetAssets() : Asset[]
+    + GetResources() : Resource[]
+    + GetFileSystems() : FileSystem[]
+    + GetResourceGroups() : ResourceGroup[]
+}
+@enduml

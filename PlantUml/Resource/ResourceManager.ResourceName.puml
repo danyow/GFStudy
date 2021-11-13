@@ -1,0 +1,27 @@
+@startuml
+class ResourceManager <<sealed>> <<partial>> {
+}
+class ResourceName <<struct>> {
+    - {static} <<readonly>> s_ResourceFullNames : Dictionary<ResourceName, string>
+    - <<readonly>> m_Name : string
+    - <<readonly>> m_Variant : string
+    - <<readonly>> m_Extension : string
+    + ResourceName(name:string, variant:string, extension:string)
+    + Name : string <<get>>
+    + Variant : string <<get>>
+    + Extension : string <<get>>
+    + FullName : string <<get>>
+    + <<override>> ToString() : string
+    + <<override>> GetHashCode() : int
+    + <<override>> Equals(obj:object) : bool
+    + Equals(value:ResourceName) : bool
+    + CompareTo(value:object) : int
+    + CompareTo(resourceName:ResourceName) : int
+}
+GameFrameworkModule <|-- ResourceManager
+IResourceManager <|-- ResourceManager
+ResourceManager +-- ResourceName
+IComparable <|-- ResourceName
+"IComparable`1" "<ResourceName>" <|-- ResourceName
+"IEquatable`1" "<ResourceName>" <|-- ResourceName
+@enduml

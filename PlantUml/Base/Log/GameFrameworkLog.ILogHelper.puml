@@ -1,0 +1,8 @@
+@startuml
+class GameFrameworkLog <<static>> <<partial>> {
+}
+interface ILogHelper {
+    Log(level:GameFrameworkLogLevel, message:object) : void
+}
+GameFrameworkLog +-- ILogHelper
+@enduml

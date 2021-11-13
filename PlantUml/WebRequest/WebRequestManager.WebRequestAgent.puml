@@ -1,0 +1,26 @@
+@startuml
+class WebRequestManager <<sealed>> <<partial>> {
+}
+class WebRequestAgent <<sealed>> {
+    - <<readonly>> m_Helper : IWebRequestAgentHelper
+    - m_Task : WebRequestTask
+    - m_WaitTime : float
+    + WebRequestAgentStart : GameFrameworkAction<WebRequestAgent>
+    + WebRequestAgentSuccess : GameFrameworkAction<WebRequestAgent, byte[]>
+    + WebRequestAgentFailure : GameFrameworkAction<WebRequestAgent, string>
+    + WebRequestAgent(webRequestAgentHelper:IWebRequestAgentHelper)
+    + Task : WebRequestTask <<get>>
+    + WaitTime : float <<get>>
+    + Initialize() : void
+    + Update(elapseSeconds:float, realElapseSeconds:float) : void
+    + Shutdown() : void
+    + Start(task:WebRequestTask) : StartTaskStatus
+    + Reset() : void
+    - OnWebRequestAgentHelperComplete(sender:object, e:WebRequestAgentHelperCompleteEventArgs) : void
+    - OnWebRequestAgentHelperError(sender:object, e:WebRequestAgentHelperErrorEventArgs) : void
+}
+GameFrameworkModule <|-- WebRequestManager
+IWebRequestManager <|-- WebRequestManager
+WebRequestManager +-- WebRequestAgent
+"ITaskAgent`1" "<WebRequestTask>" <|-- WebRequestAgent
+@enduml

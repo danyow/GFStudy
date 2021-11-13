@@ -1,0 +1,12 @@
+@startuml
+class HideEntityCompleteEventArgs <<sealed>> {
+    + HideEntityCompleteEventArgs()
+    + EntityId : int <<get>>
+    + EntityAssetName : string <<get>>
+    + EntityGroup : IEntityGroup <<get>>
+    + UserData : object <<get>>
+    + {static} Create(entityId:int, entityAssetName:string, entityGroup:IEntityGroup, userData:object) : HideEntityCompleteEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- HideEntityCompleteEventArgs
+@enduml

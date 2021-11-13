@@ -1,0 +1,24 @@
+@startuml
+class "EventPool`1"<T> <<sealed>> <<partial>> {
+    - <<readonly>> m_EventHandlers : GameFrameworkMultiDictionary<int, EventHandler<T>>
+    - <<readonly>> m_Events : Queue<Event>
+    - <<readonly>> m_CachedNodes : Dictionary<object, LinkedListNode<EventHandler<T>>>
+    - <<readonly>> m_TempNodes : Dictionary<object, LinkedListNode<EventHandler<T>>>
+    - <<readonly>> m_EventPoolMode : EventPoolMode
+    - m_DefaultHandler : EventHandler<T>
+    + EventPool(mode:EventPoolMode)
+    + EventHandlerCount : int <<get>>
+    + EventCount : int <<get>>
+    + Update(elapseSeconds:float, realElapseSeconds:float) : void
+    + Shutdown() : void
+    + Clear() : void
+    + Count(id:int) : int
+    + Check(id:int, handler:EventHandler<T>) : bool
+    + Subscribe(id:int, handler:EventHandler<T>) : void
+    + Unsubscribe(id:int, handler:EventHandler<T>) : void
+    + SetDefaultHandler(handler:EventHandler<T>) : void
+    + Fire(sender:object, e:T) : void
+    + FireNow(sender:object, e:T) : void
+    - HandleEvent(sender:object, e:T) : void
+}
+@enduml

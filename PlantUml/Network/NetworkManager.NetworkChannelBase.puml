@@ -1,0 +1,60 @@
+@startuml
+class NetworkManager <<sealed>> <<partial>> {
+}
+abstract class NetworkChannelBase {
+    - <<const>> DefaultHeartBeatInterval : float = 30f
+    - <<readonly>> m_Name : string
+    # <<readonly>> m_SendPacketPool : Queue<Packet>
+    # <<readonly>> m_ReceivePacketPool : EventPool<Packet>
+    # <<readonly>> m_NetworkChannelHelper : INetworkChannelHelper
+    # m_AddressFamily : AddressFamily
+    # m_ResetHeartBeatElapseSecondsWhenReceivePacket : bool
+    # m_HeartBeatInterval : float
+    # m_Socket : Socket
+    # <<readonly>> m_SendState : SendState
+    # <<readonly>> m_ReceiveState : ReceiveState
+    # <<readonly>> m_HeartBeatState : HeartBeatState
+    # m_SentPacketCount : int
+    # m_ReceivedPacketCount : int
+    # m_Active : bool
+    - m_Disposed : bool
+    + NetworkChannelConnected : GameFrameworkAction<NetworkChannelBase, object>
+    + NetworkChannelClosed : GameFrameworkAction<NetworkChannelBase>
+    + NetworkChannelMissHeartBeat : GameFrameworkAction<NetworkChannelBase, int>
+    + NetworkChannelError : GameFrameworkAction<NetworkChannelBase, NetworkErrorCode, SocketError, string>
+    + NetworkChannelCustomError : GameFrameworkAction<NetworkChannelBase, object>
+    + NetworkChannelBase(name:string, networkChannelHelper:INetworkChannelHelper)
+    + Name : string <<get>>
+    + Socket : Socket <<get>>
+    + Connected : bool <<get>>
+    + {abstract} ServiceType : ServiceType <<get>>
+    + AddressFamily : AddressFamily <<get>>
+    + SendPacketCount : int <<get>>
+    + SentPacketCount : int <<get>>
+    + ReceivePacketCount : int <<get>>
+    + ReceivedPacketCount : int <<get>>
+    + ResetHeartBeatElapseSecondsWhenReceivePacket : bool <<get>> <<set>>
+    + MissHeartBeatCount : int <<get>>
+    + HeartBeatInterval : float <<get>> <<set>>
+    + HeartBeatElapseSeconds : float <<get>>
+    + <<virtual>> Update(elapseSeconds:float, realElapseSeconds:float) : void
+    + <<virtual>> Shutdown() : void
+    + RegisterHandler(handler:IPacketHandler) : void
+    + SetDefaultHandler(handler:EventHandler<Packet>) : void
+    + Connect(ipAddress:IPAddress, port:int) : void
+    + <<virtual>> Connect(ipAddress:IPAddress, port:int, userData:object) : void
+    + Close() : void
+    + Send(packet:T) : void
+    + Dispose() : void
+    - Dispose(disposing:bool) : void
+    # <<virtual>> ProcessSend() : bool
+    # <<virtual>> ProcessReceive() : void
+    # <<virtual>> ProcessPacketHeader() : bool
+    # <<virtual>> ProcessPacket() : bool
+}
+GameFrameworkModule <|-- NetworkManager
+INetworkManager <|-- NetworkManager
+NetworkManager +-- NetworkChannelBase
+INetworkChannel <|-- NetworkChannelBase
+IDisposable <|-- NetworkChannelBase
+@enduml

@@ -1,0 +1,26 @@
+@startuml
+class ResourcePackVersionList <<struct>> {
+}
+class Resource <<struct>> {
+    - <<readonly>> m_Name : string
+    - <<readonly>> m_Variant : string
+    - <<readonly>> m_Extension : string
+    - <<readonly>> m_LoadType : byte
+    - <<readonly>> m_Offset : long
+    - <<readonly>> m_Length : int
+    - <<readonly>> m_HashCode : int
+    - <<readonly>> m_CompressedLength : int
+    - <<readonly>> m_CompressedHashCode : int
+    + Resource(name:string, variant:string, extension:string, loadType:byte, offset:long, length:int, hashCode:int, compressedLength:int, compressedHashCode:int)
+    + Name : string <<get>>
+    + Variant : string <<get>>
+    + Extension : string <<get>>
+    + LoadType : byte <<get>>
+    + Offset : long <<get>>
+    + Length : int <<get>>
+    + HashCode : int <<get>>
+    + CompressedLength : int <<get>>
+    + CompressedHashCode : int <<get>>
+}
+ResourcePackVersionList +-- Resource
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class LoadSceneUpdateEventArgs <<sealed>> {
+    + LoadSceneUpdateEventArgs()
+    + SceneAssetName : string <<get>>
+    + Progress : float <<get>>
+    + UserData : object <<get>>
+    + {static} Create(sceneAssetName:string, progress:float, userData:object) : LoadSceneUpdateEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- LoadSceneUpdateEventArgs
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+class FileSystem <<sealed>> <<partial>> {
+}
+class StringData <<struct>> {
+    - {static} <<readonly>> s_CachedBytes : byte[]
+    - <<readonly>> m_Length : byte
+    - <<readonly>> m_Bytes : byte[]
+    + StringData(length:byte, bytes:byte[])
+    + GetString(encryptBytes:byte[]) : string
+    + SetString(value:string, encryptBytes:byte[]) : StringData
+    + Clear() : StringData
+}
+IFileSystem <|-- FileSystem
+FileSystem +-- StringData
+@enduml

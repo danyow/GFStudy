@@ -1,0 +1,30 @@
+@startuml
+class DataNodeManager <<sealed>> <<partial>> {
+    - {static} <<readonly>> EmptyStringArray : string[]
+    - {static} <<readonly>> PathSplitSeparator : string[]
+    - <<const>> RootName : string = "<Root>"
+    - m_Root : DataNode
+    + DataNodeManager()
+    + Root : IDataNode <<get>>
+    <<internal>> <<override>> Update(elapseSeconds:float, realElapseSeconds:float) : void
+    <<internal>> <<override>> Shutdown() : void
+    + GetData(path:string) : T
+    + GetData(path:string) : Variable
+    + GetData(path:string, node:IDataNode) : T
+    + GetData(path:string, node:IDataNode) : Variable
+    + SetData(path:string, data:T) : void
+    + SetData(path:string, data:Variable) : void
+    + SetData(path:string, data:T, node:IDataNode) : void
+    + SetData(path:string, data:Variable, node:IDataNode) : void
+    + GetNode(path:string) : IDataNode
+    + GetNode(path:string, node:IDataNode) : IDataNode
+    + GetOrAddNode(path:string) : IDataNode
+    + GetOrAddNode(path:string, node:IDataNode) : IDataNode
+    + RemoveNode(path:string) : void
+    + RemoveNode(path:string, node:IDataNode) : void
+    + Clear() : void
+    - {static} GetSplitedPath(path:string) : string[]
+}
+GameFrameworkModule <|-- DataNodeManager
+IDataNodeManager <|-- DataNodeManager
+@enduml

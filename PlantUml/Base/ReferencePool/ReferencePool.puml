@@ -1,0 +1,21 @@
+@startuml
+class ReferencePool <<static>> <<partial>> {
+    - {static} <<readonly>> s_ReferenceCollections : Dictionary<Type, ReferenceCollection>
+    - {static} m_EnableStrictCheck : bool = false
+    + {static} EnableStrictCheck : bool <<get>> <<set>>
+    + {static} Count : int <<get>>
+    + {static} GetAllReferencePoolInfos() : ReferencePoolInfo[]
+    + {static} ClearAll() : void
+    + {static} Acquire() : T
+    + {static} Acquire(referenceType:Type) : IReference
+    + {static} Release(reference:IReference) : void
+    + {static} Add(count:int) : void
+    + {static} Add(referenceType:Type, count:int) : void
+    + {static} Remove(count:int) : void
+    + {static} Remove(referenceType:Type, count:int) : void
+    + {static} RemoveAll() : void
+    + {static} RemoveAll(referenceType:Type) : void
+    - {static} InternalCheckReferenceType(referenceType:Type) : void
+    - {static} GetReferenceCollection(referenceType:Type) : ReferenceCollection
+}
+@enduml

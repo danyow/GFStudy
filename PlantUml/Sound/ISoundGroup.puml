@@ -1,0 +1,12 @@
+@startuml
+interface ISoundGroup {
+    Name : string <<get>>
+    SoundAgentCount : int <<get>>
+    AvoidBeingReplacedBySamePriority : bool <<get>> <<set>>
+    Mute : bool <<get>> <<set>>
+    Volume : float <<get>> <<set>>
+    Helper : ISoundGroupHelper <<get>>
+    StopAllLoadedSounds() : void
+    StopAllLoadedSounds(fadeOutSeconds:float) : void
+}
+@enduml

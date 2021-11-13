@@ -1,0 +1,23 @@
+@startuml
+class DownloadManager <<sealed>> <<partial>> {
+}
+class DownloadCounter <<sealed>> <<partial>> {
+    - <<readonly>> m_DownloadCounterNodes : GameFrameworkLinkedList<DownloadCounterNode>
+    - m_UpdateInterval : float
+    - m_RecordInterval : float
+    - m_CurrentSpeed : float
+    - m_Accumulator : float
+    - m_TimeLeft : float
+    + DownloadCounter(updateInterval:float, recordInterval:float)
+    + UpdateInterval : float <<get>> <<set>>
+    + RecordInterval : float <<get>> <<set>>
+    + CurrentSpeed : float <<get>>
+    + Shutdown() : void
+    + Update(elapseSeconds:float, realElapseSeconds:float) : void
+    + RecordDeltaLength(deltaLength:int) : void
+    - Reset() : void
+}
+GameFrameworkModule <|-- DownloadManager
+IDownloadManager <|-- DownloadManager
+DownloadManager +-- DownloadCounter
+@enduml

@@ -1,0 +1,18 @@
+@startuml
+interface "IDataProvider`1"<T> {
+     <<event>> ReadDataSuccess : EventHandler<ReadDataSuccessEventArgs> 
+     <<event>> ReadDataFailure : EventHandler<ReadDataFailureEventArgs> 
+     <<event>> ReadDataUpdate : EventHandler<ReadDataUpdateEventArgs> 
+     <<event>> ReadDataDependencyAsset : EventHandler<ReadDataDependencyAssetEventArgs> 
+    ReadData(dataAssetName:string) : void
+    ReadData(dataAssetName:string, priority:int) : void
+    ReadData(dataAssetName:string, userData:object) : void
+    ReadData(dataAssetName:string, priority:int, userData:object) : void
+    ParseData(dataString:string) : bool
+    ParseData(dataString:string, userData:object) : bool
+    ParseData(dataBytes:byte[]) : bool
+    ParseData(dataBytes:byte[], userData:object) : bool
+    ParseData(dataBytes:byte[], startIndex:int, length:int) : bool
+    ParseData(dataBytes:byte[], startIndex:int, length:int, userData:object) : bool
+}
+@enduml

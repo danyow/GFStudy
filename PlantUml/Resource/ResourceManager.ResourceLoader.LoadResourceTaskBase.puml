@@ -1,0 +1,41 @@
+@startuml
+class ResourceManager <<sealed>> <<partial>> {
+}
+class ResourceLoader <<sealed>> <<partial>> {
+}
+abstract class LoadResourceTaskBase {
+    - {static} s_Serial : int = 0
+    - m_AssetName : string
+    - m_AssetType : Type
+    - m_ResourceInfo : ResourceInfo
+    - m_DependencyAssetNames : string[]
+    - <<readonly>> m_DependencyAssets : List<object>
+    - m_ResourceObject : ResourceObject
+    - m_StartTime : DateTime
+    - m_TotalDependencyAssetCount : int
+    + LoadResourceTaskBase()
+    + AssetName : string <<get>>
+    + AssetType : Type <<get>>
+    + ResourceInfo : ResourceInfo <<get>>
+    + ResourceObject : ResourceObject <<get>>
+    + {abstract} IsScene : bool <<get>>
+    + StartTime : DateTime <<get>> <<set>>
+    + LoadedDependencyAssetCount : int <<get>>
+    + TotalDependencyAssetCount : int <<get>> <<set>>
+    + <<override>> Description : string <<get>>
+    + <<override>> Clear() : void
+    + GetDependencyAssetNames() : string[]
+    + GetDependencyAssets() : List<object>
+    + LoadMain(agent:LoadResourceAgent, resourceObject:ResourceObject) : void
+    + <<virtual>> OnLoadAssetSuccess(agent:LoadResourceAgent, asset:object, duration:float) : void
+    + <<virtual>> OnLoadAssetFailure(agent:LoadResourceAgent, status:LoadResourceStatus, errorMessage:string) : void
+    + <<virtual>> OnLoadAssetUpdate(agent:LoadResourceAgent, type:LoadResourceProgress, progress:float) : void
+    + <<virtual>> OnLoadDependencyAsset(agent:LoadResourceAgent, dependencyAssetName:string, dependencyAsset:object) : void
+    # Initialize(assetName:string, assetType:Type, priority:int, resourceInfo:ResourceInfo, dependencyAssetNames:string[], userData:object) : void
+}
+GameFrameworkModule <|-- ResourceManager
+IResourceManager <|-- ResourceManager
+ResourceManager +-- ResourceLoader
+ResourceLoader +-- LoadResourceTaskBase
+TaskBase <|-- LoadResourceTaskBase
+@enduml

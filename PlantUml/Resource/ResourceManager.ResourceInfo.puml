@@ -1,0 +1,29 @@
+@startuml
+class ResourceManager <<sealed>> <<partial>> {
+}
+class ResourceInfo <<sealed>> {
+    - <<readonly>> m_ResourceName : ResourceName
+    - <<readonly>> m_FileSystemName : string
+    - <<readonly>> m_LoadType : LoadType
+    - <<readonly>> m_Length : int
+    - <<readonly>> m_HashCode : int
+    - <<readonly>> m_CompressedLength : int
+    - <<readonly>> m_StorageInReadOnly : bool
+    - m_Ready : bool
+    + ResourceInfo(resourceName:ResourceName, fileSystemName:string, loadType:LoadType, length:int, hashCode:int, compressedLength:int, storageInReadOnly:bool, ready:bool)
+    + ResourceName : ResourceName <<get>>
+    + UseFileSystem : bool <<get>>
+    + FileSystemName : string <<get>>
+    + IsLoadFromBinary : bool <<get>>
+    + LoadType : LoadType <<get>>
+    + Length : int <<get>>
+    + HashCode : int <<get>>
+    + CompressedLength : int <<get>>
+    + StorageInReadOnly : bool <<get>>
+    + Ready : bool <<get>>
+    + MarkReady() : void
+}
+GameFrameworkModule <|-- ResourceManager
+IResourceManager <|-- ResourceManager
+ResourceManager +-- ResourceInfo
+@enduml

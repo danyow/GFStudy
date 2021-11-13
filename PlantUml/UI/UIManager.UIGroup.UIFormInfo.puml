@@ -1,0 +1,23 @@
+@startuml
+class UIManager <<sealed>> <<partial>> {
+}
+class UIGroup <<sealed>> <<partial>> {
+}
+class UIFormInfo <<sealed>> {
+    - m_UIForm : IUIForm
+    - m_Paused : bool
+    - m_Covered : bool
+    + UIFormInfo()
+    + UIForm : IUIForm <<get>>
+    + Paused : bool <<get>> <<set>>
+    + Covered : bool <<get>> <<set>>
+    + {static} Create(uiForm:IUIForm) : UIFormInfo
+    + Clear() : void
+}
+GameFrameworkModule <|-- UIManager
+IUIManager <|-- UIManager
+UIManager +-- UIGroup
+IUIGroup <|-- UIGroup
+UIGroup +-- UIFormInfo
+IReference <|-- UIFormInfo
+@enduml

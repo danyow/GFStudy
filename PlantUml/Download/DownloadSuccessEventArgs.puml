@@ -1,0 +1,13 @@
+@startuml
+class DownloadSuccessEventArgs <<sealed>> {
+    + DownloadSuccessEventArgs()
+    + SerialId : int <<get>>
+    + DownloadPath : string <<get>>
+    + DownloadUri : string <<get>>
+    + CurrentLength : long <<get>>
+    + UserData : object <<get>>
+    + {static} Create(serialId:int, downloadPath:string, downloadUri:string, currentLength:long, userData:object) : DownloadSuccessEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- DownloadSuccessEventArgs
+@enduml

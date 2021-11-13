@@ -1,0 +1,38 @@
+@startuml
+interface ISoundManager {
+    SoundGroupCount : int <<get>>
+     <<event>> PlaySoundSuccess : EventHandler<PlaySoundSuccessEventArgs> 
+     <<event>> PlaySoundFailure : EventHandler<PlaySoundFailureEventArgs> 
+     <<event>> PlaySoundUpdate : EventHandler<PlaySoundUpdateEventArgs> 
+     <<event>> PlaySoundDependencyAsset : EventHandler<PlaySoundDependencyAssetEventArgs> 
+    SetResourceManager(resourceManager:IResourceManager) : void
+    SetSoundHelper(soundHelper:ISoundHelper) : void
+    HasSoundGroup(soundGroupName:string) : bool
+    GetSoundGroup(soundGroupName:string) : ISoundGroup
+    GetAllSoundGroups() : ISoundGroup[]
+    GetAllSoundGroups(results:List<ISoundGroup>) : void
+    AddSoundGroup(soundGroupName:string, soundGroupHelper:ISoundGroupHelper) : bool
+    AddSoundGroup(soundGroupName:string, soundGroupAvoidBeingReplacedBySamePriority:bool, soundGroupMute:bool, soundGroupVolume:float, soundGroupHelper:ISoundGroupHelper) : bool
+    AddSoundAgentHelper(soundGroupName:string, soundAgentHelper:ISoundAgentHelper) : void
+    GetAllLoadingSoundSerialIds() : int[]
+    GetAllLoadingSoundSerialIds(results:List<int>) : void
+    IsLoadingSound(serialId:int) : bool
+    PlaySound(soundAssetName:string, soundGroupName:string) : int
+    PlaySound(soundAssetName:string, soundGroupName:string, priority:int) : int
+    PlaySound(soundAssetName:string, soundGroupName:string, playSoundParams:PlaySoundParams) : int
+    PlaySound(soundAssetName:string, soundGroupName:string, userData:object) : int
+    PlaySound(soundAssetName:string, soundGroupName:string, priority:int, playSoundParams:PlaySoundParams) : int
+    PlaySound(soundAssetName:string, soundGroupName:string, priority:int, userData:object) : int
+    PlaySound(soundAssetName:string, soundGroupName:string, playSoundParams:PlaySoundParams, userData:object) : int
+    PlaySound(soundAssetName:string, soundGroupName:string, priority:int, playSoundParams:PlaySoundParams, userData:object) : int
+    StopSound(serialId:int) : bool
+    StopSound(serialId:int, fadeOutSeconds:float) : bool
+    StopAllLoadedSounds() : void
+    StopAllLoadedSounds(fadeOutSeconds:float) : void
+    StopAllLoadingSounds() : void
+    PauseSound(serialId:int) : void
+    PauseSound(serialId:int, fadeOutSeconds:float) : void
+    ResumeSound(serialId:int) : void
+    ResumeSound(serialId:int, fadeInSeconds:float) : void
+}
+@enduml

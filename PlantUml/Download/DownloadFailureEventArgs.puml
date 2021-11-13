@@ -1,0 +1,13 @@
+@startuml
+class DownloadFailureEventArgs <<sealed>> {
+    + DownloadFailureEventArgs()
+    + SerialId : int <<get>>
+    + DownloadPath : string <<get>>
+    + DownloadUri : string <<get>>
+    + ErrorMessage : string <<get>>
+    + UserData : object <<get>>
+    + {static} Create(serialId:int, downloadPath:string, downloadUri:string, errorMessage:string, userData:object) : DownloadFailureEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- DownloadFailureEventArgs
+@enduml

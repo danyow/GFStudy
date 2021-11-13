@@ -1,0 +1,11 @@
+@startuml
+class ResourceApplyStartEventArgs <<sealed>> {
+    + ResourceApplyStartEventArgs()
+    + ResourcePackPath : string <<get>>
+    + Count : int <<get>>
+    + TotalLength : long <<get>>
+    + {static} Create(resourcePackPath:string, count:int, totalLength:long) : ResourceApplyStartEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- ResourceApplyStartEventArgs
+@enduml

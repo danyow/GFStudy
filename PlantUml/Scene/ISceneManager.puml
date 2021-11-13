@@ -1,0 +1,27 @@
+@startuml
+interface ISceneManager {
+     <<event>> LoadSceneSuccess : EventHandler<LoadSceneSuccessEventArgs> 
+     <<event>> LoadSceneFailure : EventHandler<LoadSceneFailureEventArgs> 
+     <<event>> LoadSceneUpdate : EventHandler<LoadSceneUpdateEventArgs> 
+     <<event>> LoadSceneDependencyAsset : EventHandler<LoadSceneDependencyAssetEventArgs> 
+     <<event>> UnloadSceneSuccess : EventHandler<UnloadSceneSuccessEventArgs> 
+     <<event>> UnloadSceneFailure : EventHandler<UnloadSceneFailureEventArgs> 
+    SetResourceManager(resourceManager:IResourceManager) : void
+    SceneIsLoaded(sceneAssetName:string) : bool
+    GetLoadedSceneAssetNames() : string[]
+    GetLoadedSceneAssetNames(results:List<string>) : void
+    SceneIsLoading(sceneAssetName:string) : bool
+    GetLoadingSceneAssetNames() : string[]
+    GetLoadingSceneAssetNames(results:List<string>) : void
+    SceneIsUnloading(sceneAssetName:string) : bool
+    GetUnloadingSceneAssetNames() : string[]
+    GetUnloadingSceneAssetNames(results:List<string>) : void
+    HasScene(sceneAssetName:string) : bool
+    LoadScene(sceneAssetName:string) : void
+    LoadScene(sceneAssetName:string, priority:int) : void
+    LoadScene(sceneAssetName:string, userData:object) : void
+    LoadScene(sceneAssetName:string, priority:int, userData:object) : void
+    UnloadScene(sceneAssetName:string) : void
+    UnloadScene(sceneAssetName:string, userData:object) : void
+}
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class LoadResourceAgentHelperParseBytesCompleteEventArgs <<sealed>> {
+    + LoadResourceAgentHelperParseBytesCompleteEventArgs()
+    + Resource : object <<get>>
+    + {static} Create(resource:object) : LoadResourceAgentHelperParseBytesCompleteEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- LoadResourceAgentHelperParseBytesCompleteEventArgs
+@enduml

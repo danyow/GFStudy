@@ -1,0 +1,10 @@
+@startuml
+class GameFrameworkEntry <<static>> {
+    - {static} <<readonly>> s_GameFrameworkModules : GameFrameworkLinkedList<GameFrameworkModule>
+    + {static} Update(elapseSeconds:float, realElapseSeconds:float) : void
+    + {static} Shutdown() : void
+    + {static} GetModule() : T
+    - {static} GetModule(moduleType:Type) : GameFrameworkModule
+    - {static} CreateModule(moduleType:Type) : GameFrameworkModule
+}
+@enduml

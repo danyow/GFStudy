@@ -1,0 +1,43 @@
+@startuml
+class "Fsm`1"<T> <<sealed>> {
+    - m_Owner : T
+    - <<readonly>> m_States : Dictionary<Type, FsmState<T>>
+    - m_Datas : Dictionary<string, Variable>
+    - m_CurrentState : FsmState<T>
+    - m_CurrentStateTime : float
+    - m_IsDestroyed : bool
+    + Fsm()
+    + Owner : T <<get>>
+    + <<override>> OwnerType : Type <<get>>
+    + <<override>> FsmStateCount : int <<get>>
+    + <<override>> IsRunning : bool <<get>>
+    + <<override>> IsDestroyed : bool <<get>>
+    + CurrentState : FsmState<T> <<get>>
+    + <<override>> CurrentStateName : string <<get>>
+    + <<override>> CurrentStateTime : float <<get>>
+    + {static} Create(name:string, owner:T, states:FsmState<T>[]) : Fsm<T>
+    + {static} Create(name:string, owner:T, states:List<FsmState<T>>) : Fsm<T>
+    + Clear() : void
+    + Start() : void
+    + Start(stateType:Type) : void
+    + HasState() : bool
+    + HasState(stateType:Type) : bool
+    + GetState() : TState
+    + GetState(stateType:Type) : FsmState<T>
+    + GetAllStates() : FsmState<T>[]
+    + GetAllStates(results:List<FsmState<T>>) : void
+    + HasData(name:string) : bool
+    + GetData(name:string) : TData
+    + GetData(name:string) : Variable
+    + SetData(name:string, data:TData) : void
+    + SetData(name:string, data:Variable) : void
+    + RemoveData(name:string) : bool
+    <<internal>> <<override>> Update(elapseSeconds:float, realElapseSeconds:float) : void
+    <<internal>> <<override>> Shutdown() : void
+    <<internal>> ChangeState() : void
+    <<internal>> ChangeState(stateType:Type) : void
+}
+FsmBase <|-- "Fsm`1"
+IReference <|-- "Fsm`1"
+"IFsm`1" "<T>" <|-- "Fsm`1"
+@enduml

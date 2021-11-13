@@ -1,0 +1,19 @@
+@startuml
+class ReferencePoolInfo <<struct>> {
+    - <<readonly>> m_Type : Type
+    - <<readonly>> m_UnusedReferenceCount : int
+    - <<readonly>> m_UsingReferenceCount : int
+    - <<readonly>> m_AcquireReferenceCount : int
+    - <<readonly>> m_ReleaseReferenceCount : int
+    - <<readonly>> m_AddReferenceCount : int
+    - <<readonly>> m_RemoveReferenceCount : int
+    + ReferencePoolInfo(type:Type, unusedReferenceCount:int, usingReferenceCount:int, acquireReferenceCount:int, releaseReferenceCount:int, addReferenceCount:int, removeReferenceCount:int)
+    + Type : Type <<get>>
+    + UnusedReferenceCount : int <<get>>
+    + UsingReferenceCount : int <<get>>
+    + AcquireReferenceCount : int <<get>>
+    + ReleaseReferenceCount : int <<get>>
+    + AddReferenceCount : int <<get>>
+    + RemoveReferenceCount : int <<get>>
+}
+@enduml

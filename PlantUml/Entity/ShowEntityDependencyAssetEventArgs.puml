@@ -1,0 +1,15 @@
+@startuml
+class ShowEntityDependencyAssetEventArgs <<sealed>> {
+    + ShowEntityDependencyAssetEventArgs()
+    + EntityId : int <<get>>
+    + EntityAssetName : string <<get>>
+    + EntityGroupName : string <<get>>
+    + DependencyAssetName : string <<get>>
+    + LoadedCount : int <<get>>
+    + TotalCount : int <<get>>
+    + UserData : object <<get>>
+    + {static} Create(entityId:int, entityAssetName:string, entityGroupName:string, dependencyAssetName:string, loadedCount:int, totalCount:int, userData:object) : ShowEntityDependencyAssetEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- ShowEntityDependencyAssetEventArgs
+@enduml

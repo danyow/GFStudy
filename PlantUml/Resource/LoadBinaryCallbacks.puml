@@ -1,0 +1,10 @@
+@startuml
+class LoadBinaryCallbacks <<sealed>> {
+    - <<readonly>> m_LoadBinarySuccessCallback : LoadBinarySuccessCallback
+    - <<readonly>> m_LoadBinaryFailureCallback : LoadBinaryFailureCallback
+    + LoadBinaryCallbacks(loadBinarySuccessCallback:LoadBinarySuccessCallback)
+    + LoadBinaryCallbacks(loadBinarySuccessCallback:LoadBinarySuccessCallback, loadBinaryFailureCallback:LoadBinaryFailureCallback)
+    + LoadBinarySuccessCallback : LoadBinarySuccessCallback <<get>>
+    + LoadBinaryFailureCallback : LoadBinaryFailureCallback <<get>>
+}
+@enduml

@@ -1,0 +1,34 @@
+@startuml
+class ResourceManager <<sealed>> <<partial>> {
+}
+class ResourceUpdater <<sealed>> <<partial>> {
+}
+class UpdateInfo <<sealed>> {
+    - <<readonly>> m_ResourceName : ResourceName
+    - <<readonly>> m_FileSystemName : string
+    - <<readonly>> m_LoadType : LoadType
+    - <<readonly>> m_Length : int
+    - <<readonly>> m_HashCode : int
+    - <<readonly>> m_CompressedLength : int
+    - <<readonly>> m_CompressedHashCode : int
+    - <<readonly>> m_ResourcePath : string
+    - m_Downloading : bool
+    - m_RetryCount : int
+    + UpdateInfo(resourceName:ResourceName, fileSystemName:string, loadType:LoadType, length:int, hashCode:int, compressedLength:int, compressedHashCode:int, resourcePath:string)
+    + ResourceName : ResourceName <<get>>
+    + UseFileSystem : bool <<get>>
+    + FileSystemName : string <<get>>
+    + LoadType : LoadType <<get>>
+    + Length : int <<get>>
+    + HashCode : int <<get>>
+    + CompressedLength : int <<get>>
+    + CompressedHashCode : int <<get>>
+    + ResourcePath : string <<get>>
+    + Downloading : bool <<get>> <<set>>
+    + RetryCount : int <<get>> <<set>>
+}
+GameFrameworkModule <|-- ResourceManager
+IResourceManager <|-- ResourceManager
+ResourceManager +-- ResourceUpdater
+ResourceUpdater +-- UpdateInfo
+@enduml

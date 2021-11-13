@@ -1,0 +1,21 @@
+@startuml
+class SoundManager <<sealed>> <<partial>> {
+}
+class PlaySoundInfo <<sealed>> {
+    - m_SerialId : int
+    - m_SoundGroup : SoundGroup
+    - m_PlaySoundParams : PlaySoundParams
+    - m_UserData : object
+    + PlaySoundInfo()
+    + SerialId : int <<get>>
+    + SoundGroup : SoundGroup <<get>>
+    + PlaySoundParams : PlaySoundParams <<get>>
+    + UserData : object <<get>>
+    + {static} Create(serialId:int, soundGroup:SoundGroup, playSoundParams:PlaySoundParams, userData:object) : PlaySoundInfo
+    + Clear() : void
+}
+GameFrameworkModule <|-- SoundManager
+ISoundManager <|-- SoundManager
+SoundManager +-- PlaySoundInfo
+IReference <|-- PlaySoundInfo
+@enduml

@@ -1,0 +1,21 @@
+@startuml
+class Utility <<static>> <<partial>> {
+}
+class Compression <<static>> <<partial>> {
+    - {static} s_CompressionHelper : ICompressionHelper = null
+    + {static} SetCompressionHelper(compressionHelper:ICompressionHelper) : void
+    + {static} Compress(bytes:byte[]) : byte[]
+    + {static} Compress(bytes:byte[], compressedStream:Stream) : bool
+    + {static} Compress(bytes:byte[], offset:int, length:int) : byte[]
+    + {static} Compress(bytes:byte[], offset:int, length:int, compressedStream:Stream) : bool
+    + {static} Compress(stream:Stream) : byte[]
+    + {static} Compress(stream:Stream, compressedStream:Stream) : bool
+    + {static} Decompress(bytes:byte[]) : byte[]
+    + {static} Decompress(bytes:byte[], decompressedStream:Stream) : bool
+    + {static} Decompress(bytes:byte[], offset:int, length:int) : byte[]
+    + {static} Decompress(bytes:byte[], offset:int, length:int, decompressedStream:Stream) : bool
+    + {static} Decompress(stream:Stream) : byte[]
+    + {static} Decompress(stream:Stream, decompressedStream:Stream) : bool
+}
+Utility +-- Compression
+@enduml

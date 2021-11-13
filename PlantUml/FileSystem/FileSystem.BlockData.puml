@@ -1,0 +1,19 @@
+@startuml
+class FileSystem <<sealed>> <<partial>> {
+}
+class BlockData <<struct>> {
+    + {static} <<readonly>> Empty : BlockData
+    - <<readonly>> m_StringIndex : int
+    - <<readonly>> m_ClusterIndex : int
+    - <<readonly>> m_Length : int
+    + BlockData(clusterIndex:int, length:int)
+    + BlockData(stringIndex:int, clusterIndex:int, length:int)
+    + Using : bool <<get>>
+    + StringIndex : int <<get>>
+    + ClusterIndex : int <<get>>
+    + Length : int <<get>>
+    + Free() : BlockData
+}
+IFileSystem <|-- FileSystem
+FileSystem +-- BlockData
+@enduml

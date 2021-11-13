@@ -1,0 +1,5 @@
+@startuml
+interface ILocalizationHelper {
+    SystemLanguage : Language <<get>>
+}
+@enduml

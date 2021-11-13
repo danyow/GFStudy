@@ -1,0 +1,75 @@
+@startuml
+class Utility <<static>> <<partial>> {
+}
+class Converter <<static>> {
+    - <<const>> InchesToCentimeters : float = 2.54f
+    - <<const>> CentimetersToInches : float
+    + {static} IsLittleEndian : bool <<get>>
+    + {static} ScreenDpi : float <<get>> <<set>>
+    + {static} GetCentimetersFromPixels(pixels:float) : float
+    + {static} GetPixelsFromCentimeters(centimeters:float) : float
+    + {static} GetInchesFromPixels(pixels:float) : float
+    + {static} GetPixelsFromInches(inches:float) : float
+    + {static} GetBytes(value:bool) : byte[]
+    + {static} GetBytes(value:bool, buffer:byte[]) : void
+    + {static} GetBytes(value:bool, buffer:byte[], startIndex:int) : void
+    + {static} GetBoolean(value:byte[]) : bool
+    + {static} GetBoolean(value:byte[], startIndex:int) : bool
+    + {static} GetBytes(value:char) : byte[]
+    + {static} GetBytes(value:char, buffer:byte[]) : void
+    + {static} GetBytes(value:char, buffer:byte[], startIndex:int) : void
+    + {static} GetChar(value:byte[]) : char
+    + {static} GetChar(value:byte[], startIndex:int) : char
+    + {static} GetBytes(value:short) : byte[]
+    + {static} GetBytes(value:short, buffer:byte[]) : void
+    + {static} <<unsafe>> GetBytes(value:short, buffer:byte[], startIndex:int) : void
+    + {static} GetInt16(value:byte[]) : short
+    + {static} GetInt16(value:byte[], startIndex:int) : short
+    + {static} GetBytes(value:ushort) : byte[]
+    + {static} GetBytes(value:ushort, buffer:byte[]) : void
+    + {static} GetBytes(value:ushort, buffer:byte[], startIndex:int) : void
+    + {static} GetUInt16(value:byte[]) : ushort
+    + {static} GetUInt16(value:byte[], startIndex:int) : ushort
+    + {static} GetBytes(value:int) : byte[]
+    + {static} GetBytes(value:int, buffer:byte[]) : void
+    + {static} <<unsafe>> GetBytes(value:int, buffer:byte[], startIndex:int) : void
+    + {static} GetInt32(value:byte[]) : int
+    + {static} GetInt32(value:byte[], startIndex:int) : int
+    + {static} GetBytes(value:uint) : byte[]
+    + {static} GetBytes(value:uint, buffer:byte[]) : void
+    + {static} GetBytes(value:uint, buffer:byte[], startIndex:int) : void
+    + {static} GetUInt32(value:byte[]) : uint
+    + {static} GetUInt32(value:byte[], startIndex:int) : uint
+    + {static} GetBytes(value:long) : byte[]
+    + {static} GetBytes(value:long, buffer:byte[]) : void
+    + {static} <<unsafe>> GetBytes(value:long, buffer:byte[], startIndex:int) : void
+    + {static} GetInt64(value:byte[]) : long
+    + {static} GetInt64(value:byte[], startIndex:int) : long
+    + {static} GetBytes(value:ulong) : byte[]
+    + {static} GetBytes(value:ulong, buffer:byte[]) : void
+    + {static} GetBytes(value:ulong, buffer:byte[], startIndex:int) : void
+    + {static} GetUInt64(value:byte[]) : ulong
+    + {static} GetUInt64(value:byte[], startIndex:int) : ulong
+    + {static} <<unsafe>> GetBytes(value:float) : byte[]
+    + {static} <<unsafe>> GetBytes(value:float, buffer:byte[]) : void
+    + {static} <<unsafe>> GetBytes(value:float, buffer:byte[], startIndex:int) : void
+    + {static} GetSingle(value:byte[]) : float
+    + {static} GetSingle(value:byte[], startIndex:int) : float
+    + {static} <<unsafe>> GetBytes(value:double) : byte[]
+    + {static} <<unsafe>> GetBytes(value:double, buffer:byte[]) : void
+    + {static} <<unsafe>> GetBytes(value:double, buffer:byte[], startIndex:int) : void
+    + {static} GetDouble(value:byte[]) : double
+    + {static} GetDouble(value:byte[], startIndex:int) : double
+    + {static} GetBytes(value:string) : byte[]
+    + {static} GetBytes(value:string, buffer:byte[]) : int
+    + {static} GetBytes(value:string, buffer:byte[], startIndex:int) : int
+    + {static} GetBytes(value:string, encoding:Encoding) : byte[]
+    + {static} GetBytes(value:string, encoding:Encoding, buffer:byte[]) : int
+    + {static} GetBytes(value:string, encoding:Encoding, buffer:byte[], startIndex:int) : int
+    + {static} GetString(value:byte[]) : string
+    + {static} GetString(value:byte[], encoding:Encoding) : string
+    + {static} GetString(value:byte[], startIndex:int, length:int) : string
+    + {static} GetString(value:byte[], startIndex:int, length:int, encoding:Encoding) : string
+}
+Utility +-- Converter
+@enduml

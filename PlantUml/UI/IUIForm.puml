@@ -1,0 +1,21 @@
+@startuml
+interface IUIForm {
+    SerialId : int <<get>>
+    UIFormAssetName : string <<get>>
+    Handle : object <<get>>
+    UIGroup : IUIGroup <<get>>
+    DepthInUIGroup : int <<get>>
+    PauseCoveredUIForm : bool <<get>>
+    OnInit(serialId:int, uiFormAssetName:string, uiGroup:IUIGroup, pauseCoveredUIForm:bool, isNewInstance:bool, userData:object) : void
+    OnRecycle() : void
+    OnOpen(userData:object) : void
+    OnClose(isShutdown:bool, userData:object) : void
+    OnPause() : void
+    OnResume() : void
+    OnCover() : void
+    OnReveal() : void
+    OnRefocus(userData:object) : void
+    OnUpdate(elapseSeconds:float, realElapseSeconds:float) : void
+    OnDepthChanged(uiGroupDepth:int, depthInUIGroup:int) : void
+}
+@enduml

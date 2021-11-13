@@ -1,0 +1,10 @@
+@startuml
+class UnloadSceneCallbacks <<sealed>> {
+    - <<readonly>> m_UnloadSceneSuccessCallback : UnloadSceneSuccessCallback
+    - <<readonly>> m_UnloadSceneFailureCallback : UnloadSceneFailureCallback
+    + UnloadSceneCallbacks(unloadSceneSuccessCallback:UnloadSceneSuccessCallback)
+    + UnloadSceneCallbacks(unloadSceneSuccessCallback:UnloadSceneSuccessCallback, unloadSceneFailureCallback:UnloadSceneFailureCallback)
+    + UnloadSceneSuccessCallback : UnloadSceneSuccessCallback <<get>>
+    + UnloadSceneFailureCallback : UnloadSceneFailureCallback <<get>>
+}
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+interface IEntityHelper {
+    InstantiateEntity(entityAsset:object) : object
+    CreateEntity(entityInstance:object, entityGroup:IEntityGroup, userData:object) : IEntity
+    ReleaseEntity(entityAsset:object, entityInstance:object) : void
+}
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+class ResourceVerifyStartEventArgs <<sealed>> {
+    + ResourceVerifyStartEventArgs()
+    + Count : int <<get>>
+    + TotalLength : long <<get>>
+    + {static} Create(count:int, totalLength:long) : ResourceVerifyStartEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- ResourceVerifyStartEventArgs
+@enduml

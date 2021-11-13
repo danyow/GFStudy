@@ -1,0 +1,16 @@
+@startuml
+class ResourceManager <<sealed>> <<partial>> {
+}
+class AssetInfo <<sealed>> {
+    - <<readonly>> m_AssetName : string
+    - <<readonly>> m_ResourceName : ResourceName
+    - <<readonly>> m_DependencyAssetNames : string[]
+    + AssetInfo(assetName:string, resourceName:ResourceName, dependencyAssetNames:string[])
+    + AssetName : string <<get>>
+    + ResourceName : ResourceName <<get>>
+    + GetDependencyAssetNames() : string[]
+}
+GameFrameworkModule <|-- ResourceManager
+IResourceManager <|-- ResourceManager
+ResourceManager +-- AssetInfo
+@enduml

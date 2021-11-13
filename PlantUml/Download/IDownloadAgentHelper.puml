@@ -1,0 +1,12 @@
+@startuml
+interface IDownloadAgentHelper {
+     <<event>> DownloadAgentHelperUpdateBytes : EventHandler<DownloadAgentHelperUpdateBytesEventArgs> 
+     <<event>> DownloadAgentHelperUpdateLength : EventHandler<DownloadAgentHelperUpdateLengthEventArgs> 
+     <<event>> DownloadAgentHelperComplete : EventHandler<DownloadAgentHelperCompleteEventArgs> 
+     <<event>> DownloadAgentHelperError : EventHandler<DownloadAgentHelperErrorEventArgs> 
+    Download(downloadUri:string, userData:object) : void
+    Download(downloadUri:string, fromPosition:long, userData:object) : void
+    Download(downloadUri:string, fromPosition:long, toPosition:long, userData:object) : void
+    Reset() : void
+}
+@enduml

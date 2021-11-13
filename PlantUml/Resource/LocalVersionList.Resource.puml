@@ -1,0 +1,20 @@
+@startuml
+class LocalVersionList <<struct>> {
+}
+class Resource <<struct>> {
+    - <<readonly>> m_Name : string
+    - <<readonly>> m_Variant : string
+    - <<readonly>> m_Extension : string
+    - <<readonly>> m_LoadType : byte
+    - <<readonly>> m_Length : int
+    - <<readonly>> m_HashCode : int
+    + Resource(name:string, variant:string, extension:string, loadType:byte, length:int, hashCode:int)
+    + Name : string <<get>>
+    + Variant : string <<get>>
+    + Extension : string <<get>>
+    + LoadType : byte <<get>>
+    + Length : int <<get>>
+    + HashCode : int <<get>>
+}
+LocalVersionList +-- Resource
+@enduml

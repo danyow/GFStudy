@@ -1,0 +1,9 @@
+@startuml
+interface "IDataProviderHelper`1"<T> {
+    ReadData(dataProviderOwner:T, dataAssetName:string, dataAsset:object, userData:object) : bool
+    ReadData(dataProviderOwner:T, dataAssetName:string, dataBytes:byte[], startIndex:int, length:int, userData:object) : bool
+    ParseData(dataProviderOwner:T, dataString:string, userData:object) : bool
+    ParseData(dataProviderOwner:T, dataBytes:byte[], startIndex:int, length:int, userData:object) : bool
+    ReleaseDataAsset(dataProviderOwner:T, dataAsset:object) : void
+}
+@enduml

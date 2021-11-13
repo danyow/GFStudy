@@ -1,0 +1,14 @@
+@startuml
+class OpenUIFormFailureEventArgs <<sealed>> {
+    + OpenUIFormFailureEventArgs()
+    + SerialId : int <<get>>
+    + UIFormAssetName : string <<get>>
+    + UIGroupName : string <<get>>
+    + PauseCoveredUIForm : bool <<get>>
+    + ErrorMessage : string <<get>>
+    + UserData : object <<get>>
+    + {static} Create(serialId:int, uiFormAssetName:string, uiGroupName:string, pauseCoveredUIForm:bool, errorMessage:string, userData:object) : OpenUIFormFailureEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- OpenUIFormFailureEventArgs
+@enduml

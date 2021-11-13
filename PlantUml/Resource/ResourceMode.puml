@@ -1,0 +1,8 @@
+@startuml
+enum ResourceMode {
+    Unspecified= 0,
+    Package,
+    Updatable,
+    UpdatableWhilePlaying,
+}
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+abstract class GameFrameworkModule {
+    <<internal>> <<virtual>> Priority : int <<get>>
+    <<internal>> {abstract} Update(elapseSeconds:float, realElapseSeconds:float) : void
+    <<internal>> {abstract} Shutdown() : void
+}
+@enduml

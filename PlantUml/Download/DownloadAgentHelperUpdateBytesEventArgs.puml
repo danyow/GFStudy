@@ -1,0 +1,12 @@
+@startuml
+class DownloadAgentHelperUpdateBytesEventArgs <<sealed>> {
+    - m_Bytes : byte[]
+    + DownloadAgentHelperUpdateBytesEventArgs()
+    + Offset : int <<get>>
+    + Length : int <<get>>
+    + {static} Create(bytes:byte[], offset:int, length:int) : DownloadAgentHelperUpdateBytesEventArgs
+    + <<override>> Clear() : void
+    + GetBytes() : byte[]
+}
+GameFrameworkEventArgs <|-- DownloadAgentHelperUpdateBytesEventArgs
+@enduml

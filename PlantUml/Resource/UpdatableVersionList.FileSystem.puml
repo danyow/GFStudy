@@ -1,0 +1,13 @@
+@startuml
+class UpdatableVersionList <<struct>> {
+}
+class FileSystem <<struct>> {
+    - {static} <<readonly>> EmptyIntArray : int[]
+    - <<readonly>> m_Name : string
+    - <<readonly>> m_ResourceIndexes : int[]
+    + FileSystem(name:string, resourceIndexes:int[])
+    + Name : string <<get>>
+    + GetResourceIndexes() : int[]
+}
+UpdatableVersionList +-- FileSystem
+@enduml

@@ -1,0 +1,27 @@
+@startuml
+class NetworkManager <<sealed>> <<partial>> {
+    - <<readonly>> m_NetworkChannels : Dictionary<string, NetworkChannelBase>
+    - m_NetworkConnectedEventHandler : EventHandler<NetworkConnectedEventArgs>
+    - m_NetworkClosedEventHandler : EventHandler<NetworkClosedEventArgs>
+    - m_NetworkMissHeartBeatEventHandler : EventHandler<NetworkMissHeartBeatEventArgs>
+    - m_NetworkErrorEventHandler : EventHandler<NetworkErrorEventArgs>
+    - m_NetworkCustomErrorEventHandler : EventHandler<NetworkCustomErrorEventArgs>
+    + NetworkManager()
+    + NetworkChannelCount : int <<get>>
+    <<internal>> <<override>> Update(elapseSeconds:float, realElapseSeconds:float) : void
+    <<internal>> <<override>> Shutdown() : void
+    + HasNetworkChannel(name:string) : bool
+    + GetNetworkChannel(name:string) : INetworkChannel
+    + GetAllNetworkChannels() : INetworkChannel[]
+    + GetAllNetworkChannels(results:List<INetworkChannel>) : void
+    + CreateNetworkChannel(name:string, serviceType:ServiceType, networkChannelHelper:INetworkChannelHelper) : INetworkChannel
+    + DestroyNetworkChannel(name:string) : bool
+    - OnNetworkChannelConnected(networkChannel:NetworkChannelBase, userData:object) : void
+    - OnNetworkChannelClosed(networkChannel:NetworkChannelBase) : void
+    - OnNetworkChannelMissHeartBeat(networkChannel:NetworkChannelBase, missHeartBeatCount:int) : void
+    - OnNetworkChannelError(networkChannel:NetworkChannelBase, errorCode:NetworkErrorCode, socketErrorCode:SocketError, errorMessage:string) : void
+    - OnNetworkChannelCustomError(networkChannel:NetworkChannelBase, customErrorData:object) : void
+}
+GameFrameworkModule <|-- NetworkManager
+INetworkManager <|-- NetworkManager
+@enduml

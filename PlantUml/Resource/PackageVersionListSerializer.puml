@@ -1,0 +1,8 @@
+@startuml
+class PackageVersionListSerializer <<sealed>> {
+    - {static} <<readonly>> Header : byte[]
+    + PackageVersionListSerializer()
+    # <<override>> GetHeader() : byte[]
+}
+"GameFrameworkSerializer`1" "<PackageVersionList>" <|-- PackageVersionListSerializer
+@enduml

@@ -1,0 +1,34 @@
+@startuml
+class ResourceManager <<sealed>> <<partial>> {
+}
+class ResourceChecker <<sealed>> <<partial>> {
+    - <<readonly>> m_ResourceManager : ResourceManager
+    - <<readonly>> m_CheckInfos : Dictionary<ResourceName, CheckInfo>
+    - m_CurrentVariant : string
+    - m_IgnoreOtherVariant : bool
+    - m_UpdatableVersionListReady : bool
+    - m_ReadOnlyVersionListReady : bool
+    - m_ReadWriteVersionListReady : bool
+    + ResourceNeedUpdate : GameFrameworkAction<ResourceName, string, LoadType, int, int, int, int>
+    + ResourceCheckComplete : GameFrameworkAction<int, int, int, long, long>
+    + ResourceChecker(resourceManager:ResourceManager)
+    + Shutdown() : void
+    + CheckResources(currentVariant:string, ignoreOtherVariant:bool) : void
+    - SetCachedFileSystemName(resourceName:ResourceName, fileSystemName:string) : void
+    - SetVersionInfo(resourceName:ResourceName, loadType:LoadType, length:int, hashCode:int, compressedLength:int, compressedHashCode:int) : void
+    - SetReadOnlyInfo(resourceName:ResourceName, loadType:LoadType, length:int, hashCode:int) : void
+    - SetReadWriteInfo(resourceName:ResourceName, loadType:LoadType, length:int, hashCode:int) : void
+    - GetOrAddCheckInfo(resourceName:ResourceName) : CheckInfo
+    - RefreshCheckInfoStatus() : void
+    - RemoveEmptyFileSystems() : void
+    - OnLoadUpdatableVersionListSuccess(fileUri:string, bytes:byte[], duration:float, userData:object) : void
+    - OnLoadUpdatableVersionListFailure(fileUri:string, errorMessage:string, userData:object) : void
+    - OnLoadReadOnlyVersionListSuccess(fileUri:string, bytes:byte[], duration:float, userData:object) : void
+    - OnLoadReadOnlyVersionListFailure(fileUri:string, errorMessage:string, userData:object) : void
+    - OnLoadReadWriteVersionListSuccess(fileUri:string, bytes:byte[], duration:float, userData:object) : void
+    - OnLoadReadWriteVersionListFailure(fileUri:string, errorMessage:string, userData:object) : void
+}
+GameFrameworkModule <|-- ResourceManager
+IResourceManager <|-- ResourceManager
+ResourceManager +-- ResourceChecker
+@enduml

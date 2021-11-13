@@ -1,0 +1,20 @@
+@startuml
+interface IDataNodeManager {
+    Root : IDataNode <<get>>
+    GetData(path:string) : T
+    GetData(path:string) : Variable
+    GetData(path:string, node:IDataNode) : T
+    GetData(path:string, node:IDataNode) : Variable
+    SetData(path:string, data:T) : void
+    SetData(path:string, data:Variable) : void
+    SetData(path:string, data:T, node:IDataNode) : void
+    SetData(path:string, data:Variable, node:IDataNode) : void
+    GetNode(path:string) : IDataNode
+    GetNode(path:string, node:IDataNode) : IDataNode
+    GetOrAddNode(path:string) : IDataNode
+    GetOrAddNode(path:string, node:IDataNode) : IDataNode
+    RemoveNode(path:string) : void
+    RemoveNode(path:string, node:IDataNode) : void
+    Clear() : void
+}
+@enduml

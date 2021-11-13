@@ -1,0 +1,32 @@
+@startuml
+interface "IObjectPool`1"<T> {
+    Name : string <<get>>
+    FullName : string <<get>>
+    ObjectType : Type <<get>>
+    Count : int <<get>>
+    CanReleaseCount : int <<get>>
+    AllowMultiSpawn : bool <<get>>
+    AutoReleaseInterval : float <<get>> <<set>>
+    Capacity : int <<get>> <<set>>
+    ExpireTime : float <<get>> <<set>>
+    Priority : int <<get>> <<set>>
+    Register(obj:T, spawned:bool) : void
+    CanSpawn() : bool
+    CanSpawn(name:string) : bool
+    Spawn() : T
+    Spawn(name:string) : T
+    Unspawn(obj:T) : void
+    Unspawn(target:object) : void
+    SetLocked(obj:T, locked:bool) : void
+    SetLocked(target:object, locked:bool) : void
+    SetPriority(obj:T, priority:int) : void
+    SetPriority(target:object, priority:int) : void
+    ReleaseObject(obj:T) : bool
+    ReleaseObject(target:object) : bool
+    Release() : void
+    Release(toReleaseCount:int) : void
+    Release(releaseObjectFilterCallback:ReleaseObjectFilterCallback<T>) : void
+    Release(toReleaseCount:int, releaseObjectFilterCallback:ReleaseObjectFilterCallback<T>) : void
+    ReleaseAllUnused() : void
+}
+@enduml

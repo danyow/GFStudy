@@ -1,0 +1,16 @@
+@startuml
+class OpenUIFormDependencyAssetEventArgs <<sealed>> {
+    + OpenUIFormDependencyAssetEventArgs()
+    + SerialId : int <<get>>
+    + UIFormAssetName : string <<get>>
+    + UIGroupName : string <<get>>
+    + PauseCoveredUIForm : bool <<get>>
+    + DependencyAssetName : string <<get>>
+    + LoadedCount : int <<get>>
+    + TotalCount : int <<get>>
+    + UserData : object <<get>>
+    + {static} Create(serialId:int, uiFormAssetName:string, uiGroupName:string, pauseCoveredUIForm:bool, dependencyAssetName:string, loadedCount:int, totalCount:int, userData:object) : OpenUIFormDependencyAssetEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- OpenUIFormDependencyAssetEventArgs
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+enum LoadResourceStatus {
+    Success= 0,
+    NotExist,
+    NotReady,
+    DependencyError,
+    TypeError,
+    AssetError,
+}
+@enduml

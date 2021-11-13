@@ -1,0 +1,13 @@
+@startuml
+interface IFileSystemManager {
+    Count : int <<get>>
+    SetFileSystemHelper(fileSystemHelper:IFileSystemHelper) : void
+    HasFileSystem(fullPath:string) : bool
+    GetFileSystem(fullPath:string) : IFileSystem
+    CreateFileSystem(fullPath:string, access:FileSystemAccess, maxFileCount:int, maxBlockCount:int) : IFileSystem
+    LoadFileSystem(fullPath:string, access:FileSystemAccess) : IFileSystem
+    DestroyFileSystem(fileSystem:IFileSystem, deletePhysicalFile:bool) : void
+    GetAllFileSystems() : IFileSystem[]
+    GetAllFileSystems(results:List<IFileSystem>) : void
+}
+@enduml

@@ -1,0 +1,26 @@
+@startuml
+class EntityManager <<sealed>> <<partial>> {
+}
+class EntityInfo <<sealed>> {
+    - m_Entity : IEntity
+    - m_Status : EntityStatus
+    - m_ParentEntity : IEntity
+    - m_ChildEntities : List<IEntity>
+    + EntityInfo()
+    + Entity : IEntity <<get>>
+    + Status : EntityStatus <<get>> <<set>>
+    + ParentEntity : IEntity <<get>> <<set>>
+    + ChildEntityCount : int <<get>>
+    + {static} Create(entity:IEntity) : EntityInfo
+    + Clear() : void
+    + GetChildEntity() : IEntity
+    + GetChildEntities() : IEntity[]
+    + GetChildEntities(results:List<IEntity>) : void
+    + AddChildEntity(childEntity:IEntity) : void
+    + RemoveChildEntity(childEntity:IEntity) : void
+}
+GameFrameworkModule <|-- EntityManager
+IEntityManager <|-- EntityManager
+EntityManager +-- EntityInfo
+IReference <|-- EntityInfo
+@enduml

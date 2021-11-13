@@ -1,0 +1,29 @@
+@startuml
+class ReferencePool <<static>> <<partial>> {
+}
+class ReferenceCollection <<sealed>> {
+    - <<readonly>> m_References : Queue<IReference>
+    - <<readonly>> m_ReferenceType : Type
+    - m_UsingReferenceCount : int
+    - m_AcquireReferenceCount : int
+    - m_ReleaseReferenceCount : int
+    - m_AddReferenceCount : int
+    - m_RemoveReferenceCount : int
+    + ReferenceCollection(referenceType:Type)
+    + ReferenceType : Type <<get>>
+    + UnusedReferenceCount : int <<get>>
+    + UsingReferenceCount : int <<get>>
+    + AcquireReferenceCount : int <<get>>
+    + ReleaseReferenceCount : int <<get>>
+    + AddReferenceCount : int <<get>>
+    + RemoveReferenceCount : int <<get>>
+    + Acquire() : T
+    + Acquire() : IReference
+    + Release(reference:IReference) : void
+    + Add(count:int) : void
+    + Add(count:int) : void
+    + Remove(count:int) : void
+    + RemoveAll() : void
+}
+ReferencePool +-- ReferenceCollection
+@enduml

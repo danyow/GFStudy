@@ -1,0 +1,14 @@
+@startuml
+class Utility <<static>> <<partial>> {
+}
+class Encryption <<static>> {
+    <<internal>> <<const>> QuickEncryptLength : int = 220
+    + {static} GetQuickXorBytes(bytes:byte[], code:byte[]) : byte[]
+    + {static} GetQuickSelfXorBytes(bytes:byte[], code:byte[]) : void
+    + {static} GetXorBytes(bytes:byte[], code:byte[]) : byte[]
+    + {static} GetSelfXorBytes(bytes:byte[], code:byte[]) : void
+    + {static} GetXorBytes(bytes:byte[], startIndex:int, length:int, code:byte[]) : byte[]
+    + {static} GetSelfXorBytes(bytes:byte[], startIndex:int, length:int, code:byte[]) : void
+}
+Utility +-- Encryption
+@enduml

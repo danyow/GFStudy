@@ -1,0 +1,14 @@
+@startuml
+class Utility <<static>> <<partial>> {
+}
+class Random <<static>> {
+    - {static} s_Random : System.Random
+    + {static} SetSeed(seed:int) : void
+    + {static} GetRandom() : int
+    + {static} GetRandom(maxValue:int) : int
+    + {static} GetRandom(minValue:int, maxValue:int) : int
+    + {static} GetRandomDouble() : double
+    + {static} GetRandomBytes(buffer:byte[]) : void
+}
+Utility +-- Random
+@enduml

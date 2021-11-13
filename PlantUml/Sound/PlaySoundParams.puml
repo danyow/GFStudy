@@ -1,0 +1,32 @@
+@startuml
+class PlaySoundParams <<sealed>> {
+    - m_Referenced : bool
+    - m_Time : float
+    - m_MuteInSoundGroup : bool
+    - m_Loop : bool
+    - m_Priority : int
+    - m_VolumeInSoundGroup : float
+    - m_FadeInSeconds : float
+    - m_Pitch : float
+    - m_PanStereo : float
+    - m_SpatialBlend : float
+    - m_MaxDistance : float
+    - m_DopplerLevel : float
+    + PlaySoundParams()
+    + Time : float <<get>> <<set>>
+    + MuteInSoundGroup : bool <<get>> <<set>>
+    + Loop : bool <<get>> <<set>>
+    + Priority : int <<get>> <<set>>
+    + VolumeInSoundGroup : float <<get>> <<set>>
+    + FadeInSeconds : float <<get>> <<set>>
+    + Pitch : float <<get>> <<set>>
+    + PanStereo : float <<get>> <<set>>
+    + SpatialBlend : float <<get>> <<set>>
+    + MaxDistance : float <<get>> <<set>>
+    + DopplerLevel : float <<get>> <<set>>
+    <<internal>> Referenced : bool <<get>>
+    + {static} Create() : PlaySoundParams
+    + Clear() : void
+}
+IReference <|-- PlaySoundParams
+@enduml

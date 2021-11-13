@@ -1,0 +1,48 @@
+@startuml
+class DownloadManager <<sealed>> <<partial>> {
+    - <<const>> OneMegaBytes : int
+    - <<readonly>> m_TaskPool : TaskPool<DownloadTask>
+    - <<readonly>> m_DownloadCounter : DownloadCounter
+    - m_FlushSize : int
+    - m_Timeout : float
+    - m_DownloadStartEventHandler : EventHandler<DownloadStartEventArgs>
+    - m_DownloadUpdateEventHandler : EventHandler<DownloadUpdateEventArgs>
+    - m_DownloadSuccessEventHandler : EventHandler<DownloadSuccessEventArgs>
+    - m_DownloadFailureEventHandler : EventHandler<DownloadFailureEventArgs>
+    + DownloadManager()
+    <<internal>> <<override>> Priority : int <<get>>
+    + Paused : bool <<get>> <<set>>
+    + TotalAgentCount : int <<get>>
+    + FreeAgentCount : int <<get>>
+    + WorkingAgentCount : int <<get>>
+    + WaitingTaskCount : int <<get>>
+    + FlushSize : int <<get>> <<set>>
+    + Timeout : float <<get>> <<set>>
+    + CurrentSpeed : float <<get>>
+    <<internal>> <<override>> Update(elapseSeconds:float, realElapseSeconds:float) : void
+    <<internal>> <<override>> Shutdown() : void
+    + AddDownloadAgentHelper(downloadAgentHelper:IDownloadAgentHelper) : void
+    + GetDownloadInfo(serialId:int) : TaskInfo
+    + GetDownloadInfos(tag:string) : TaskInfo[]
+    + GetDownloadInfos(tag:string, results:List<TaskInfo>) : void
+    + GetAllDownloadInfos() : TaskInfo[]
+    + GetAllDownloadInfos(results:List<TaskInfo>) : void
+    + AddDownload(downloadPath:string, downloadUri:string) : int
+    + AddDownload(downloadPath:string, downloadUri:string, tag:string) : int
+    + AddDownload(downloadPath:string, downloadUri:string, priority:int) : int
+    + AddDownload(downloadPath:string, downloadUri:string, userData:object) : int
+    + AddDownload(downloadPath:string, downloadUri:string, tag:string, priority:int) : int
+    + AddDownload(downloadPath:string, downloadUri:string, tag:string, userData:object) : int
+    + AddDownload(downloadPath:string, downloadUri:string, priority:int, userData:object) : int
+    + AddDownload(downloadPath:string, downloadUri:string, tag:string, priority:int, userData:object) : int
+    + RemoveDownload(serialId:int) : bool
+    + RemoveDownloads(tag:string) : int
+    + RemoveAllDownloads() : int
+    - OnDownloadAgentStart(sender:DownloadAgent) : void
+    - OnDownloadAgentUpdate(sender:DownloadAgent, deltaLength:int) : void
+    - OnDownloadAgentSuccess(sender:DownloadAgent, length:long) : void
+    - OnDownloadAgentFailure(sender:DownloadAgent, errorMessage:string) : void
+}
+GameFrameworkModule <|-- DownloadManager
+IDownloadManager <|-- DownloadManager
+@enduml

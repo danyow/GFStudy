@@ -1,0 +1,27 @@
+@startuml
+class ResourceManager <<sealed>> <<partial>> {
+}
+class ResourceGroupCollection <<sealed>> {
+    - <<readonly>> m_ResourceGroups : ResourceGroup[]
+    - <<readonly>> m_ResourceInfos : Dictionary<ResourceName, ResourceInfo>
+    - <<readonly>> m_ResourceNames : HashSet<ResourceName>
+    - m_TotalLength : long
+    - m_TotalCompressedLength : long
+    + ResourceGroupCollection(resourceGroups:ResourceGroup[], resourceInfos:Dictionary<ResourceName, ResourceInfo>)
+    + Ready : bool <<get>>
+    + TotalCount : int <<get>>
+    + ReadyCount : int <<get>>
+    + TotalLength : long <<get>>
+    + TotalCompressedLength : long <<get>>
+    + ReadyLength : long <<get>>
+    + ReadyCompressedLength : long <<get>>
+    + Progress : float <<get>>
+    + GetResourceGroups() : IResourceGroup[]
+    + GetResourceNames() : string[]
+    + GetResourceNames(results:List<string>) : void
+}
+GameFrameworkModule <|-- ResourceManager
+IResourceManager <|-- ResourceManager
+ResourceManager +-- ResourceGroupCollection
+IResourceGroupCollection <|-- ResourceGroupCollection
+@enduml

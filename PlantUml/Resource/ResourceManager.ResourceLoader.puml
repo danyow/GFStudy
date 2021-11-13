@@ -1,0 +1,58 @@
+@startuml
+class ResourceManager <<sealed>> <<partial>> {
+}
+class ResourceLoader <<sealed>> <<partial>> {
+    - <<const>> CachedHashBytesLength : int = 4
+    - <<readonly>> m_ResourceManager : ResourceManager
+    - <<readonly>> m_TaskPool : TaskPool<LoadResourceTaskBase>
+    - <<readonly>> m_AssetDependencyCount : Dictionary<object, int>
+    - <<readonly>> m_ResourceDependencyCount : Dictionary<object, int>
+    - <<readonly>> m_AssetToResourceMap : Dictionary<object, object>
+    - <<readonly>> m_SceneToAssetMap : Dictionary<string, object>
+    - <<readonly>> m_LoadBytesCallbacks : LoadBytesCallbacks
+    - <<readonly>> m_CachedHashBytes : byte[]
+    - m_AssetPool : IObjectPool<AssetObject>
+    - m_ResourcePool : IObjectPool<ResourceObject>
+    + ResourceLoader(resourceManager:ResourceManager)
+    + TotalAgentCount : int <<get>>
+    + FreeAgentCount : int <<get>>
+    + WorkingAgentCount : int <<get>>
+    + WaitingTaskCount : int <<get>>
+    + AssetAutoReleaseInterval : float <<get>> <<set>>
+    + AssetCapacity : int <<get>> <<set>>
+    + AssetExpireTime : float <<get>> <<set>>
+    + AssetPriority : int <<get>> <<set>>
+    + ResourceAutoReleaseInterval : float <<get>> <<set>>
+    + ResourceCapacity : int <<get>> <<set>>
+    + ResourceExpireTime : float <<get>> <<set>>
+    + ResourcePriority : int <<get>> <<set>>
+    + Update(elapseSeconds:float, realElapseSeconds:float) : void
+    + Shutdown() : void
+    + SetObjectPoolManager(objectPoolManager:IObjectPoolManager) : void
+    + AddLoadResourceAgentHelper(loadResourceAgentHelper:ILoadResourceAgentHelper, resourceHelper:IResourceHelper, readOnlyPath:string, readWritePath:string, decryptResourceCallback:DecryptResourceCallback) : void
+    + HasAsset(assetName:string) : HasAssetResult
+    + LoadAsset(assetName:string, assetType:Type, priority:int, loadAssetCallbacks:LoadAssetCallbacks, userData:object) : void
+    + UnloadAsset(asset:object) : void
+    + LoadScene(sceneAssetName:string, priority:int, loadSceneCallbacks:LoadSceneCallbacks, userData:object) : void
+    + UnloadScene(sceneAssetName:string, unloadSceneCallbacks:UnloadSceneCallbacks, userData:object) : void
+    + GetBinaryPath(binaryAssetName:string) : string
+    + GetBinaryPath(binaryAssetName:string, storageInReadOnly:bool, storageInFileSystem:bool, relativePath:string, fileName:string) : bool
+    + GetBinaryLength(binaryAssetName:string) : int
+    + LoadBinary(binaryAssetName:string, loadBinaryCallbacks:LoadBinaryCallbacks, userData:object) : void
+    + LoadBinaryFromFileSystem(binaryAssetName:string) : byte[]
+    + LoadBinaryFromFileSystem(binaryAssetName:string, buffer:byte[], startIndex:int, length:int) : int
+    + LoadBinarySegmentFromFileSystem(binaryAssetName:string, offset:int, length:int) : byte[]
+    + LoadBinarySegmentFromFileSystem(binaryAssetName:string, offset:int, buffer:byte[], startIndex:int, length:int) : int
+    + GetAllLoadAssetInfos() : TaskInfo[]
+    + GetAllLoadAssetInfos(results:List<TaskInfo>) : void
+    - LoadDependencyAsset(assetName:string, priority:int, mainTask:LoadResourceTaskBase, userData:object) : bool
+    - GetResourceInfo(assetName:string) : ResourceInfo
+    - CheckAsset(assetName:string, resourceInfo:ResourceInfo, dependencyAssetNames:string[]) : bool
+    - DefaultDecryptResourceCallback(bytes:byte[], startIndex:int, count:int, name:string, variant:string, extension:string, storageInReadOnly:bool, fileSystem:string, loadType:byte, length:int, hashCode:int) : void
+    - OnLoadBinarySuccess(fileUri:string, bytes:byte[], duration:float, userData:object) : void
+    - OnLoadBinaryFailure(fileUri:string, errorMessage:string, userData:object) : void
+}
+GameFrameworkModule <|-- ResourceManager
+IResourceManager <|-- ResourceManager
+ResourceManager +-- ResourceLoader
+@enduml

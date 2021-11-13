@@ -1,0 +1,13 @@
+@startuml
+class DownloadManager <<sealed>> <<partial>> {
+}
+enum DownloadTaskStatus {
+    Todo= 0,
+    Doing,
+    Done,
+    Error,
+}
+GameFrameworkModule <|-- DownloadManager
+IDownloadManager <|-- DownloadManager
+DownloadManager +-- DownloadTaskStatus
+@enduml

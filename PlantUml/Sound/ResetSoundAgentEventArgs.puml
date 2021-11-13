@@ -1,0 +1,8 @@
+@startuml
+class ResetSoundAgentEventArgs <<sealed>> {
+    + ResetSoundAgentEventArgs()
+    + {static} Create() : ResetSoundAgentEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- ResetSoundAgentEventArgs
+@enduml

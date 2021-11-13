@@ -1,0 +1,19 @@
+@startuml
+class LoadSceneCallbacks <<sealed>> {
+    - <<readonly>> m_LoadSceneSuccessCallback : LoadSceneSuccessCallback
+    - <<readonly>> m_LoadSceneFailureCallback : LoadSceneFailureCallback
+    - <<readonly>> m_LoadSceneUpdateCallback : LoadSceneUpdateCallback
+    - <<readonly>> m_LoadSceneDependencyAssetCallback : LoadSceneDependencyAssetCallback
+    + LoadSceneCallbacks(loadSceneSuccessCallback:LoadSceneSuccessCallback)
+    + LoadSceneCallbacks(loadSceneSuccessCallback:LoadSceneSuccessCallback, loadSceneFailureCallback:LoadSceneFailureCallback)
+    + LoadSceneCallbacks(loadSceneSuccessCallback:LoadSceneSuccessCallback, loadSceneUpdateCallback:LoadSceneUpdateCallback)
+    + LoadSceneCallbacks(loadSceneSuccessCallback:LoadSceneSuccessCallback, loadSceneDependencyAssetCallback:LoadSceneDependencyAssetCallback)
+    + LoadSceneCallbacks(loadSceneSuccessCallback:LoadSceneSuccessCallback, loadSceneFailureCallback:LoadSceneFailureCallback, loadSceneUpdateCallback:LoadSceneUpdateCallback)
+    + LoadSceneCallbacks(loadSceneSuccessCallback:LoadSceneSuccessCallback, loadSceneFailureCallback:LoadSceneFailureCallback, loadSceneDependencyAssetCallback:LoadSceneDependencyAssetCallback)
+    + LoadSceneCallbacks(loadSceneSuccessCallback:LoadSceneSuccessCallback, loadSceneFailureCallback:LoadSceneFailureCallback, loadSceneUpdateCallback:LoadSceneUpdateCallback, loadSceneDependencyAssetCallback:LoadSceneDependencyAssetCallback)
+    + LoadSceneSuccessCallback : LoadSceneSuccessCallback <<get>>
+    + LoadSceneFailureCallback : LoadSceneFailureCallback <<get>>
+    + LoadSceneUpdateCallback : LoadSceneUpdateCallback <<get>>
+    + LoadSceneDependencyAssetCallback : LoadSceneDependencyAssetCallback <<get>>
+}
+@enduml

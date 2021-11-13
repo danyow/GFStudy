@@ -1,0 +1,32 @@
+@startuml
+class "GameFrameworkMultiDictionary`2"<TKey,TValue> <<sealed>> {
+    - <<readonly>> m_LinkedList : GameFrameworkLinkedList<TValue>
+    - <<readonly>> m_Dictionary : Dictionary<TKey, GameFrameworkLinkedListRange<TValue>>
+    + GameFrameworkMultiDictionary()
+    + Count : int <<get>>
+    + Clear() : void
+    + Contains(key:TKey) : bool
+    + Contains(key:TKey, value:TValue) : bool
+    + TryGetValue(key:TKey, range:GameFrameworkLinkedListRange<TValue>) : bool
+    + Add(key:TKey, value:TValue) : void
+    + Remove(key:TKey, value:TValue) : bool
+    + RemoveAll(key:TKey) : bool
+    + GetEnumerator() : Enumerator
+    GetEnumerator() : IEnumerator<KeyValuePair<TKey, GameFrameworkLinkedListRange<TValue>>>
+    GetEnumerator() : IEnumerator
+}
+class Enumerator <<struct>> {
+    - m_Enumerator : Dictionary<TKey, GameFrameworkLinkedListRange<TValue>>.Enumerator
+    <<internal>> Enumerator(dictionary:Dictionary<TKey, GameFrameworkLinkedListRange<TValue>>)
+    + Current : KeyValuePair<TKey, GameFrameworkLinkedListRange<TValue>> <<get>>
+    Current : object <<get>>
+    + Dispose() : void
+    + MoveNext() : bool
+    Reset() : void
+}
+"IEnumerable`1" "<KeyValuePair<TKey, GameFrameworkLinkedListRange<TValue>>>" <|-- "GameFrameworkMultiDictionary`2"
+IEnumerable <|-- "GameFrameworkMultiDictionary`2"
+"GameFrameworkMultiDictionary`2" +-- Enumerator
+"IEnumerator`1" "<KeyValuePair<TKey, GameFrameworkLinkedListRange<TValue>>>" <|-- Enumerator
+IEnumerator <|-- Enumerator
+@enduml

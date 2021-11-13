@@ -1,0 +1,13 @@
+@startuml
+class DownloadUpdateEventArgs <<sealed>> {
+    + DownloadUpdateEventArgs()
+    + SerialId : int <<get>>
+    + DownloadPath : string <<get>>
+    + DownloadUri : string <<get>>
+    + CurrentLength : long <<get>>
+    + UserData : object <<get>>
+    + {static} Create(serialId:int, downloadPath:string, downloadUri:string, currentLength:long, userData:object) : DownloadUpdateEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- DownloadUpdateEventArgs
+@enduml

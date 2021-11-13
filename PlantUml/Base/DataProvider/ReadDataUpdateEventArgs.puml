@@ -1,0 +1,11 @@
+@startuml
+class ReadDataUpdateEventArgs <<sealed>> {
+    + ReadDataUpdateEventArgs()
+    + DataAssetName : string <<get>>
+    + Progress : float <<get>>
+    + UserData : object <<get>>
+    + {static} Create(dataAssetName:string, progress:float, userData:object) : ReadDataUpdateEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- ReadDataUpdateEventArgs
+@enduml

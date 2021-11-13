@@ -1,0 +1,42 @@
+@startuml
+class DownloadManager <<sealed>> <<partial>> {
+}
+class DownloadAgent <<sealed>> {
+    - <<readonly>> m_Helper : IDownloadAgentHelper
+    - m_Task : DownloadTask
+    - m_FileStream : FileStream
+    - m_WaitFlushSize : int
+    - m_WaitTime : float
+    - m_StartLength : long
+    - m_DownloadedLength : long
+    - m_SavedLength : long
+    - m_Disposed : bool
+    + DownloadAgentStart : GameFrameworkAction<DownloadAgent>
+    + DownloadAgentUpdate : GameFrameworkAction<DownloadAgent, int>
+    + DownloadAgentSuccess : GameFrameworkAction<DownloadAgent, long>
+    + DownloadAgentFailure : GameFrameworkAction<DownloadAgent, string>
+    + DownloadAgent(downloadAgentHelper:IDownloadAgentHelper)
+    + Task : DownloadTask <<get>>
+    + WaitTime : float <<get>>
+    + StartLength : long <<get>>
+    + DownloadedLength : long <<get>>
+    + CurrentLength : long <<get>>
+    + SavedLength : long <<get>>
+    + Initialize() : void
+    + Update(elapseSeconds:float, realElapseSeconds:float) : void
+    + Shutdown() : void
+    + Start(task:DownloadTask) : StartTaskStatus
+    + Reset() : void
+    + Dispose() : void
+    - Dispose(disposing:bool) : void
+    - OnDownloadAgentHelperUpdateBytes(sender:object, e:DownloadAgentHelperUpdateBytesEventArgs) : void
+    - OnDownloadAgentHelperUpdateLength(sender:object, e:DownloadAgentHelperUpdateLengthEventArgs) : void
+    - OnDownloadAgentHelperComplete(sender:object, e:DownloadAgentHelperCompleteEventArgs) : void
+    - OnDownloadAgentHelperError(sender:object, e:DownloadAgentHelperErrorEventArgs) : void
+}
+GameFrameworkModule <|-- DownloadManager
+IDownloadManager <|-- DownloadManager
+DownloadManager +-- DownloadAgent
+"ITaskAgent`1" "<DownloadTask>" <|-- DownloadAgent
+IDisposable <|-- DownloadAgent
+@enduml

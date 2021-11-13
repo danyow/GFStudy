@@ -1,0 +1,16 @@
+@startuml
+class UIManager <<sealed>> <<partial>> {
+}
+class UIFormInstanceObject <<sealed>> {
+    - m_UIFormAsset : object
+    - m_UIFormHelper : IUIFormHelper
+    + UIFormInstanceObject()
+    + {static} Create(name:string, uiFormAsset:object, uiFormInstance:object, uiFormHelper:IUIFormHelper) : UIFormInstanceObject
+    + <<override>> Clear() : void
+    # <<internal>> <<override>> Release(isShutdown:bool) : void
+}
+GameFrameworkModule <|-- UIManager
+IUIManager <|-- UIManager
+UIManager +-- UIFormInstanceObject
+ObjectBase <|-- UIFormInstanceObject
+@enduml

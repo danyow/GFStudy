@@ -1,0 +1,10 @@
+@startuml
+class Version <<static>> <<partial>> {
+    - <<const>> GameFrameworkVersionString : string = "2021.05.31"
+    - {static} s_VersionHelper : IVersionHelper = null
+    + {static} GameFrameworkVersion : string <<get>>
+    + {static} GameVersion : string <<get>>
+    + {static} InternalGameVersion : int <<get>>
+    + {static} SetVersionHelper(versionHelper:IVersionHelper) : void
+}
+@enduml

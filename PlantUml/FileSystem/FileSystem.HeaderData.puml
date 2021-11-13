@@ -1,0 +1,27 @@
+@startuml
+class FileSystem <<sealed>> <<partial>> {
+}
+class HeaderData <<struct>> {
+    - <<const>> HeaderLength : int = 3
+    - <<const>> FileSystemVersion : int = 0
+    - <<const>> EncryptBytesLength : int = 4
+    - {static} <<readonly>> Header : byte[]
+    - <<readonly>> m_Header : byte[]
+    - <<readonly>> m_Version : byte
+    - <<readonly>> m_EncryptBytes : byte[]
+    - <<readonly>> m_MaxFileCount : int
+    - <<readonly>> m_MaxBlockCount : int
+    - <<readonly>> m_BlockCount : int
+    + HeaderData(maxFileCount:int, maxBlockCount:int)
+    + HeaderData(version:byte, encryptBytes:byte[], maxFileCount:int, maxBlockCount:int, blockCount:int)
+    + IsValid : bool <<get>>
+    + Version : byte <<get>>
+    + MaxFileCount : int <<get>>
+    + MaxBlockCount : int <<get>>
+    + BlockCount : int <<get>>
+    + GetEncryptBytes() : byte[]
+    + SetBlockCount(blockCount:int) : HeaderData
+}
+IFileSystem <|-- FileSystem
+FileSystem +-- HeaderData
+@enduml

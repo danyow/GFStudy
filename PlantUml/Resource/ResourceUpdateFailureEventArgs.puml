@@ -1,0 +1,13 @@
+@startuml
+class ResourceUpdateFailureEventArgs <<sealed>> {
+    + ResourceUpdateFailureEventArgs()
+    + Name : string <<get>>
+    + DownloadUri : string <<get>>
+    + RetryCount : int <<get>>
+    + TotalRetryCount : int <<get>>
+    + ErrorMessage : string <<get>>
+    + {static} Create(name:string, downloadUri:string, retryCount:int, totalRetryCount:int, errorMessage:string) : ResourceUpdateFailureEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- ResourceUpdateFailureEventArgs
+@enduml

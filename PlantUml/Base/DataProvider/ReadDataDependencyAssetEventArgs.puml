@@ -1,0 +1,13 @@
+@startuml
+class ReadDataDependencyAssetEventArgs <<sealed>> {
+    + ReadDataDependencyAssetEventArgs()
+    + DataAssetName : string <<get>>
+    + DependencyAssetName : string <<get>>
+    + LoadedCount : int <<get>>
+    + TotalCount : int <<get>>
+    + UserData : object <<get>>
+    + {static} Create(dataAssetName:string, dependencyAssetName:string, loadedCount:int, totalCount:int, userData:object) : ReadDataDependencyAssetEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- ReadDataDependencyAssetEventArgs
+@enduml

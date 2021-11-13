@@ -1,0 +1,16 @@
+@startuml
+interface INetworkManager {
+    NetworkChannelCount : int <<get>>
+     <<event>> NetworkConnected : EventHandler<NetworkConnectedEventArgs> 
+     <<event>> NetworkClosed : EventHandler<NetworkClosedEventArgs> 
+     <<event>> NetworkMissHeartBeat : EventHandler<NetworkMissHeartBeatEventArgs> 
+     <<event>> NetworkError : EventHandler<NetworkErrorEventArgs> 
+     <<event>> NetworkCustomError : EventHandler<NetworkCustomErrorEventArgs> 
+    HasNetworkChannel(name:string) : bool
+    GetNetworkChannel(name:string) : INetworkChannel
+    GetAllNetworkChannels() : INetworkChannel[]
+    GetAllNetworkChannels(results:List<INetworkChannel>) : void
+    CreateNetworkChannel(name:string, serviceType:ServiceType, networkChannelHelper:INetworkChannelHelper) : INetworkChannel
+    DestroyNetworkChannel(name:string) : bool
+}
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+interface IDebuggerWindow {
+    Initialize(args:object[]) : void
+    Shutdown() : void
+    OnEnter() : void
+    OnLeave() : void
+    OnUpdate(elapseSeconds:float, realElapseSeconds:float) : void
+    OnDraw() : void
+}
+@enduml

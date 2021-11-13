@@ -1,0 +1,11 @@
+@startuml
+class OpenUIFormSuccessEventArgs <<sealed>> {
+    + OpenUIFormSuccessEventArgs()
+    + UIForm : IUIForm <<get>>
+    + Duration : float <<get>>
+    + UserData : object <<get>>
+    + {static} Create(uiForm:IUIForm, duration:float, userData:object) : OpenUIFormSuccessEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- OpenUIFormSuccessEventArgs
+@enduml

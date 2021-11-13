@@ -1,0 +1,11 @@
+@startuml
+class ResourceApplyFailureEventArgs <<sealed>> {
+    + ResourceApplyFailureEventArgs()
+    + Name : string <<get>>
+    + ResourcePackPath : string <<get>>
+    + ErrorMessage : string <<get>>
+    + {static} Create(name:string, resourcePackPath:string, errorMessage:string) : ResourceApplyFailureEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- ResourceApplyFailureEventArgs
+@enduml

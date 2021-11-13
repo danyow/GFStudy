@@ -1,0 +1,23 @@
+@startuml
+class Utility <<static>> <<partial>> {
+}
+class Verifier <<static>> <<partial>> {
+}
+class Crc32 <<sealed>> {
+    - <<const>> TableLength : int = 256
+    - <<const>> DefaultPolynomial : uint = 0xedb88320
+    - <<const>> DefaultSeed : uint = 0xffffffff
+    - <<readonly>> m_Seed : uint
+    - <<readonly>> m_Table : uint[]
+    - m_Hash : uint
+    + Crc32()
+    + Crc32(polynomial:uint, seed:uint)
+    + Initialize() : void
+    + HashCore(bytes:byte[], offset:int, length:int) : void
+    + HashFinal() : uint
+    - {static} CalculateHash(table:uint[], value:uint, bytes:byte[], offset:int, length:int) : uint
+    - {static} InitializeTable(polynomial:uint) : uint[]
+}
+Utility +-- Verifier
+Verifier +-- Crc32
+@enduml

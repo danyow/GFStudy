@@ -1,0 +1,16 @@
+@startuml
+class PlaySoundDependencyAssetEventArgs <<sealed>> {
+    + PlaySoundDependencyAssetEventArgs()
+    + SerialId : int <<get>>
+    + SoundAssetName : string <<get>>
+    + SoundGroupName : string <<get>>
+    + PlaySoundParams : PlaySoundParams <<get>>
+    + DependencyAssetName : string <<get>>
+    + LoadedCount : int <<get>>
+    + TotalCount : int <<get>>
+    + UserData : object <<get>>
+    + {static} Create(serialId:int, soundAssetName:string, soundGroupName:string, playSoundParams:PlaySoundParams, dependencyAssetName:string, loadedCount:int, totalCount:int, userData:object) : PlaySoundDependencyAssetEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- PlaySoundDependencyAssetEventArgs
+@enduml

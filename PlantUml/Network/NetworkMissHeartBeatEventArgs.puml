@@ -1,0 +1,10 @@
+@startuml
+class NetworkMissHeartBeatEventArgs <<sealed>> {
+    + NetworkMissHeartBeatEventArgs()
+    + NetworkChannel : INetworkChannel <<get>>
+    + MissCount : int <<get>>
+    + {static} Create(networkChannel:INetworkChannel, missCount:int) : NetworkMissHeartBeatEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- NetworkMissHeartBeatEventArgs
+@enduml

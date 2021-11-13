@@ -1,0 +1,30 @@
+@startuml
+class SoundManager <<sealed>> <<partial>> {
+}
+class SoundGroup <<sealed>> {
+    - <<readonly>> m_Name : string
+    - <<readonly>> m_SoundGroupHelper : ISoundGroupHelper
+    - <<readonly>> m_SoundAgents : List<SoundAgent>
+    - m_AvoidBeingReplacedBySamePriority : bool
+    - m_Mute : bool
+    - m_Volume : float
+    + SoundGroup(name:string, soundGroupHelper:ISoundGroupHelper)
+    + Name : string <<get>>
+    + SoundAgentCount : int <<get>>
+    + AvoidBeingReplacedBySamePriority : bool <<get>> <<set>>
+    + Mute : bool <<get>> <<set>>
+    + Volume : float <<get>> <<set>>
+    + Helper : ISoundGroupHelper <<get>>
+    + AddSoundAgentHelper(soundHelper:ISoundHelper, soundAgentHelper:ISoundAgentHelper) : void
+    + PlaySound(serialId:int, soundAsset:object, playSoundParams:PlaySoundParams, errorCode:PlaySoundErrorCode?) : ISoundAgent
+    + StopSound(serialId:int, fadeOutSeconds:float) : bool
+    + PauseSound(serialId:int, fadeOutSeconds:float) : bool
+    + ResumeSound(serialId:int, fadeInSeconds:float) : bool
+    + StopAllLoadedSounds() : void
+    + StopAllLoadedSounds(fadeOutSeconds:float) : void
+}
+GameFrameworkModule <|-- SoundManager
+ISoundManager <|-- SoundManager
+SoundManager +-- SoundGroup
+ISoundGroup <|-- SoundGroup
+@enduml

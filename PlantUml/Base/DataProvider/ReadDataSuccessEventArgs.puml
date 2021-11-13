@@ -1,0 +1,11 @@
+@startuml
+class ReadDataSuccessEventArgs <<sealed>> {
+    + ReadDataSuccessEventArgs()
+    + DataAssetName : string <<get>>
+    + Duration : float <<get>>
+    + UserData : object <<get>>
+    + {static} Create(dataAssetName:string, duration:float, userData:object) : ReadDataSuccessEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- ReadDataSuccessEventArgs
+@enduml

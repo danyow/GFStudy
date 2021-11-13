@@ -1,0 +1,8 @@
+@startuml
+class ReadOnlyVersionListSerializer <<sealed>> {
+    - {static} <<readonly>> Header : byte[]
+    + ReadOnlyVersionListSerializer()
+    # <<override>> GetHeader() : byte[]
+}
+"GameFrameworkSerializer`1" "<LocalVersionList>" <|-- ReadOnlyVersionListSerializer
+@enduml

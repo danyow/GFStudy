@@ -1,0 +1,66 @@
+@startuml
+class ResourceManager <<sealed>> <<partial>> {
+}
+class ResourceUpdater <<sealed>> <<partial>> {
+    - <<const>> CachedHashBytesLength : int = 4
+    - <<const>> CachedBytesLength : int = 0x1000
+    - <<readonly>> m_ResourceManager : ResourceManager
+    - <<readonly>> m_ApplyWaitingInfo : Queue<ApplyInfo>
+    - <<readonly>> m_UpdateWaitingInfo : List<UpdateInfo>
+    - <<readonly>> m_UpdateWaitingInfoWhilePlaying : HashSet<UpdateInfo>
+    - <<readonly>> m_UpdateCandidateInfo : Dictionary<ResourceName, UpdateInfo>
+    - <<readonly>> m_CachedFileSystemsForGenerateReadWriteVersionList : SortedDictionary<string, List<int>>
+    - <<readonly>> m_CachedResourceNames : List<ResourceName>
+    - <<readonly>> m_CachedHashBytes : byte[]
+    - <<readonly>> m_CachedBytes : byte[]
+    - m_DownloadManager : IDownloadManager
+    - m_CheckResourcesComplete : bool
+    - m_ApplyingResourcePackPath : string
+    - m_ApplyingResourcePackStream : FileStream
+    - m_UpdatingResourceGroup : ResourceGroup
+    - m_GenerateReadWriteVersionListLength : int
+    - m_CurrentGenerateReadWriteVersionListLength : int
+    - m_UpdateRetryCount : int
+    - m_FailureFlag : bool
+    - m_ReadWriteVersionListFileName : string
+    - m_ReadWriteVersionListTempFileName : string
+    + ResourceApplyStart : GameFrameworkAction<string, int, long>
+    + ResourceApplySuccess : GameFrameworkAction<ResourceName, string, string, int, int>
+    + ResourceApplyFailure : GameFrameworkAction<ResourceName, string, string>
+    + ResourceApplyComplete : GameFrameworkAction<string, bool>
+    + ResourceUpdateStart : GameFrameworkAction<ResourceName, string, string, int, int, int>
+    + ResourceUpdateChanged : GameFrameworkAction<ResourceName, string, string, int, int>
+    + ResourceUpdateSuccess : GameFrameworkAction<ResourceName, string, string, int, int>
+    + ResourceUpdateFailure : GameFrameworkAction<ResourceName, string, int, int, string>
+    + ResourceUpdateComplete : GameFrameworkAction<ResourceGroup, bool>
+    + ResourceUpdateAllComplete : GameFrameworkAction
+    + ResourceUpdater(resourceManager:ResourceManager)
+    + GenerateReadWriteVersionListLength : int <<get>> <<set>>
+    + ApplyingResourcePackPath : string <<get>>
+    + ApplyWaitingCount : int <<get>>
+    + UpdateRetryCount : int <<get>> <<set>>
+    + UpdatingResourceGroup : IResourceGroup <<get>>
+    + UpdateWaitingCount : int <<get>>
+    + UpdateWaitingWhilePlayingCount : int <<get>>
+    + UpdateCandidateCount : int <<get>>
+    + Update(elapseSeconds:float, realElapseSeconds:float) : void
+    + Shutdown() : void
+    + SetDownloadManager(downloadManager:IDownloadManager) : void
+    + AddResourceUpdate(resourceName:ResourceName, fileSystemName:string, loadType:LoadType, length:int, hashCode:int, compressedLength:int, compressedHashCode:int, resourcePath:string) : void
+    + CheckResourceComplete(needGenerateReadWriteVersionList:bool) : void
+    + ApplyResources(resourcePackPath:string) : void
+    + UpdateResources(resourceGroup:ResourceGroup) : void
+    + StopUpdateResources() : void
+    + UpdateResource(resourceName:ResourceName) : void
+    - ApplyResource(applyInfo:ApplyInfo) : bool
+    - DownloadResource(updateInfo:UpdateInfo) : bool
+    - GenerateReadWriteVersionList() : void
+    - OnDownloadStart(sender:object, e:DownloadStartEventArgs) : void
+    - OnDownloadUpdate(sender:object, e:DownloadUpdateEventArgs) : void
+    - OnDownloadSuccess(sender:object, e:DownloadSuccessEventArgs) : void
+    - OnDownloadFailure(sender:object, e:DownloadFailureEventArgs) : void
+}
+GameFrameworkModule <|-- ResourceManager
+IResourceManager <|-- ResourceManager
+ResourceManager +-- ResourceUpdater
+@enduml

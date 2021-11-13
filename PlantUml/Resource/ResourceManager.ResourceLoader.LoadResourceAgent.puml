@@ -1,0 +1,43 @@
+@startuml
+class ResourceManager <<sealed>> <<partial>> {
+}
+class ResourceLoader <<sealed>> <<partial>> {
+}
+class LoadResourceAgent <<sealed>> <<partial>> {
+    - {static} <<readonly>> s_CachedResourceNames : Dictionary<string, string>
+    - {static} <<readonly>> s_LoadingAssetNames : HashSet<string>
+    - {static} <<readonly>> s_LoadingResourceNames : HashSet<string>
+    - <<readonly>> m_Helper : ILoadResourceAgentHelper
+    - <<readonly>> m_ResourceHelper : IResourceHelper
+    - <<readonly>> m_ResourceLoader : ResourceLoader
+    - <<readonly>> m_ReadOnlyPath : string
+    - <<readonly>> m_ReadWritePath : string
+    - <<readonly>> m_DecryptResourceCallback : DecryptResourceCallback
+    - m_Task : LoadResourceTaskBase
+    + LoadResourceAgent(loadResourceAgentHelper:ILoadResourceAgentHelper, resourceHelper:IResourceHelper, resourceLoader:ResourceLoader, readOnlyPath:string, readWritePath:string, decryptResourceCallback:DecryptResourceCallback)
+    + Helper : ILoadResourceAgentHelper <<get>>
+    + Task : LoadResourceTaskBase <<get>>
+    + Initialize() : void
+    + Update(elapseSeconds:float, realElapseSeconds:float) : void
+    + Shutdown() : void
+    + {static} Clear() : void
+    + Start(task:LoadResourceTaskBase) : StartTaskStatus
+    + Reset() : void
+    - {static} IsAssetLoading(assetName:string) : bool
+    - {static} IsResourceLoading(resourceName:string) : bool
+    - OnAssetObjectReady(assetObject:AssetObject) : void
+    - OnResourceObjectReady(resourceObject:ResourceObject) : void
+    - OnError(status:LoadResourceStatus, errorMessage:string) : void
+    - OnLoadResourceAgentHelperUpdate(sender:object, e:LoadResourceAgentHelperUpdateEventArgs) : void
+    - OnLoadResourceAgentHelperReadFileComplete(sender:object, e:LoadResourceAgentHelperReadFileCompleteEventArgs) : void
+    - OnLoadResourceAgentHelperReadBytesComplete(sender:object, e:LoadResourceAgentHelperReadBytesCompleteEventArgs) : void
+    - OnLoadResourceAgentHelperParseBytesComplete(sender:object, e:LoadResourceAgentHelperParseBytesCompleteEventArgs) : void
+    - OnLoadResourceAgentHelperLoadComplete(sender:object, e:LoadResourceAgentHelperLoadCompleteEventArgs) : void
+    - OnLoadResourceAgentHelperError(sender:object, e:LoadResourceAgentHelperErrorEventArgs) : void
+}
+GameFrameworkModule <|-- ResourceManager
+IResourceManager <|-- ResourceManager
+ResourceManager +-- ResourceLoader
+ResourceLoader +-- LoadResourceAgent
+"ITaskAgent`1" "<LoadResourceTaskBase>" <|-- LoadResourceAgent
+@enduml

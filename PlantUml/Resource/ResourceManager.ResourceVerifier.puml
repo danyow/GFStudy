@@ -1,0 +1,29 @@
+@startuml
+class ResourceManager <<sealed>> <<partial>> {
+}
+class ResourceVerifier <<sealed>> <<partial>> {
+    - <<const>> CachedHashBytesLength : int = 4
+    - <<readonly>> m_ResourceManager : ResourceManager
+    - <<readonly>> m_VerifyInfos : List<VerifyInfo>
+    - <<readonly>> m_CachedHashBytes : byte[]
+    - m_LoadReadWriteVersionListComplete : bool
+    - m_VerifyResourceLengthPerFrame : int
+    - m_VerifyResourceIndex : int
+    - m_FailureFlag : bool
+    + ResourceVerifyStart : GameFrameworkAction<int, long>
+    + ResourceVerifySuccess : GameFrameworkAction<ResourceName, int>
+    + ResourceVerifyFailure : GameFrameworkAction<ResourceName>
+    + ResourceVerifyComplete : GameFrameworkAction<bool>
+    + ResourceVerifier(resourceManager:ResourceManager)
+    + Update(elapseSeconds:float, realElapseSeconds:float) : void
+    + Shutdown() : void
+    + VerifyResources(verifyResourceLengthPerFrame:int) : void
+    - VerifyResource(verifyInfo:VerifyInfo) : bool
+    - GenerateReadWriteVersionList() : void
+    - OnLoadReadWriteVersionListSuccess(fileUri:string, bytes:byte[], duration:float, userData:object) : void
+    - OnLoadReadWriteVersionListFailure(fileUri:string, errorMessage:string, userData:object) : void
+}
+GameFrameworkModule <|-- ResourceManager
+IResourceManager <|-- ResourceManager
+ResourceManager +-- ResourceVerifier
+@enduml

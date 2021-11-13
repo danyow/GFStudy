@@ -1,0 +1,9 @@
+@startuml
+class ResourceVerifyFailureEventArgs <<sealed>> {
+    + ResourceVerifyFailureEventArgs()
+    + Name : string <<get>>
+    + {static} Create(name:string) : ResourceVerifyFailureEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- ResourceVerifyFailureEventArgs
+@enduml

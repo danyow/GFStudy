@@ -1,0 +1,15 @@
+@startuml
+class PlaySoundFailureEventArgs <<sealed>> {
+    + PlaySoundFailureEventArgs()
+    + SerialId : int <<get>>
+    + SoundAssetName : string <<get>>
+    + SoundGroupName : string <<get>>
+    + PlaySoundParams : PlaySoundParams <<get>>
+    + ErrorCode : PlaySoundErrorCode <<get>>
+    + ErrorMessage : string <<get>>
+    + UserData : object <<get>>
+    + {static} Create(serialId:int, soundAssetName:string, soundGroupName:string, playSoundParams:PlaySoundParams, errorCode:PlaySoundErrorCode, errorMessage:string, userData:object) : PlaySoundFailureEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- PlaySoundFailureEventArgs
+@enduml

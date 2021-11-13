@@ -1,0 +1,8 @@
+@startuml
+enum StartTaskStatus {
+    Done= 0,
+    CanResume,
+    HasToWait,
+    UnknownError,
+}
+@enduml

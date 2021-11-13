@@ -1,0 +1,14 @@
+@startuml
+class NetworkManager <<sealed>> <<partial>> {
+}
+class ConnectState <<sealed>> {
+    - <<readonly>> m_Socket : Socket
+    - <<readonly>> m_UserData : object
+    + ConnectState(socket:Socket, userData:object)
+    + Socket : Socket <<get>>
+    + UserData : object <<get>>
+}
+GameFrameworkModule <|-- NetworkManager
+INetworkManager <|-- NetworkManager
+NetworkManager +-- ConnectState
+@enduml

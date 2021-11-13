@@ -1,0 +1,8 @@
+@startuml
+class UpdatableVersionListSerializer <<sealed>> {
+    - {static} <<readonly>> Header : byte[]
+    + UpdatableVersionListSerializer()
+    # <<override>> GetHeader() : byte[]
+}
+"GameFrameworkSerializer`1" "<UpdatableVersionList>" <|-- UpdatableVersionListSerializer
+@enduml

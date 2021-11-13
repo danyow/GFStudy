@@ -1,0 +1,5 @@
+@startuml
+class Constant <<static>> {
+    <<internal>> <<const>> DefaultPriority : int = 0
+}
+@enduml

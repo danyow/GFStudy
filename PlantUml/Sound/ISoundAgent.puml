@@ -1,0 +1,30 @@
+@startuml
+interface ISoundAgent {
+    SoundGroup : ISoundGroup <<get>>
+    SerialId : int <<get>>
+    IsPlaying : bool <<get>>
+    Length : float <<get>>
+    Time : float <<get>> <<set>>
+    Mute : bool <<get>>
+    MuteInSoundGroup : bool <<get>> <<set>>
+    Loop : bool <<get>> <<set>>
+    Priority : int <<get>> <<set>>
+    Volume : float <<get>>
+    VolumeInSoundGroup : float <<get>> <<set>>
+    Pitch : float <<get>> <<set>>
+    PanStereo : float <<get>> <<set>>
+    SpatialBlend : float <<get>> <<set>>
+    MaxDistance : float <<get>> <<set>>
+    DopplerLevel : float <<get>> <<set>>
+    Helper : ISoundAgentHelper <<get>>
+    Play() : void
+    Play(fadeInSeconds:float) : void
+    Stop() : void
+    Stop(fadeOutSeconds:float) : void
+    Pause() : void
+    Pause(fadeOutSeconds:float) : void
+    Resume() : void
+    Resume(fadeInSeconds:float) : void
+    Reset() : void
+}
+@enduml

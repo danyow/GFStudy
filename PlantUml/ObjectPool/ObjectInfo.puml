@@ -1,0 +1,18 @@
+@startuml
+class ObjectInfo <<struct>> {
+    - <<readonly>> m_Name : string
+    - <<readonly>> m_Locked : bool
+    - <<readonly>> m_CustomCanReleaseFlag : bool
+    - <<readonly>> m_Priority : int
+    - <<readonly>> m_LastUseTime : DateTime
+    - <<readonly>> m_SpawnCount : int
+    + ObjectInfo(name:string, locked:bool, customCanReleaseFlag:bool, priority:int, lastUseTime:DateTime, spawnCount:int)
+    + Name : string <<get>>
+    + Locked : bool <<get>>
+    + CustomCanReleaseFlag : bool <<get>>
+    + Priority : int <<get>>
+    + LastUseTime : DateTime <<get>>
+    + IsInUse : bool <<get>>
+    + SpawnCount : int <<get>>
+}
+@enduml

@@ -1,0 +1,19 @@
+@startuml
+class LoadAssetCallbacks <<sealed>> {
+    - <<readonly>> m_LoadAssetSuccessCallback : LoadAssetSuccessCallback
+    - <<readonly>> m_LoadAssetFailureCallback : LoadAssetFailureCallback
+    - <<readonly>> m_LoadAssetUpdateCallback : LoadAssetUpdateCallback
+    - <<readonly>> m_LoadAssetDependencyAssetCallback : LoadAssetDependencyAssetCallback
+    + LoadAssetCallbacks(loadAssetSuccessCallback:LoadAssetSuccessCallback)
+    + LoadAssetCallbacks(loadAssetSuccessCallback:LoadAssetSuccessCallback, loadAssetFailureCallback:LoadAssetFailureCallback)
+    + LoadAssetCallbacks(loadAssetSuccessCallback:LoadAssetSuccessCallback, loadAssetUpdateCallback:LoadAssetUpdateCallback)
+    + LoadAssetCallbacks(loadAssetSuccessCallback:LoadAssetSuccessCallback, loadAssetDependencyAssetCallback:LoadAssetDependencyAssetCallback)
+    + LoadAssetCallbacks(loadAssetSuccessCallback:LoadAssetSuccessCallback, loadAssetFailureCallback:LoadAssetFailureCallback, loadAssetUpdateCallback:LoadAssetUpdateCallback)
+    + LoadAssetCallbacks(loadAssetSuccessCallback:LoadAssetSuccessCallback, loadAssetFailureCallback:LoadAssetFailureCallback, loadAssetDependencyAssetCallback:LoadAssetDependencyAssetCallback)
+    + LoadAssetCallbacks(loadAssetSuccessCallback:LoadAssetSuccessCallback, loadAssetFailureCallback:LoadAssetFailureCallback, loadAssetUpdateCallback:LoadAssetUpdateCallback, loadAssetDependencyAssetCallback:LoadAssetDependencyAssetCallback)
+    + LoadAssetSuccessCallback : LoadAssetSuccessCallback <<get>>
+    + LoadAssetFailureCallback : LoadAssetFailureCallback <<get>>
+    + LoadAssetUpdateCallback : LoadAssetUpdateCallback <<get>>
+    + LoadAssetDependencyAssetCallback : LoadAssetDependencyAssetCallback <<get>>
+}
+@enduml

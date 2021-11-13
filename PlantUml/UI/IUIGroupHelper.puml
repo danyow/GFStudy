@@ -1,0 +1,5 @@
+@startuml
+interface IUIGroupHelper {
+    SetDepth(depth:int) : void
+}
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+class NetworkCustomErrorEventArgs <<sealed>> {
+    + NetworkCustomErrorEventArgs()
+    + NetworkChannel : INetworkChannel <<get>>
+    + CustomErrorData : object <<get>>
+    + {static} Create(networkChannel:INetworkChannel, customErrorData:object) : NetworkCustomErrorEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- NetworkCustomErrorEventArgs
+@enduml

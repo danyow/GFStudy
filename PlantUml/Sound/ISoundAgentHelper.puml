@@ -1,0 +1,23 @@
+@startuml
+interface ISoundAgentHelper {
+    IsPlaying : bool <<get>>
+    Length : float <<get>>
+    Time : float <<get>> <<set>>
+    Mute : bool <<get>> <<set>>
+    Loop : bool <<get>> <<set>>
+    Priority : int <<get>> <<set>>
+    Volume : float <<get>> <<set>>
+    Pitch : float <<get>> <<set>>
+    PanStereo : float <<get>> <<set>>
+    SpatialBlend : float <<get>> <<set>>
+    MaxDistance : float <<get>> <<set>>
+    DopplerLevel : float <<get>> <<set>>
+     <<event>> ResetSoundAgent : EventHandler<ResetSoundAgentEventArgs> 
+    Play(fadeInSeconds:float) : void
+    Stop(fadeOutSeconds:float) : void
+    Pause(fadeOutSeconds:float) : void
+    Resume(fadeInSeconds:float) : void
+    Reset() : void
+    SetSoundAsset(soundAsset:object) : bool
+}
+@enduml

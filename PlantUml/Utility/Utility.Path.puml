@@ -1,0 +1,10 @@
+@startuml
+class Utility <<static>> <<partial>> {
+}
+class Path <<static>> {
+    + {static} GetRegularPath(path:string) : string
+    + {static} GetRemotePath(path:string) : string
+    + {static} RemoveEmptyDirectory(directoryName:string) : bool
+}
+Utility +-- Path
+@enduml

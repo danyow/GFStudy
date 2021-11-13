@@ -1,0 +1,10 @@
+@startuml
+class LoadResourceAgentHelperReadBytesCompleteEventArgs <<sealed>> {
+    - m_Bytes : byte[]
+    + LoadResourceAgentHelperReadBytesCompleteEventArgs()
+    + {static} Create(bytes:byte[]) : LoadResourceAgentHelperReadBytesCompleteEventArgs
+    + <<override>> Clear() : void
+    + GetBytes() : byte[]
+}
+GameFrameworkEventArgs <|-- LoadResourceAgentHelperReadBytesCompleteEventArgs
+@enduml

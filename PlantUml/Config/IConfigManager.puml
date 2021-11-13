@@ -1,0 +1,25 @@
+@startuml
+interface IConfigManager {
+    Count : int <<get>>
+    CachedBytesSize : int <<get>>
+    SetResourceManager(resourceManager:IResourceManager) : void
+    SetDataProviderHelper(dataProviderHelper:IDataProviderHelper<IConfigManager>) : void
+    SetConfigHelper(configHelper:IConfigHelper) : void
+    EnsureCachedBytesSize(ensureSize:int) : void
+    FreeCachedBytes() : void
+    HasConfig(configName:string) : bool
+    GetBool(configName:string) : bool
+    GetBool(configName:string, defaultValue:bool) : bool
+    GetInt(configName:string) : int
+    GetInt(configName:string, defaultValue:int) : int
+    GetFloat(configName:string) : float
+    GetFloat(configName:string, defaultValue:float) : float
+    GetString(configName:string) : string
+    GetString(configName:string, defaultValue:string) : string
+    AddConfig(configName:string, configValue:string) : bool
+    AddConfig(configName:string, boolValue:bool, intValue:int, floatValue:float, stringValue:string) : bool
+    RemoveConfig(configName:string) : bool
+    RemoveAllConfigs() : void
+}
+"IDataProvider`1" "<IConfigManager>" <|-- IConfigManager
+@enduml

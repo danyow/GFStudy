@@ -1,0 +1,14 @@
+@startuml
+class ResourceUpdateStartEventArgs <<sealed>> {
+    + ResourceUpdateStartEventArgs()
+    + Name : string <<get>>
+    + DownloadPath : string <<get>>
+    + DownloadUri : string <<get>>
+    + CurrentLength : int <<get>>
+    + CompressedLength : int <<get>>
+    + RetryCount : int <<get>>
+    + {static} Create(name:string, downloadPath:string, downloadUri:string, currentLength:int, compressedLength:int, retryCount:int) : ResourceUpdateStartEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- ResourceUpdateStartEventArgs
+@enduml

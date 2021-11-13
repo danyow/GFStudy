@@ -1,0 +1,10 @@
+@startuml
+interface "ITaskAgent`1"<T> {
+    Task : T <<get>>
+    Initialize() : void
+    Update(elapseSeconds:float, realElapseSeconds:float) : void
+    Shutdown() : void
+    Start(task:T) : StartTaskStatus
+    Reset() : void
+}
+@enduml

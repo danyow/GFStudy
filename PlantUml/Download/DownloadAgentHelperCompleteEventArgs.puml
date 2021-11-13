@@ -1,0 +1,9 @@
+@startuml
+class DownloadAgentHelperCompleteEventArgs <<sealed>> {
+    + DownloadAgentHelperCompleteEventArgs()
+    + Length : long <<get>>
+    + {static} Create(length:long) : DownloadAgentHelperCompleteEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- DownloadAgentHelperCompleteEventArgs
+@enduml

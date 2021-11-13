@@ -1,0 +1,23 @@
+@startuml
+interface INetworkChannel {
+    Name : string <<get>>
+    Socket : Socket <<get>>
+    Connected : bool <<get>>
+    ServiceType : ServiceType <<get>>
+    AddressFamily : AddressFamily <<get>>
+    SendPacketCount : int <<get>>
+    SentPacketCount : int <<get>>
+    ReceivePacketCount : int <<get>>
+    ReceivedPacketCount : int <<get>>
+    ResetHeartBeatElapseSecondsWhenReceivePacket : bool <<get>> <<set>>
+    MissHeartBeatCount : int <<get>>
+    HeartBeatInterval : float <<get>> <<set>>
+    HeartBeatElapseSeconds : float <<get>>
+    RegisterHandler(handler:IPacketHandler) : void
+    SetDefaultHandler(handler:EventHandler<Packet>) : void
+    Connect(ipAddress:IPAddress, port:int) : void
+    Connect(ipAddress:IPAddress, port:int, userData:object) : void
+    Close() : void
+    Send(packet:T) : void
+}
+@enduml

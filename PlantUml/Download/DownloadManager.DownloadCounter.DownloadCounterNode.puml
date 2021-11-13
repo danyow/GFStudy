@@ -1,0 +1,22 @@
+@startuml
+class DownloadManager <<sealed>> <<partial>> {
+}
+class DownloadCounter <<sealed>> <<partial>> {
+}
+class DownloadCounterNode <<sealed>> {
+    - m_DeltaLength : long
+    - m_ElapseSeconds : float
+    + DownloadCounterNode()
+    + DeltaLength : long <<get>>
+    + ElapseSeconds : float <<get>>
+    + {static} Create() : DownloadCounterNode
+    + Update(elapseSeconds:float, realElapseSeconds:float) : void
+    + AddDeltaLength(deltaLength:int) : void
+    + Clear() : void
+}
+GameFrameworkModule <|-- DownloadManager
+IDownloadManager <|-- DownloadManager
+DownloadManager +-- DownloadCounter
+DownloadCounter +-- DownloadCounterNode
+IReference <|-- DownloadCounterNode
+@enduml

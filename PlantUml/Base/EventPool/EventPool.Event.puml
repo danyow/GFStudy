@@ -1,0 +1,15 @@
+@startuml
+class "EventPool`1"<T> <<sealed>> <<partial>> {
+}
+class Event <<sealed>> {
+    - m_Sender : object
+    - m_EventArgs : T
+    + Event()
+    + Sender : object <<get>>
+    + EventArgs : T <<get>>
+    + {static} Create(sender:object, e:T) : Event
+    + Clear() : void
+}
+"EventPool`1" +-- Event
+IReference <|-- Event
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+enum TaskStatus {
+    Todo= 0,
+    Doing,
+    Done,
+}
+@enduml

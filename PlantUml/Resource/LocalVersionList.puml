@@ -1,0 +1,13 @@
+@startuml
+class LocalVersionList <<struct>> {
+    - {static} <<readonly>> EmptyResourceArray : Resource[]
+    - {static} <<readonly>> EmptyFileSystemArray : FileSystem[]
+    - <<readonly>> m_IsValid : bool
+    - <<readonly>> m_Resources : Resource[]
+    - <<readonly>> m_FileSystems : FileSystem[]
+    + LocalVersionList(resources:Resource[], fileSystems:FileSystem[])
+    + IsValid : bool <<get>>
+    + GetResources() : Resource[]
+    + GetFileSystems() : FileSystem[]
+}
+@enduml

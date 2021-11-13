@@ -1,0 +1,18 @@
+@startuml
+class ConfigManager <<sealed>> <<partial>> {
+}
+class ConfigData <<struct>> {
+    - <<readonly>> m_BoolValue : bool
+    - <<readonly>> m_IntValue : int
+    - <<readonly>> m_FloatValue : float
+    - <<readonly>> m_StringValue : string
+    + ConfigData(boolValue:bool, intValue:int, floatValue:float, stringValue:string)
+    + BoolValue : bool <<get>>
+    + IntValue : int <<get>>
+    + FloatValue : float <<get>>
+    + StringValue : string <<get>>
+}
+GameFrameworkModule <|-- ConfigManager
+IConfigManager <|-- ConfigManager
+ConfigManager +-- ConfigData
+@enduml

@@ -1,0 +1,21 @@
+@startuml
+interface IEntityGroup {
+    Name : string <<get>>
+    EntityCount : int <<get>>
+    InstanceAutoReleaseInterval : float <<get>> <<set>>
+    InstanceCapacity : int <<get>> <<set>>
+    InstanceExpireTime : float <<get>> <<set>>
+    InstancePriority : int <<get>> <<set>>
+    Helper : IEntityGroupHelper <<get>>
+    HasEntity(entityId:int) : bool
+    HasEntity(entityAssetName:string) : bool
+    GetEntity(entityId:int) : IEntity
+    GetEntity(entityAssetName:string) : IEntity
+    GetEntities(entityAssetName:string) : IEntity[]
+    GetEntities(entityAssetName:string, results:List<IEntity>) : void
+    GetAllEntities() : IEntity[]
+    GetAllEntities(results:List<IEntity>) : void
+    SetEntityInstanceLocked(entityInstance:object, locked:bool) : void
+    SetEntityInstancePriority(entityInstance:object, priority:int) : void
+}
+@enduml

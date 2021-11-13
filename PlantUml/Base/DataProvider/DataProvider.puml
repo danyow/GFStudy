@@ -1,0 +1,37 @@
+@startuml
+class "DataProvider`1"<T> <<sealed>> {
+    - <<const>> BlockSize : int
+    - {static} s_CachedBytes : byte[] = null
+    - <<readonly>> m_Owner : T
+    - <<readonly>> m_LoadAssetCallbacks : LoadAssetCallbacks
+    - <<readonly>> m_LoadBinaryCallbacks : LoadBinaryCallbacks
+    - m_ResourceManager : IResourceManager
+    - m_DataProviderHelper : IDataProviderHelper<T>
+    - m_ReadDataSuccessEventHandler : EventHandler<ReadDataSuccessEventArgs>
+    - m_ReadDataFailureEventHandler : EventHandler<ReadDataFailureEventArgs>
+    - m_ReadDataUpdateEventHandler : EventHandler<ReadDataUpdateEventArgs>
+    - m_ReadDataDependencyAssetEventHandler : EventHandler<ReadDataDependencyAssetEventArgs>
+    + DataProvider(owner:T)
+    + {static} CachedBytesSize : int <<get>>
+    + {static} EnsureCachedBytesSize(ensureSize:int) : void
+    + {static} FreeCachedBytes() : void
+    + ReadData(dataAssetName:string) : void
+    + ReadData(dataAssetName:string, priority:int) : void
+    + ReadData(dataAssetName:string, userData:object) : void
+    + ReadData(dataAssetName:string, priority:int, userData:object) : void
+    + ParseData(dataString:string) : bool
+    + ParseData(dataString:string, userData:object) : bool
+    + ParseData(dataBytes:byte[]) : bool
+    + ParseData(dataBytes:byte[], userData:object) : bool
+    + ParseData(dataBytes:byte[], startIndex:int, length:int) : bool
+    + ParseData(dataBytes:byte[], startIndex:int, length:int, userData:object) : bool
+    <<internal>> SetResourceManager(resourceManager:IResourceManager) : void
+    <<internal>> SetDataProviderHelper(dataProviderHelper:IDataProviderHelper<T>) : void
+    - LoadAssetSuccessCallback(dataAssetName:string, dataAsset:object, duration:float, userData:object) : void
+    - LoadAssetOrBinaryFailureCallback(dataAssetName:string, status:LoadResourceStatus, errorMessage:string, userData:object) : void
+    - LoadAssetUpdateCallback(dataAssetName:string, progress:float, userData:object) : void
+    - LoadAssetDependencyAssetCallback(dataAssetName:string, dependencyAssetName:string, loadedCount:int, totalCount:int, userData:object) : void
+    - LoadBinarySuccessCallback(dataAssetName:string, dataBytes:byte[], duration:float, userData:object) : void
+}
+"IDataProvider`1" "<T>" <|-- "DataProvider`1"
+@enduml

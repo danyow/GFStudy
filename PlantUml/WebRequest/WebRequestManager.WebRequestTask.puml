@@ -1,0 +1,23 @@
+@startuml
+class WebRequestManager <<sealed>> <<partial>> {
+}
+class WebRequestTask <<sealed>> {
+    - {static} s_Serial : int = 0
+    - m_Status : WebRequestTaskStatus
+    - m_WebRequestUri : string
+    - m_PostData : byte[]
+    - m_Timeout : float
+    + WebRequestTask()
+    + Status : WebRequestTaskStatus <<get>> <<set>>
+    + WebRequestUri : string <<get>>
+    + Timeout : float <<get>>
+    + <<override>> Description : string <<get>>
+    + {static} Create(webRequestUri:string, postData:byte[], tag:string, priority:int, timeout:float, userData:object) : WebRequestTask
+    + <<override>> Clear() : void
+    + GetPostData() : byte[]
+}
+GameFrameworkModule <|-- WebRequestManager
+IWebRequestManager <|-- WebRequestManager
+WebRequestManager +-- WebRequestTask
+TaskBase <|-- WebRequestTask
+@enduml

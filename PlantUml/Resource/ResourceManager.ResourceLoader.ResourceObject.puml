@@ -1,0 +1,22 @@
+@startuml
+class ResourceManager <<sealed>> <<partial>> {
+}
+class ResourceLoader <<sealed>> <<partial>> {
+}
+class ResourceObject <<sealed>> {
+    - m_DependencyResources : List<object>
+    - m_ResourceHelper : IResourceHelper
+    - m_ResourceLoader : ResourceLoader
+    + ResourceObject()
+    + <<override>> CustomCanReleaseFlag : bool <<get>>
+    + {static} Create(name:string, target:object, resourceHelper:IResourceHelper, resourceLoader:ResourceLoader) : ResourceObject
+    + <<override>> Clear() : void
+    + AddDependencyResource(dependencyResource:object) : void
+    # <<internal>> <<override>> Release(isShutdown:bool) : void
+}
+GameFrameworkModule <|-- ResourceManager
+IResourceManager <|-- ResourceManager
+ResourceManager +-- ResourceLoader
+ResourceLoader +-- ResourceObject
+ObjectBase <|-- ResourceObject
+@enduml

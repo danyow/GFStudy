@@ -1,0 +1,39 @@
+@startuml
+class DataTableManager <<sealed>> <<partial>> {
+}
+class "DataTable`1"<T> <<sealed>> {
+    - <<readonly>> m_DataSet : Dictionary<int, T>
+    - m_MinIdDataRow : T
+    - m_MaxIdDataRow : T
+    + DataTable(name:string)
+    + <<override>> Type : Type <<get>>
+    + <<override>> Count : int <<get>>
+    + MinIdDataRow : T <<get>>
+    + MaxIdDataRow : T <<get>>
+    + <<override>> HasDataRow(id:int) : bool
+    + HasDataRow(condition:Predicate<T>) : bool
+    + GetDataRow(id:int) : T
+    + GetDataRow(condition:Predicate<T>) : T
+    + GetDataRows(condition:Predicate<T>) : T[]
+    + GetDataRows(condition:Predicate<T>, results:List<T>) : void
+    + GetDataRows(comparison:Comparison<T>) : T[]
+    + GetDataRows(comparison:Comparison<T>, results:List<T>) : void
+    + GetDataRows(condition:Predicate<T>, comparison:Comparison<T>) : T[]
+    + GetDataRows(condition:Predicate<T>, comparison:Comparison<T>, results:List<T>) : void
+    + GetAllDataRows() : T[]
+    + GetAllDataRows(results:List<T>) : void
+    + <<override>> AddDataRow(dataRowString:string, userData:object) : bool
+    + <<override>> AddDataRow(dataRowBytes:byte[], startIndex:int, length:int, userData:object) : bool
+    + <<override>> RemoveDataRow(id:int) : bool
+    + <<override>> RemoveAllDataRows() : void
+    + GetEnumerator() : IEnumerator<T>
+    GetEnumerator() : IEnumerator
+    <<internal>> <<override>> Shutdown() : void
+    - InternalAddDataRow(dataRow:T) : void
+}
+GameFrameworkModule <|-- DataTableManager
+IDataTableManager <|-- DataTableManager
+DataTableManager +-- "DataTable`1"
+DataTableBase <|-- "DataTable`1"
+"IDataTable`1" "<T>" <|-- "DataTable`1"
+@enduml

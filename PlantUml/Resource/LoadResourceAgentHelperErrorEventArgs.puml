@@ -1,0 +1,10 @@
+@startuml
+class LoadResourceAgentHelperErrorEventArgs <<sealed>> {
+    + LoadResourceAgentHelperErrorEventArgs()
+    + Status : LoadResourceStatus <<get>>
+    + ErrorMessage : string <<get>>
+    + {static} Create(status:LoadResourceStatus, errorMessage:string) : LoadResourceAgentHelperErrorEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- LoadResourceAgentHelperErrorEventArgs
+@enduml

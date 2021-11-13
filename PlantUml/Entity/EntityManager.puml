@@ -1,0 +1,90 @@
+@startuml
+class EntityManager <<sealed>> <<partial>> {
+    - <<readonly>> m_EntityInfos : Dictionary<int, EntityInfo>
+    - <<readonly>> m_EntityGroups : Dictionary<string, EntityGroup>
+    - <<readonly>> m_EntitiesBeingLoaded : Dictionary<int, int>
+    - <<readonly>> m_EntitiesToReleaseOnLoad : HashSet<int>
+    - <<readonly>> m_RecycleQueue : Queue<EntityInfo>
+    - <<readonly>> m_LoadAssetCallbacks : LoadAssetCallbacks
+    - m_ObjectPoolManager : IObjectPoolManager
+    - m_ResourceManager : IResourceManager
+    - m_EntityHelper : IEntityHelper
+    - m_Serial : int
+    - m_IsShutdown : bool
+    - m_ShowEntitySuccessEventHandler : EventHandler<ShowEntitySuccessEventArgs>
+    - m_ShowEntityFailureEventHandler : EventHandler<ShowEntityFailureEventArgs>
+    - m_ShowEntityUpdateEventHandler : EventHandler<ShowEntityUpdateEventArgs>
+    - m_ShowEntityDependencyAssetEventHandler : EventHandler<ShowEntityDependencyAssetEventArgs>
+    - m_HideEntityCompleteEventHandler : EventHandler<HideEntityCompleteEventArgs>
+    + EntityManager()
+    + EntityCount : int <<get>>
+    + EntityGroupCount : int <<get>>
+    <<internal>> <<override>> Update(elapseSeconds:float, realElapseSeconds:float) : void
+    <<internal>> <<override>> Shutdown() : void
+    + SetObjectPoolManager(objectPoolManager:IObjectPoolManager) : void
+    + SetResourceManager(resourceManager:IResourceManager) : void
+    + SetEntityHelper(entityHelper:IEntityHelper) : void
+    + HasEntityGroup(entityGroupName:string) : bool
+    + GetEntityGroup(entityGroupName:string) : IEntityGroup
+    + GetAllEntityGroups() : IEntityGroup[]
+    + GetAllEntityGroups(results:List<IEntityGroup>) : void
+    + AddEntityGroup(entityGroupName:string, instanceAutoReleaseInterval:float, instanceCapacity:int, instanceExpireTime:float, instancePriority:int, entityGroupHelper:IEntityGroupHelper) : bool
+    + HasEntity(entityId:int) : bool
+    + HasEntity(entityAssetName:string) : bool
+    + GetEntity(entityId:int) : IEntity
+    + GetEntity(entityAssetName:string) : IEntity
+    + GetEntities(entityAssetName:string) : IEntity[]
+    + GetEntities(entityAssetName:string, results:List<IEntity>) : void
+    + GetAllLoadedEntities() : IEntity[]
+    + GetAllLoadedEntities(results:List<IEntity>) : void
+    + GetAllLoadingEntityIds() : int[]
+    + GetAllLoadingEntityIds(results:List<int>) : void
+    + IsLoadingEntity(entityId:int) : bool
+    + IsValidEntity(entity:IEntity) : bool
+    + ShowEntity(entityId:int, entityAssetName:string, entityGroupName:string) : void
+    + ShowEntity(entityId:int, entityAssetName:string, entityGroupName:string, priority:int) : void
+    + ShowEntity(entityId:int, entityAssetName:string, entityGroupName:string, userData:object) : void
+    + ShowEntity(entityId:int, entityAssetName:string, entityGroupName:string, priority:int, userData:object) : void
+    + HideEntity(entityId:int) : void
+    + HideEntity(entityId:int, userData:object) : void
+    + HideEntity(entity:IEntity) : void
+    + HideEntity(entity:IEntity, userData:object) : void
+    + HideAllLoadedEntities() : void
+    + HideAllLoadedEntities(userData:object) : void
+    + HideAllLoadingEntities() : void
+    + GetParentEntity(childEntityId:int) : IEntity
+    + GetParentEntity(childEntity:IEntity) : IEntity
+    + GetChildEntityCount(parentEntityId:int) : int
+    + GetChildEntity(parentEntityId:int) : IEntity
+    + GetChildEntity(parentEntity:IEntity) : IEntity
+    + GetChildEntities(parentEntityId:int) : IEntity[]
+    + GetChildEntities(parentEntityId:int, results:List<IEntity>) : void
+    + GetChildEntities(parentEntity:IEntity) : IEntity[]
+    + GetChildEntities(parentEntity:IEntity, results:List<IEntity>) : void
+    + AttachEntity(childEntityId:int, parentEntityId:int) : void
+    + AttachEntity(childEntityId:int, parentEntityId:int, userData:object) : void
+    + AttachEntity(childEntityId:int, parentEntity:IEntity) : void
+    + AttachEntity(childEntityId:int, parentEntity:IEntity, userData:object) : void
+    + AttachEntity(childEntity:IEntity, parentEntityId:int) : void
+    + AttachEntity(childEntity:IEntity, parentEntityId:int, userData:object) : void
+    + AttachEntity(childEntity:IEntity, parentEntity:IEntity) : void
+    + AttachEntity(childEntity:IEntity, parentEntity:IEntity, userData:object) : void
+    + DetachEntity(childEntityId:int) : void
+    + DetachEntity(childEntityId:int, userData:object) : void
+    + DetachEntity(childEntity:IEntity) : void
+    + DetachEntity(childEntity:IEntity, userData:object) : void
+    + DetachChildEntities(parentEntityId:int) : void
+    + DetachChildEntities(parentEntityId:int, userData:object) : void
+    + DetachChildEntities(parentEntity:IEntity) : void
+    + DetachChildEntities(parentEntity:IEntity, userData:object) : void
+    - GetEntityInfo(entityId:int) : EntityInfo
+    - InternalShowEntity(entityId:int, entityAssetName:string, entityGroup:EntityGroup, entityInstance:object, isNewInstance:bool, duration:float, userData:object) : void
+    - InternalHideEntity(entityInfo:EntityInfo, userData:object) : void
+    - LoadAssetSuccessCallback(entityAssetName:string, entityAsset:object, duration:float, userData:object) : void
+    - LoadAssetFailureCallback(entityAssetName:string, status:LoadResourceStatus, errorMessage:string, userData:object) : void
+    - LoadAssetUpdateCallback(entityAssetName:string, progress:float, userData:object) : void
+    - LoadAssetDependencyAssetCallback(entityAssetName:string, dependencyAssetName:string, loadedCount:int, totalCount:int, userData:object) : void
+}
+GameFrameworkModule <|-- EntityManager
+IEntityManager <|-- EntityManager
+@enduml

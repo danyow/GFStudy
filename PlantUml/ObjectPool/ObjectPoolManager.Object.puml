@@ -1,0 +1,26 @@
+@startuml
+class ObjectPoolManager <<sealed>> <<partial>> {
+}
+class "Object`1"<T> <<sealed>> {
+    - m_Object : T
+    - m_SpawnCount : int
+    + Object()
+    + Name : string <<get>>
+    + Locked : bool <<get>> <<internal set>>
+    + Priority : int <<get>> <<internal set>>
+    + CustomCanReleaseFlag : bool <<get>>
+    + LastUseTime : DateTime <<get>>
+    + IsInUse : bool <<get>>
+    + SpawnCount : int <<get>>
+    + {static} Create(obj:T, spawned:bool) : Object<T>
+    + Clear() : void
+    + Peek() : T
+    + Spawn() : T
+    + Unspawn() : void
+    + Release(isShutdown:bool) : void
+}
+GameFrameworkModule <|-- ObjectPoolManager
+IObjectPoolManager <|-- ObjectPoolManager
+ObjectPoolManager +-- "Object`1"
+IReference <|-- "Object`1"
+@enduml

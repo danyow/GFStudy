@@ -1,0 +1,39 @@
+@startuml
+class EntityManager <<sealed>> <<partial>> {
+}
+class EntityGroup <<sealed>> {
+    - <<readonly>> m_Name : string
+    - <<readonly>> m_EntityGroupHelper : IEntityGroupHelper
+    - <<readonly>> m_InstancePool : IObjectPool<EntityInstanceObject>
+    - <<readonly>> m_Entities : GameFrameworkLinkedList<IEntity>
+    - m_CachedNode : LinkedListNode<IEntity>
+    + EntityGroup(name:string, instanceAutoReleaseInterval:float, instanceCapacity:int, instanceExpireTime:float, instancePriority:int, entityGroupHelper:IEntityGroupHelper, objectPoolManager:IObjectPoolManager)
+    + Name : string <<get>>
+    + EntityCount : int <<get>>
+    + InstanceAutoReleaseInterval : float <<get>> <<set>>
+    + InstanceCapacity : int <<get>> <<set>>
+    + InstanceExpireTime : float <<get>> <<set>>
+    + InstancePriority : int <<get>> <<set>>
+    + Helper : IEntityGroupHelper <<get>>
+    + Update(elapseSeconds:float, realElapseSeconds:float) : void
+    + HasEntity(entityId:int) : bool
+    + HasEntity(entityAssetName:string) : bool
+    + GetEntity(entityId:int) : IEntity
+    + GetEntity(entityAssetName:string) : IEntity
+    + GetEntities(entityAssetName:string) : IEntity[]
+    + GetEntities(entityAssetName:string, results:List<IEntity>) : void
+    + GetAllEntities() : IEntity[]
+    + GetAllEntities(results:List<IEntity>) : void
+    + AddEntity(entity:IEntity) : void
+    + RemoveEntity(entity:IEntity) : void
+    + RegisterEntityInstanceObject(obj:EntityInstanceObject, spawned:bool) : void
+    + SpawnEntityInstanceObject(name:string) : EntityInstanceObject
+    + UnspawnEntity(entity:IEntity) : void
+    + SetEntityInstanceLocked(entityInstance:object, locked:bool) : void
+    + SetEntityInstancePriority(entityInstance:object, priority:int) : void
+}
+GameFrameworkModule <|-- EntityManager
+IEntityManager <|-- EntityManager
+EntityManager +-- EntityGroup
+IEntityGroup <|-- EntityGroup
+@enduml

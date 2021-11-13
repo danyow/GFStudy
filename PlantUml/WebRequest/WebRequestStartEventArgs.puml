@@ -1,0 +1,11 @@
+@startuml
+class WebRequestStartEventArgs <<sealed>> {
+    + WebRequestStartEventArgs()
+    + SerialId : int <<get>>
+    + WebRequestUri : string <<get>>
+    + UserData : object <<get>>
+    + {static} Create(serialId:int, webRequestUri:string, userData:object) : WebRequestStartEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- WebRequestStartEventArgs
+@enduml

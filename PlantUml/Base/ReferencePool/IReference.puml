@@ -1,0 +1,5 @@
+@startuml
+interface IReference {
+    Clear() : void
+}
+@enduml

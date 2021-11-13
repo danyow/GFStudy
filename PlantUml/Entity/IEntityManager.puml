@@ -1,0 +1,67 @@
+@startuml
+interface IEntityManager {
+    EntityCount : int <<get>>
+    EntityGroupCount : int <<get>>
+     <<event>> ShowEntitySuccess : EventHandler<ShowEntitySuccessEventArgs> 
+     <<event>> ShowEntityFailure : EventHandler<ShowEntityFailureEventArgs> 
+     <<event>> ShowEntityUpdate : EventHandler<ShowEntityUpdateEventArgs> 
+     <<event>> ShowEntityDependencyAsset : EventHandler<ShowEntityDependencyAssetEventArgs> 
+     <<event>> HideEntityComplete : EventHandler<HideEntityCompleteEventArgs> 
+    SetObjectPoolManager(objectPoolManager:IObjectPoolManager) : void
+    SetResourceManager(resourceManager:IResourceManager) : void
+    SetEntityHelper(entityHelper:IEntityHelper) : void
+    HasEntityGroup(entityGroupName:string) : bool
+    GetEntityGroup(entityGroupName:string) : IEntityGroup
+    GetAllEntityGroups() : IEntityGroup[]
+    GetAllEntityGroups(results:List<IEntityGroup>) : void
+    AddEntityGroup(entityGroupName:string, instanceAutoReleaseInterval:float, instanceCapacity:int, instanceExpireTime:float, instancePriority:int, entityGroupHelper:IEntityGroupHelper) : bool
+    HasEntity(entityId:int) : bool
+    HasEntity(entityAssetName:string) : bool
+    GetEntity(entityId:int) : IEntity
+    GetEntity(entityAssetName:string) : IEntity
+    GetEntities(entityAssetName:string) : IEntity[]
+    GetEntities(entityAssetName:string, results:List<IEntity>) : void
+    GetAllLoadedEntities() : IEntity[]
+    GetAllLoadedEntities(results:List<IEntity>) : void
+    GetAllLoadingEntityIds() : int[]
+    GetAllLoadingEntityIds(results:List<int>) : void
+    IsLoadingEntity(entityId:int) : bool
+    IsValidEntity(entity:IEntity) : bool
+    ShowEntity(entityId:int, entityAssetName:string, entityGroupName:string) : void
+    ShowEntity(entityId:int, entityAssetName:string, entityGroupName:string, priority:int) : void
+    ShowEntity(entityId:int, entityAssetName:string, entityGroupName:string, userData:object) : void
+    ShowEntity(entityId:int, entityAssetName:string, entityGroupName:string, priority:int, userData:object) : void
+    HideEntity(entityId:int) : void
+    HideEntity(entityId:int, userData:object) : void
+    HideEntity(entity:IEntity) : void
+    HideEntity(entity:IEntity, userData:object) : void
+    HideAllLoadedEntities() : void
+    HideAllLoadedEntities(userData:object) : void
+    HideAllLoadingEntities() : void
+    GetParentEntity(childEntityId:int) : IEntity
+    GetParentEntity(childEntity:IEntity) : IEntity
+    GetChildEntityCount(parentEntityId:int) : int
+    GetChildEntity(parentEntityId:int) : IEntity
+    GetChildEntity(parentEntity:IEntity) : IEntity
+    GetChildEntities(parentEntityId:int) : IEntity[]
+    GetChildEntities(parentEntityId:int, results:List<IEntity>) : void
+    GetChildEntities(parentEntity:IEntity) : IEntity[]
+    GetChildEntities(parentEntity:IEntity, results:List<IEntity>) : void
+    AttachEntity(childEntityId:int, parentEntityId:int) : void
+    AttachEntity(childEntityId:int, parentEntityId:int, userData:object) : void
+    AttachEntity(childEntityId:int, parentEntity:IEntity) : void
+    AttachEntity(childEntityId:int, parentEntity:IEntity, userData:object) : void
+    AttachEntity(childEntity:IEntity, parentEntityId:int) : void
+    AttachEntity(childEntity:IEntity, parentEntityId:int, userData:object) : void
+    AttachEntity(childEntity:IEntity, parentEntity:IEntity) : void
+    AttachEntity(childEntity:IEntity, parentEntity:IEntity, userData:object) : void
+    DetachEntity(childEntityId:int) : void
+    DetachEntity(childEntityId:int, userData:object) : void
+    DetachEntity(childEntity:IEntity) : void
+    DetachEntity(childEntity:IEntity, userData:object) : void
+    DetachChildEntities(parentEntityId:int) : void
+    DetachChildEntities(parentEntityId:int, userData:object) : void
+    DetachChildEntities(parentEntity:IEntity) : void
+    DetachChildEntities(parentEntity:IEntity, userData:object) : void
+}
+@enduml

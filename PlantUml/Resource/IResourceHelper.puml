@@ -1,0 +1,7 @@
+@startuml
+interface IResourceHelper {
+    LoadBytes(fileUri:string, loadBytesCallbacks:LoadBytesCallbacks, userData:object) : void
+    UnloadScene(sceneAssetName:string, unloadSceneCallbacks:UnloadSceneCallbacks, userData:object) : void
+    Release(objectToRelease:object) : void
+}
+@enduml

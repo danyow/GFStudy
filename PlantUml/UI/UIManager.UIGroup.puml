@@ -1,0 +1,39 @@
+@startuml
+class UIManager <<sealed>> <<partial>> {
+}
+class UIGroup <<sealed>> <<partial>> {
+    - <<readonly>> m_Name : string
+    - m_Depth : int
+    - m_Pause : bool
+    - <<readonly>> m_UIGroupHelper : IUIGroupHelper
+    - <<readonly>> m_UIFormInfos : GameFrameworkLinkedList<UIFormInfo>
+    - m_CachedNode : LinkedListNode<UIFormInfo>
+    + UIGroup(name:string, depth:int, uiGroupHelper:IUIGroupHelper)
+    + Name : string <<get>>
+    + Depth : int <<get>> <<set>>
+    + Pause : bool <<get>> <<set>>
+    + UIFormCount : int <<get>>
+    + CurrentUIForm : IUIForm <<get>>
+    + Helper : IUIGroupHelper <<get>>
+    + Update(elapseSeconds:float, realElapseSeconds:float) : void
+    + HasUIForm(serialId:int) : bool
+    + HasUIForm(uiFormAssetName:string) : bool
+    + GetUIForm(serialId:int) : IUIForm
+    + GetUIForm(uiFormAssetName:string) : IUIForm
+    + GetUIForms(uiFormAssetName:string) : IUIForm[]
+    + GetUIForms(uiFormAssetName:string, results:List<IUIForm>) : void
+    + GetAllUIForms() : IUIForm[]
+    + GetAllUIForms(results:List<IUIForm>) : void
+    + AddUIForm(uiForm:IUIForm) : void
+    + RemoveUIForm(uiForm:IUIForm) : void
+    + RefocusUIForm(uiForm:IUIForm, userData:object) : void
+    + Refresh() : void
+    <<internal>> InternalGetUIForms(uiFormAssetName:string, results:List<IUIForm>) : void
+    <<internal>> InternalGetAllUIForms(results:List<IUIForm>) : void
+    - GetUIFormInfo(uiForm:IUIForm) : UIFormInfo
+}
+GameFrameworkModule <|-- UIManager
+IUIManager <|-- UIManager
+UIManager +-- UIGroup
+IUIGroup <|-- UIGroup
+@enduml

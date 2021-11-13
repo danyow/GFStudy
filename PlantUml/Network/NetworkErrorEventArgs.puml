@@ -1,0 +1,12 @@
+@startuml
+class NetworkErrorEventArgs <<sealed>> {
+    + NetworkErrorEventArgs()
+    + NetworkChannel : INetworkChannel <<get>>
+    + ErrorCode : NetworkErrorCode <<get>>
+    + SocketErrorCode : SocketError <<get>>
+    + ErrorMessage : string <<get>>
+    + {static} Create(networkChannel:INetworkChannel, errorCode:NetworkErrorCode, socketErrorCode:SocketError, errorMessage:string) : NetworkErrorEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- NetworkErrorEventArgs
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+enum CheckVersionListResult {
+    Updated= 0,
+    NeedUpdate,
+}
+@enduml

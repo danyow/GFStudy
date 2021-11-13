@@ -1,0 +1,25 @@
+@startuml
+interface IFsmManager {
+    Count : int <<get>>
+    HasFsm() : bool
+    HasFsm(ownerType:Type) : bool
+    HasFsm(name:string) : bool
+    HasFsm(ownerType:Type, name:string) : bool
+    GetFsm() : IFsm<T>
+    GetFsm(ownerType:Type) : FsmBase
+    GetFsm(name:string) : IFsm<T>
+    GetFsm(ownerType:Type, name:string) : FsmBase
+    GetAllFsms() : FsmBase[]
+    GetAllFsms(results:List<FsmBase>) : void
+    CreateFsm(owner:T, states:FsmState<T>[]) : IFsm<T>
+    CreateFsm(name:string, owner:T, states:FsmState<T>[]) : IFsm<T>
+    CreateFsm(owner:T, states:List<FsmState<T>>) : IFsm<T>
+    CreateFsm(name:string, owner:T, states:List<FsmState<T>>) : IFsm<T>
+    DestroyFsm() : bool
+    DestroyFsm(ownerType:Type) : bool
+    DestroyFsm(name:string) : bool
+    DestroyFsm(ownerType:Type, name:string) : bool
+    DestroyFsm(fsm:IFsm<T>) : bool
+    DestroyFsm(fsm:FsmBase) : bool
+}
+@enduml

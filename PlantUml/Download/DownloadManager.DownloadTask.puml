@@ -1,0 +1,25 @@
+@startuml
+class DownloadManager <<sealed>> <<partial>> {
+}
+class DownloadTask <<sealed>> {
+    - {static} s_Serial : int = 0
+    - m_Status : DownloadTaskStatus
+    - m_DownloadPath : string
+    - m_DownloadUri : string
+    - m_FlushSize : int
+    - m_Timeout : float
+    + DownloadTask()
+    + Status : DownloadTaskStatus <<get>> <<set>>
+    + DownloadPath : string <<get>>
+    + DownloadUri : string <<get>>
+    + FlushSize : int <<get>>
+    + Timeout : float <<get>>
+    + <<override>> Description : string <<get>>
+    + {static} Create(downloadPath:string, downloadUri:string, tag:string, priority:int, flushSize:int, timeout:float, userData:object) : DownloadTask
+    + <<override>> Clear() : void
+}
+GameFrameworkModule <|-- DownloadManager
+IDownloadManager <|-- DownloadManager
+DownloadManager +-- DownloadTask
+TaskBase <|-- DownloadTask
+@enduml

@@ -1,0 +1,22 @@
+@startuml
+class ResourceManager <<sealed>> <<partial>> {
+}
+class ResourceLoader <<sealed>> <<partial>> {
+}
+class LoadSceneTask <<sealed>> {
+    - m_LoadSceneCallbacks : LoadSceneCallbacks
+    + LoadSceneTask()
+    + <<override>> IsScene : bool <<get>>
+    + {static} Create(sceneAssetName:string, priority:int, resourceInfo:ResourceInfo, dependencyAssetNames:string[], loadSceneCallbacks:LoadSceneCallbacks, userData:object) : LoadSceneTask
+    + <<override>> Clear() : void
+    + <<override>> OnLoadAssetSuccess(agent:LoadResourceAgent, asset:object, duration:float) : void
+    + <<override>> OnLoadAssetFailure(agent:LoadResourceAgent, status:LoadResourceStatus, errorMessage:string) : void
+    + <<override>> OnLoadAssetUpdate(agent:LoadResourceAgent, type:LoadResourceProgress, progress:float) : void
+    + <<override>> OnLoadDependencyAsset(agent:LoadResourceAgent, dependencyAssetName:string, dependencyAsset:object) : void
+}
+GameFrameworkModule <|-- ResourceManager
+IResourceManager <|-- ResourceManager
+ResourceManager +-- ResourceLoader
+ResourceLoader +-- LoadSceneTask
+LoadResourceTaskBase <|-- LoadSceneTask
+@enduml

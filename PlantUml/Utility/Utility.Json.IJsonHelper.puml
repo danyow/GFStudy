@@ -1,0 +1,13 @@
+@startuml
+class Utility <<static>> <<partial>> {
+}
+class Json <<static>> <<partial>> {
+}
+interface IJsonHelper {
+    ToJson(obj:object) : string
+    ToObject(json:string) : T
+    ToObject(objectType:Type, json:string) : object
+}
+Utility +-- Json
+Json +-- IJsonHelper
+@enduml

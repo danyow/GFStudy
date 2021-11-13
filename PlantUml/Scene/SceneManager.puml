@@ -1,0 +1,45 @@
+@startuml
+class SceneManager <<sealed>> {
+    - <<readonly>> m_LoadedSceneAssetNames : List<string>
+    - <<readonly>> m_LoadingSceneAssetNames : List<string>
+    - <<readonly>> m_UnloadingSceneAssetNames : List<string>
+    - <<readonly>> m_LoadSceneCallbacks : LoadSceneCallbacks
+    - <<readonly>> m_UnloadSceneCallbacks : UnloadSceneCallbacks
+    - m_ResourceManager : IResourceManager
+    - m_LoadSceneSuccessEventHandler : EventHandler<LoadSceneSuccessEventArgs>
+    - m_LoadSceneFailureEventHandler : EventHandler<LoadSceneFailureEventArgs>
+    - m_LoadSceneUpdateEventHandler : EventHandler<LoadSceneUpdateEventArgs>
+    - m_LoadSceneDependencyAssetEventHandler : EventHandler<LoadSceneDependencyAssetEventArgs>
+    - m_UnloadSceneSuccessEventHandler : EventHandler<UnloadSceneSuccessEventArgs>
+    - m_UnloadSceneFailureEventHandler : EventHandler<UnloadSceneFailureEventArgs>
+    + SceneManager()
+    <<internal>> <<override>> Priority : int <<get>>
+    <<internal>> <<override>> Update(elapseSeconds:float, realElapseSeconds:float) : void
+    <<internal>> <<override>> Shutdown() : void
+    + SetResourceManager(resourceManager:IResourceManager) : void
+    + SceneIsLoaded(sceneAssetName:string) : bool
+    + GetLoadedSceneAssetNames() : string[]
+    + GetLoadedSceneAssetNames(results:List<string>) : void
+    + SceneIsLoading(sceneAssetName:string) : bool
+    + GetLoadingSceneAssetNames() : string[]
+    + GetLoadingSceneAssetNames(results:List<string>) : void
+    + SceneIsUnloading(sceneAssetName:string) : bool
+    + GetUnloadingSceneAssetNames() : string[]
+    + GetUnloadingSceneAssetNames(results:List<string>) : void
+    + HasScene(sceneAssetName:string) : bool
+    + LoadScene(sceneAssetName:string) : void
+    + LoadScene(sceneAssetName:string, priority:int) : void
+    + LoadScene(sceneAssetName:string, userData:object) : void
+    + LoadScene(sceneAssetName:string, priority:int, userData:object) : void
+    + UnloadScene(sceneAssetName:string) : void
+    + UnloadScene(sceneAssetName:string, userData:object) : void
+    - LoadSceneSuccessCallback(sceneAssetName:string, duration:float, userData:object) : void
+    - LoadSceneFailureCallback(sceneAssetName:string, status:LoadResourceStatus, errorMessage:string, userData:object) : void
+    - LoadSceneUpdateCallback(sceneAssetName:string, progress:float, userData:object) : void
+    - LoadSceneDependencyAssetCallback(sceneAssetName:string, dependencyAssetName:string, loadedCount:int, totalCount:int, userData:object) : void
+    - UnloadSceneSuccessCallback(sceneAssetName:string, userData:object) : void
+    - UnloadSceneFailureCallback(sceneAssetName:string, userData:object) : void
+}
+GameFrameworkModule <|-- SceneManager
+ISceneManager <|-- SceneManager
+@enduml

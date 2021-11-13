@@ -1,0 +1,9 @@
+@startuml
+class WebRequestAgentHelperErrorEventArgs <<sealed>> {
+    + WebRequestAgentHelperErrorEventArgs()
+    + ErrorMessage : string <<get>>
+    + {static} Create(errorMessage:string) : WebRequestAgentHelperErrorEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- WebRequestAgentHelperErrorEventArgs
+@enduml

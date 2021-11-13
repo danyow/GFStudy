@@ -1,0 +1,40 @@
+@startuml
+class ResourceManager <<sealed>> <<partial>> {
+}
+class ResourceChecker <<sealed>> <<partial>> {
+}
+class CheckInfo <<sealed>> <<partial>> {
+    - <<readonly>> m_ResourceName : ResourceName
+    - m_Status : CheckStatus
+    - m_NeedRemove : bool
+    - m_NeedMoveToDisk : bool
+    - m_NeedMoveToFileSystem : bool
+    - m_VersionInfo : RemoteVersionInfo
+    - m_ReadOnlyInfo : LocalVersionInfo
+    - m_ReadWriteInfo : LocalVersionInfo
+    - m_CachedFileSystemName : string
+    + CheckInfo(resourceName:ResourceName)
+    + ResourceName : ResourceName <<get>>
+    + Status : CheckStatus <<get>>
+    + NeedRemove : bool <<get>>
+    + NeedMoveToDisk : bool <<get>>
+    + NeedMoveToFileSystem : bool <<get>>
+    + FileSystemName : string <<get>>
+    + ReadWriteUseFileSystem : bool <<get>>
+    + ReadWriteFileSystemName : string <<get>>
+    + LoadType : LoadType <<get>>
+    + Length : int <<get>>
+    + HashCode : int <<get>>
+    + CompressedLength : int <<get>>
+    + CompressedHashCode : int <<get>>
+    + SetCachedFileSystemName(fileSystemName:string) : void
+    + SetVersionInfo(loadType:LoadType, length:int, hashCode:int, compressedLength:int, compressedHashCode:int) : void
+    + SetReadOnlyInfo(loadType:LoadType, length:int, hashCode:int) : void
+    + SetReadWriteInfo(loadType:LoadType, length:int, hashCode:int) : void
+    + RefreshStatus(currentVariant:string, ignoreOtherVariant:bool) : void
+}
+GameFrameworkModule <|-- ResourceManager
+IResourceManager <|-- ResourceManager
+ResourceManager +-- ResourceChecker
+ResourceChecker +-- CheckInfo
+@enduml

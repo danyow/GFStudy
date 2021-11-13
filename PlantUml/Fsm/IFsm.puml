@@ -1,0 +1,26 @@
+@startuml
+interface "IFsm`1"<T> {
+    Name : string <<get>>
+    FullName : string <<get>>
+    Owner : T <<get>>
+    FsmStateCount : int <<get>>
+    IsRunning : bool <<get>>
+    IsDestroyed : bool <<get>>
+    CurrentState : FsmState<T> <<get>>
+    CurrentStateTime : float <<get>>
+    Start() : void
+    Start(stateType:Type) : void
+    HasState() : bool
+    HasState(stateType:Type) : bool
+    GetState() : TState
+    GetState(stateType:Type) : FsmState<T>
+    GetAllStates() : FsmState<T>[]
+    GetAllStates(results:List<FsmState<T>>) : void
+    HasData(name:string) : bool
+    GetData(name:string) : TData
+    GetData(name:string) : Variable
+    SetData(name:string, data:TData) : void
+    SetData(name:string, data:Variable) : void
+    RemoveData(name:string) : bool
+}
+@enduml

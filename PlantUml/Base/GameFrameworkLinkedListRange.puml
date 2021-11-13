@@ -1,0 +1,31 @@
+@startuml
+class "GameFrameworkLinkedListRange`1"<T> <<struct>> {
+    - <<readonly>> m_First : LinkedListNode<T>
+    - <<readonly>> m_Terminal : LinkedListNode<T>
+    + GameFrameworkLinkedListRange(first:LinkedListNode<T>, terminal:LinkedListNode<T>)
+    + IsValid : bool <<get>>
+    + First : LinkedListNode<T> <<get>>
+    + Terminal : LinkedListNode<T> <<get>>
+    + Count : int <<get>>
+    + Contains(value:T) : bool
+    + GetEnumerator() : Enumerator
+    GetEnumerator() : IEnumerator<T>
+    GetEnumerator() : IEnumerator
+}
+class Enumerator <<struct>> {
+    - <<readonly>> m_GameFrameworkLinkedListRange : GameFrameworkLinkedListRange<T>
+    - m_Current : LinkedListNode<T>
+    - m_CurrentValue : T
+    <<internal>> Enumerator(range:GameFrameworkLinkedListRange<T>)
+    + Current : T <<get>>
+    Current : object <<get>>
+    + Dispose() : void
+    + MoveNext() : bool
+    Reset() : void
+}
+"IEnumerable`1" "<T>" <|-- "GameFrameworkLinkedListRange`1"
+IEnumerable <|-- "GameFrameworkLinkedListRange`1"
+"GameFrameworkLinkedListRange`1" +-- Enumerator
+"IEnumerator`1" "<T>" <|-- Enumerator
+IEnumerator <|-- Enumerator
+@enduml

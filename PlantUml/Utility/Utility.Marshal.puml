@@ -1,0 +1,23 @@
+@startuml
+class Utility <<static>> <<partial>> {
+}
+class Marshal <<static>> {
+    - <<const>> BlockSize : int
+    - {static} s_CachedHGlobalPtr : IntPtr
+    - {static} s_CachedHGlobalSize : int = 0
+    + {static} CachedHGlobalSize : int <<get>>
+    + {static} EnsureCachedHGlobalSize(ensureSize:int) : void
+    + {static} FreeCachedHGlobal() : void
+    + {static} StructureToBytes(structure:T) : byte[]
+    <<internal>> {static} StructureToBytes(structure:T, structureSize:int) : byte[]
+    + {static} StructureToBytes(structure:T, result:byte[]) : void
+    <<internal>> {static} StructureToBytes(structure:T, structureSize:int, result:byte[]) : void
+    + {static} StructureToBytes(structure:T, result:byte[], startIndex:int) : void
+    <<internal>> {static} StructureToBytes(structure:T, structureSize:int, result:byte[], startIndex:int) : void
+    + {static} BytesToStructure(buffer:byte[]) : T
+    + {static} BytesToStructure(buffer:byte[], startIndex:int) : T
+    <<internal>> {static} BytesToStructure(structureSize:int, buffer:byte[]) : T
+    <<internal>> {static} BytesToStructure(structureSize:int, buffer:byte[], startIndex:int) : T
+}
+Utility +-- Marshal
+@enduml

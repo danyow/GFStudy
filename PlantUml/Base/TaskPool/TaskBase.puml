@@ -1,0 +1,20 @@
+@startuml
+abstract class TaskBase {
+    + <<const>> DefaultPriority : int = 0
+    - m_SerialId : int
+    - m_Tag : string
+    - m_Priority : int
+    - m_UserData : object
+    - m_Done : bool
+    + TaskBase()
+    + SerialId : int <<get>>
+    + Tag : string <<get>>
+    + Priority : int <<get>>
+    + UserData : object <<get>>
+    + Done : bool <<get>> <<set>>
+    + <<virtual>> Description : string <<get>>
+    <<internal>> Initialize(serialId:int, tag:string, priority:int, userData:object) : void
+    + <<virtual>> Clear() : void
+}
+IReference <|-- TaskBase
+@enduml

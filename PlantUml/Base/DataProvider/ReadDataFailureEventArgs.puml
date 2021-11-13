@@ -1,0 +1,11 @@
+@startuml
+class ReadDataFailureEventArgs <<sealed>> {
+    + ReadDataFailureEventArgs()
+    + DataAssetName : string <<get>>
+    + ErrorMessage : string <<get>>
+    + UserData : object <<get>>
+    + {static} Create(dataAssetName:string, errorMessage:string, userData:object) : ReadDataFailureEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- ReadDataFailureEventArgs
+@enduml

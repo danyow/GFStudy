@@ -1,0 +1,6 @@
+@startuml
+interface IPacketHandler {
+    Id : int <<get>>
+    Handle(sender:object, packet:Packet) : void
+}
+@enduml

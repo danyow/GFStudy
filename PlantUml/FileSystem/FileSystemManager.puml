@@ -1,0 +1,21 @@
+@startuml
+class FileSystemManager <<sealed>> {
+    - <<readonly>> m_FileSystems : Dictionary<string, FileSystem>
+    - m_FileSystemHelper : IFileSystemHelper
+    + FileSystemManager()
+    <<internal>> <<override>> Priority : int <<get>>
+    + Count : int <<get>>
+    <<internal>> <<override>> Update(elapseSeconds:float, realElapseSeconds:float) : void
+    <<internal>> <<override>> Shutdown() : void
+    + SetFileSystemHelper(fileSystemHelper:IFileSystemHelper) : void
+    + HasFileSystem(fullPath:string) : bool
+    + GetFileSystem(fullPath:string) : IFileSystem
+    + CreateFileSystem(fullPath:string, access:FileSystemAccess, maxFileCount:int, maxBlockCount:int) : IFileSystem
+    + LoadFileSystem(fullPath:string, access:FileSystemAccess) : IFileSystem
+    + DestroyFileSystem(fileSystem:IFileSystem, deletePhysicalFile:bool) : void
+    + GetAllFileSystems() : IFileSystem[]
+    + GetAllFileSystems(results:List<IFileSystem>) : void
+}
+GameFrameworkModule <|-- FileSystemManager
+IFileSystemManager <|-- FileSystemManager
+@enduml

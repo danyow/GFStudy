@@ -1,0 +1,9 @@
+@startuml
+interface IWebRequestAgentHelper {
+     <<event>> WebRequestAgentHelperComplete : EventHandler<WebRequestAgentHelperCompleteEventArgs> 
+     <<event>> WebRequestAgentHelperError : EventHandler<WebRequestAgentHelperErrorEventArgs> 
+    Request(webRequestUri:string, userData:object) : void
+    Request(webRequestUri:string, postData:byte[], userData:object) : void
+    Reset() : void
+}
+@enduml

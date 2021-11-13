@@ -1,0 +1,7 @@
+@startuml
+enum AddressFamily {
+    Unknown= 0,
+    IPv4,
+    IPv6,
+}
+@enduml

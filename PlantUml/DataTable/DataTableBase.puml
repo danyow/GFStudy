@@ -1,0 +1,31 @@
+@startuml
+abstract class DataTableBase {
+    - <<readonly>> m_Name : string
+    - <<readonly>> m_DataProvider : DataProvider<DataTableBase>
+    + DataTableBase()
+    + DataTableBase(name:string)
+    + Name : string <<get>>
+    + FullName : string <<get>>
+    + {abstract} Type : Type <<get>>
+    + {abstract} Count : int <<get>>
+    + ReadData(dataTableAssetName:string) : void
+    + ReadData(dataTableAssetName:string, priority:int) : void
+    + ReadData(dataTableAssetName:string, userData:object) : void
+    + ReadData(dataTableAssetName:string, priority:int, userData:object) : void
+    + ParseData(dataTableString:string) : bool
+    + ParseData(dataTableString:string, userData:object) : bool
+    + ParseData(dataTableBytes:byte[]) : bool
+    + ParseData(dataTableBytes:byte[], userData:object) : bool
+    + ParseData(dataTableBytes:byte[], startIndex:int, length:int) : bool
+    + ParseData(dataTableBytes:byte[], startIndex:int, length:int, userData:object) : bool
+    + {abstract} HasDataRow(id:int) : bool
+    + {abstract} AddDataRow(dataRowString:string, userData:object) : bool
+    + {abstract} AddDataRow(dataRowBytes:byte[], startIndex:int, length:int, userData:object) : bool
+    + {abstract} RemoveDataRow(id:int) : bool
+    + {abstract} RemoveAllDataRows() : void
+    <<internal>> SetResourceManager(resourceManager:IResourceManager) : void
+    <<internal>> SetDataProviderHelper(dataProviderHelper:IDataProviderHelper<DataTableBase>) : void
+    <<internal>> {abstract} Shutdown() : void
+}
+"IDataProvider`1" "<DataTableBase>" <|-- DataTableBase
+@enduml

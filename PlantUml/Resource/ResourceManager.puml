@@ -1,0 +1,185 @@
+@startuml
+class ResourceManager <<sealed>> <<partial>> {
+    - <<const>> RemoteVersionListFileName : string = "GameFrameworkVersion.dat"
+    - <<const>> LocalVersionListFileName : string = "GameFrameworkList.dat"
+    - <<const>> DefaultExtension : string = "dat"
+    - <<const>> TempExtension : string = "tmp"
+    - <<const>> FileSystemMaxFileCount : int
+    - <<const>> FileSystemMaxBlockCount : int
+    - m_AssetInfos : Dictionary<string, AssetInfo>
+    - m_ResourceInfos : Dictionary<ResourceName, ResourceInfo>
+    - m_ReadWriteResourceInfos : SortedDictionary<ResourceName, ReadWriteResourceInfo>
+    - <<readonly>> m_ReadOnlyFileSystems : Dictionary<string, IFileSystem>
+    - <<readonly>> m_ReadWriteFileSystems : Dictionary<string, IFileSystem>
+    - <<readonly>> m_ResourceGroups : Dictionary<string, ResourceGroup>
+    - m_PackageVersionListSerializer : PackageVersionListSerializer
+    - m_UpdatableVersionListSerializer : UpdatableVersionListSerializer
+    - m_ReadOnlyVersionListSerializer : ReadOnlyVersionListSerializer
+    - m_ReadWriteVersionListSerializer : ReadWriteVersionListSerializer
+    - m_ResourcePackVersionListSerializer : ResourcePackVersionListSerializer
+    - m_FileSystemManager : IFileSystemManager
+    - m_ResourceIniter : ResourceIniter
+    - m_VersionListProcessor : VersionListProcessor
+    - m_ResourceVerifier : ResourceVerifier
+    - m_ResourceChecker : ResourceChecker
+    - m_ResourceUpdater : ResourceUpdater
+    - m_ResourceLoader : ResourceLoader
+    - m_ResourceHelper : IResourceHelper
+    - m_ReadOnlyPath : string
+    - m_ReadWritePath : string
+    - m_ResourceMode : ResourceMode
+    - m_RefuseSetFlag : bool
+    - m_CurrentVariant : string
+    - m_UpdatePrefixUri : string
+    - m_ApplicableGameVersion : string
+    - m_InternalResourceVersion : int
+    - m_CachedStream : MemoryStream
+    - m_DecryptResourceCallback : DecryptResourceCallback
+    - m_InitResourcesCompleteCallback : InitResourcesCompleteCallback
+    - m_UpdateVersionListCallbacks : UpdateVersionListCallbacks
+    - m_VerifyResourcesCompleteCallback : VerifyResourcesCompleteCallback
+    - m_CheckResourcesCompleteCallback : CheckResourcesCompleteCallback
+    - m_ApplyResourcesCompleteCallback : ApplyResourcesCompleteCallback
+    - m_UpdateResourcesCompleteCallback : UpdateResourcesCompleteCallback
+    - m_ResourceVerifyStartEventHandler : EventHandler<ResourceVerifyStartEventArgs>
+    - m_ResourceVerifySuccessEventHandler : EventHandler<ResourceVerifySuccessEventArgs>
+    - m_ResourceVerifyFailureEventHandler : EventHandler<ResourceVerifyFailureEventArgs>
+    - m_ResourceApplyStartEventHandler : EventHandler<ResourceApplyStartEventArgs>
+    - m_ResourceApplySuccessEventHandler : EventHandler<ResourceApplySuccessEventArgs>
+    - m_ResourceApplyFailureEventHandler : EventHandler<ResourceApplyFailureEventArgs>
+    - m_ResourceUpdateStartEventHandler : EventHandler<ResourceUpdateStartEventArgs>
+    - m_ResourceUpdateChangedEventHandler : EventHandler<ResourceUpdateChangedEventArgs>
+    - m_ResourceUpdateSuccessEventHandler : EventHandler<ResourceUpdateSuccessEventArgs>
+    - m_ResourceUpdateFailureEventHandler : EventHandler<ResourceUpdateFailureEventArgs>
+    - m_ResourceUpdateAllCompleteEventHandler : EventHandler<ResourceUpdateAllCompleteEventArgs>
+    + ResourceManager()
+    <<internal>> <<override>> Priority : int <<get>>
+    + ReadOnlyPath : string <<get>>
+    + ReadWritePath : string <<get>>
+    + ResourceMode : ResourceMode <<get>>
+    + CurrentVariant : string <<get>>
+    + PackageVersionListSerializer : PackageVersionListSerializer <<get>>
+    + UpdatableVersionListSerializer : UpdatableVersionListSerializer <<get>>
+    + ReadOnlyVersionListSerializer : ReadOnlyVersionListSerializer <<get>>
+    + ReadWriteVersionListSerializer : ReadWriteVersionListSerializer <<get>>
+    + ResourcePackVersionListSerializer : ResourcePackVersionListSerializer <<get>>
+    + ApplicableGameVersion : string <<get>>
+    + InternalResourceVersion : int <<get>>
+    + AssetCount : int <<get>>
+    + ResourceCount : int <<get>>
+    + ResourceGroupCount : int <<get>>
+    + UpdatePrefixUri : string <<get>> <<set>>
+    + GenerateReadWriteVersionListLength : int <<get>> <<set>>
+    + ApplyingResourcePackPath : string <<get>>
+    + ApplyWaitingCount : int <<get>>
+    + UpdateRetryCount : int <<get>> <<set>>
+    + UpdatingResourceGroup : IResourceGroup <<get>>
+    + UpdateWaitingCount : int <<get>>
+    + UpdateWaitingWhilePlayingCount : int <<get>>
+    + UpdateCandidateCount : int <<get>>
+    + LoadTotalAgentCount : int <<get>>
+    + LoadFreeAgentCount : int <<get>>
+    + LoadWorkingAgentCount : int <<get>>
+    + LoadWaitingTaskCount : int <<get>>
+    + AssetAutoReleaseInterval : float <<get>> <<set>>
+    + AssetCapacity : int <<get>> <<set>>
+    + AssetExpireTime : float <<get>> <<set>>
+    + AssetPriority : int <<get>> <<set>>
+    + ResourceAutoReleaseInterval : float <<get>> <<set>>
+    + ResourceCapacity : int <<get>> <<set>>
+    + ResourceExpireTime : float <<get>> <<set>>
+    + ResourcePriority : int <<get>> <<set>>
+    <<internal>> <<override>> Update(elapseSeconds:float, realElapseSeconds:float) : void
+    <<internal>> <<override>> Shutdown() : void
+    + SetReadOnlyPath(readOnlyPath:string) : void
+    + SetReadWritePath(readWritePath:string) : void
+    + SetResourceMode(resourceMode:ResourceMode) : void
+    + SetCurrentVariant(currentVariant:string) : void
+    + SetObjectPoolManager(objectPoolManager:IObjectPoolManager) : void
+    + SetFileSystemManager(fileSystemManager:IFileSystemManager) : void
+    + SetDownloadManager(downloadManager:IDownloadManager) : void
+    + SetDecryptResourceCallback(decryptResourceCallback:DecryptResourceCallback) : void
+    + SetResourceHelper(resourceHelper:IResourceHelper) : void
+    + AddLoadResourceAgentHelper(loadResourceAgentHelper:ILoadResourceAgentHelper) : void
+    + InitResources(initResourcesCompleteCallback:InitResourcesCompleteCallback) : void
+    + CheckVersionList(latestInternalResourceVersion:int) : CheckVersionListResult
+    + UpdateVersionList(versionListLength:int, versionListHashCode:int, versionListCompressedLength:int, versionListCompressedHashCode:int, updateVersionListCallbacks:UpdateVersionListCallbacks) : void
+    + VerifyResources(verifyResourceLengthPerFrame:int, verifyResourcesCompleteCallback:VerifyResourcesCompleteCallback) : void
+    + CheckResources(ignoreOtherVariant:bool, checkResourcesCompleteCallback:CheckResourcesCompleteCallback) : void
+    + ApplyResources(resourcePackPath:string, applyResourcesCompleteCallback:ApplyResourcesCompleteCallback) : void
+    + UpdateResources(updateResourcesCompleteCallback:UpdateResourcesCompleteCallback) : void
+    + UpdateResources(resourceGroupName:string, updateResourcesCompleteCallback:UpdateResourcesCompleteCallback) : void
+    + StopUpdateResources() : void
+    + VerifyResourcePack(resourcePackPath:string) : bool
+    + GetAllLoadAssetInfos() : TaskInfo[]
+    + GetAllLoadAssetInfos(results:List<TaskInfo>) : void
+    + HasAsset(assetName:string) : HasAssetResult
+    + LoadAsset(assetName:string, loadAssetCallbacks:LoadAssetCallbacks) : void
+    + LoadAsset(assetName:string, assetType:Type, loadAssetCallbacks:LoadAssetCallbacks) : void
+    + LoadAsset(assetName:string, priority:int, loadAssetCallbacks:LoadAssetCallbacks) : void
+    + LoadAsset(assetName:string, loadAssetCallbacks:LoadAssetCallbacks, userData:object) : void
+    + LoadAsset(assetName:string, assetType:Type, priority:int, loadAssetCallbacks:LoadAssetCallbacks) : void
+    + LoadAsset(assetName:string, assetType:Type, loadAssetCallbacks:LoadAssetCallbacks, userData:object) : void
+    + LoadAsset(assetName:string, priority:int, loadAssetCallbacks:LoadAssetCallbacks, userData:object) : void
+    + LoadAsset(assetName:string, assetType:Type, priority:int, loadAssetCallbacks:LoadAssetCallbacks, userData:object) : void
+    + UnloadAsset(asset:object) : void
+    + LoadScene(sceneAssetName:string, loadSceneCallbacks:LoadSceneCallbacks) : void
+    + LoadScene(sceneAssetName:string, priority:int, loadSceneCallbacks:LoadSceneCallbacks) : void
+    + LoadScene(sceneAssetName:string, loadSceneCallbacks:LoadSceneCallbacks, userData:object) : void
+    + LoadScene(sceneAssetName:string, priority:int, loadSceneCallbacks:LoadSceneCallbacks, userData:object) : void
+    + UnloadScene(sceneAssetName:string, unloadSceneCallbacks:UnloadSceneCallbacks) : void
+    + UnloadScene(sceneAssetName:string, unloadSceneCallbacks:UnloadSceneCallbacks, userData:object) : void
+    + GetBinaryPath(binaryAssetName:string) : string
+    + GetBinaryPath(binaryAssetName:string, storageInReadOnly:bool, storageInFileSystem:bool, relativePath:string, fileName:string) : bool
+    + GetBinaryLength(binaryAssetName:string) : int
+    + LoadBinary(binaryAssetName:string, loadBinaryCallbacks:LoadBinaryCallbacks) : void
+    + LoadBinary(binaryAssetName:string, loadBinaryCallbacks:LoadBinaryCallbacks, userData:object) : void
+    + LoadBinaryFromFileSystem(binaryAssetName:string) : byte[]
+    + LoadBinaryFromFileSystem(binaryAssetName:string, buffer:byte[]) : int
+    + LoadBinaryFromFileSystem(binaryAssetName:string, buffer:byte[], startIndex:int) : int
+    + LoadBinaryFromFileSystem(binaryAssetName:string, buffer:byte[], startIndex:int, length:int) : int
+    + LoadBinarySegmentFromFileSystem(binaryAssetName:string, length:int) : byte[]
+    + LoadBinarySegmentFromFileSystem(binaryAssetName:string, offset:int, length:int) : byte[]
+    + LoadBinarySegmentFromFileSystem(binaryAssetName:string, buffer:byte[]) : int
+    + LoadBinarySegmentFromFileSystem(binaryAssetName:string, buffer:byte[], length:int) : int
+    + LoadBinarySegmentFromFileSystem(binaryAssetName:string, buffer:byte[], startIndex:int, length:int) : int
+    + LoadBinarySegmentFromFileSystem(binaryAssetName:string, offset:int, buffer:byte[]) : int
+    + LoadBinarySegmentFromFileSystem(binaryAssetName:string, offset:int, buffer:byte[], length:int) : int
+    + LoadBinarySegmentFromFileSystem(binaryAssetName:string, offset:int, buffer:byte[], startIndex:int, length:int) : int
+    + HasResourceGroup(resourceGroupName:string) : bool
+    + GetResourceGroup() : IResourceGroup
+    + GetResourceGroup(resourceGroupName:string) : IResourceGroup
+    + GetAllResourceGroups() : IResourceGroup[]
+    + GetAllResourceGroups(results:List<IResourceGroup>) : void
+    + GetResourceGroupCollection(resourceGroupNames:string[]) : IResourceGroupCollection
+    + GetResourceGroupCollection(resourceGroupNames:List<string>) : IResourceGroupCollection
+    - UpdateResource(resourceName:ResourceName) : void
+    - GetOrAddResourceGroup(resourceGroupName:string) : ResourceGroup
+    - GetAssetInfo(assetName:string) : AssetInfo
+    - GetResourceInfo(resourceName:ResourceName) : ResourceInfo
+    - GetFileSystem(fileSystemName:string, storageInReadOnly:bool) : IFileSystem
+    - PrepareCachedStream() : void
+    - FreeCachedStream() : void
+    - OnIniterResourceInitComplete() : void
+    - OnVersionListProcessorUpdateSuccess(downloadPath:string, downloadUri:string) : void
+    - OnVersionListProcessorUpdateFailure(downloadUri:string, errorMessage:string) : void
+    - OnVerifierResourceVerifyStart(count:int, totalLength:long) : void
+    - OnVerifierResourceVerifySuccess(resourceName:ResourceName, length:int) : void
+    - OnVerifierResourceVerifyFailure(resourceName:ResourceName) : void
+    - OnVerifierResourceVerifyComplete(result:bool) : void
+    - OnCheckerResourceNeedUpdate(resourceName:ResourceName, fileSystemName:string, loadType:LoadType, length:int, hashCode:int, compressedLength:int, compressedHashCode:int) : void
+    - OnCheckerResourceCheckComplete(movedCount:int, removedCount:int, updateCount:int, updateTotalLength:long, updateTotalCompressedLength:long) : void
+    - OnUpdaterResourceApplyStart(resourcePackPath:string, count:int, totalLength:long) : void
+    - OnUpdaterResourceApplySuccess(resourceName:ResourceName, applyPath:string, resourcePackPath:string, length:int, compressedLength:int) : void
+    - OnUpdaterResourceApplyFailure(resourceName:ResourceName, resourcePackPath:string, errorMessage:string) : void
+    - OnUpdaterResourceApplyComplete(resourcePackPath:string, result:bool) : void
+    - OnUpdaterResourceUpdateStart(resourceName:ResourceName, downloadPath:string, downloadUri:string, currentLength:int, compressedLength:int, retryCount:int) : void
+    - OnUpdaterResourceUpdateChanged(resourceName:ResourceName, downloadPath:string, downloadUri:string, currentLength:int, compressedLength:int) : void
+    - OnUpdaterResourceUpdateSuccess(resourceName:ResourceName, downloadPath:string, downloadUri:string, length:int, compressedLength:int) : void
+    - OnUpdaterResourceUpdateFailure(resourceName:ResourceName, downloadUri:string, retryCount:int, totalRetryCount:int, errorMessage:string) : void
+    - OnUpdaterResourceUpdateComplete(resourceGroup:ResourceGroup, result:bool) : void
+    - OnUpdaterResourceUpdateAllComplete() : void
+}
+GameFrameworkModule <|-- ResourceManager
+IResourceManager <|-- ResourceManager
+@enduml

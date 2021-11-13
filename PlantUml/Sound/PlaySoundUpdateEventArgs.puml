@@ -1,0 +1,14 @@
+@startuml
+class PlaySoundUpdateEventArgs <<sealed>> {
+    + PlaySoundUpdateEventArgs()
+    + SerialId : int <<get>>
+    + SoundAssetName : string <<get>>
+    + SoundGroupName : string <<get>>
+    + PlaySoundParams : PlaySoundParams <<get>>
+    + Progress : float <<get>>
+    + UserData : object <<get>>
+    + {static} Create(serialId:int, soundAssetName:string, soundGroupName:string, playSoundParams:PlaySoundParams, progress:float, userData:object) : PlaySoundUpdateEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- PlaySoundUpdateEventArgs
+@enduml

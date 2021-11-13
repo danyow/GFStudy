@@ -1,0 +1,16 @@
+@startuml
+class ResourceManager <<sealed>> <<partial>> {
+}
+enum LoadType {
+    LoadFromFile= 0,
+    LoadFromMemory,
+    LoadFromMemoryAndQuickDecrypt,
+    LoadFromMemoryAndDecrypt,
+    LoadFromBinary,
+    LoadFromBinaryAndQuickDecrypt,
+    LoadFromBinaryAndDecrypt,
+}
+GameFrameworkModule <|-- ResourceManager
+IResourceManager <|-- ResourceManager
+ResourceManager +-- LoadType
+@enduml

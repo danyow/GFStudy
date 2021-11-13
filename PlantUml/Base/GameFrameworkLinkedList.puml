@@ -1,0 +1,55 @@
+@startuml
+class "GameFrameworkLinkedList`1"<T> <<sealed>> {
+    - <<readonly>> m_LinkedList : LinkedList<T>
+    - <<readonly>> m_CachedNodes : Queue<LinkedListNode<T>>
+    + GameFrameworkLinkedList()
+    + Count : int <<get>>
+    + CachedNodeCount : int <<get>>
+    + First : LinkedListNode<T> <<get>>
+    + Last : LinkedListNode<T> <<get>>
+    + IsReadOnly : bool <<get>>
+    + SyncRoot : object <<get>>
+    + IsSynchronized : bool <<get>>
+    + AddAfter(node:LinkedListNode<T>, value:T) : LinkedListNode<T>
+    + AddAfter(node:LinkedListNode<T>, newNode:LinkedListNode<T>) : void
+    + AddBefore(node:LinkedListNode<T>, value:T) : LinkedListNode<T>
+    + AddBefore(node:LinkedListNode<T>, newNode:LinkedListNode<T>) : void
+    + AddFirst(value:T) : LinkedListNode<T>
+    + AddFirst(node:LinkedListNode<T>) : void
+    + AddLast(value:T) : LinkedListNode<T>
+    + AddLast(node:LinkedListNode<T>) : void
+    + Clear() : void
+    + ClearCachedNodes() : void
+    + Contains(value:T) : bool
+    + CopyTo(array:T[], index:int) : void
+    + CopyTo(array:Array, index:int) : void
+    + Find(value:T) : LinkedListNode<T>
+    + FindLast(value:T) : LinkedListNode<T>
+    + Remove(value:T) : bool
+    + Remove(node:LinkedListNode<T>) : void
+    + RemoveFirst() : void
+    + RemoveLast() : void
+    + GetEnumerator() : Enumerator
+    - AcquireNode(value:T) : LinkedListNode<T>
+    - ReleaseNode(node:LinkedListNode<T>) : void
+    Add(value:T) : void
+    GetEnumerator() : IEnumerator<T>
+    GetEnumerator() : IEnumerator
+}
+class Enumerator <<struct>> {
+    - m_Enumerator : LinkedList<T>.Enumerator
+    <<internal>> Enumerator(linkedList:LinkedList<T>)
+    + Current : T <<get>>
+    Current : object <<get>>
+    + Dispose() : void
+    + MoveNext() : bool
+    Reset() : void
+}
+"ICollection`1" "<T>" <|-- "GameFrameworkLinkedList`1"
+"IEnumerable`1" "<T>" <|-- "GameFrameworkLinkedList`1"
+ICollection <|-- "GameFrameworkLinkedList`1"
+IEnumerable <|-- "GameFrameworkLinkedList`1"
+"GameFrameworkLinkedList`1" +-- Enumerator
+"IEnumerator`1" "<T>" <|-- Enumerator
+IEnumerator <|-- Enumerator
+@enduml

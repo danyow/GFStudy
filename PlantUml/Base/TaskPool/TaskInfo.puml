@@ -1,0 +1,19 @@
+@startuml
+class TaskInfo <<struct>> {
+    - <<readonly>> m_IsValid : bool
+    - <<readonly>> m_SerialId : int
+    - <<readonly>> m_Tag : string
+    - <<readonly>> m_Priority : int
+    - <<readonly>> m_UserData : object
+    - <<readonly>> m_Status : TaskStatus
+    - <<readonly>> m_Description : string
+    + TaskInfo(serialId:int, tag:string, priority:int, userData:object, status:TaskStatus, description:string)
+    + IsValid : bool <<get>>
+    + SerialId : int <<get>>
+    + Tag : string <<get>>
+    + Priority : int <<get>>
+    + UserData : object <<get>>
+    + Status : TaskStatus <<get>>
+    + Description : string <<get>>
+}
+@enduml

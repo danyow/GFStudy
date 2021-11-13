@@ -1,0 +1,13 @@
+@startuml
+class ShowEntityUpdateEventArgs <<sealed>> {
+    + ShowEntityUpdateEventArgs()
+    + EntityId : int <<get>>
+    + EntityAssetName : string <<get>>
+    + EntityGroupName : string <<get>>
+    + Progress : float <<get>>
+    + UserData : object <<get>>
+    + {static} Create(entityId:int, entityAssetName:string, entityGroupName:string, progress:float, userData:object) : ShowEntityUpdateEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- ShowEntityUpdateEventArgs
+@enduml

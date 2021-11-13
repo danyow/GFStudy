@@ -1,0 +1,13 @@
+@startuml
+interface IProcedureManager {
+    CurrentProcedure : ProcedureBase <<get>>
+    CurrentProcedureTime : float <<get>>
+    Initialize(fsmManager:IFsmManager, procedures:ProcedureBase[]) : void
+    StartProcedure() : void
+    StartProcedure(procedureType:Type) : void
+    HasProcedure() : bool
+    HasProcedure(procedureType:Type) : bool
+    GetProcedure() : ProcedureBase
+    GetProcedure(procedureType:Type) : ProcedureBase
+}
+@enduml

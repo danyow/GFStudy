@@ -1,0 +1,12 @@
+@startuml
+abstract class "FsmState`1"<T> {
+    + FsmState()
+    # <<internal>> <<virtual>> OnInit(fsm:IFsm<T>) : void
+    # <<internal>> <<virtual>> OnEnter(fsm:IFsm<T>) : void
+    # <<internal>> <<virtual>> OnUpdate(fsm:IFsm<T>, elapseSeconds:float, realElapseSeconds:float) : void
+    # <<internal>> <<virtual>> OnLeave(fsm:IFsm<T>, isShutdown:bool) : void
+    # <<internal>> <<virtual>> OnDestroy(fsm:IFsm<T>) : void
+    # ChangeState(fsm:IFsm<T>) : void
+    # ChangeState(fsm:IFsm<T>, stateType:Type) : void
+}
+@enduml

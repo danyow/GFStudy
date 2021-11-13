@@ -1,0 +1,18 @@
+@startuml
+class EntityManager <<sealed>> <<partial>> {
+}
+enum EntityStatus {
+    Unknown= 0,
+    WillInit,
+    Inited,
+    WillShow,
+    Showed,
+    WillHide,
+    Hidden,
+    WillRecycle,
+    Recycled,
+}
+GameFrameworkModule <|-- EntityManager
+IEntityManager <|-- EntityManager
+EntityManager +-- EntityStatus
+@enduml

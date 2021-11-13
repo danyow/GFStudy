@@ -1,0 +1,9 @@
+@startuml
+class DownloadAgentHelperUpdateLengthEventArgs <<sealed>> {
+    + DownloadAgentHelperUpdateLengthEventArgs()
+    + DeltaLength : int <<get>>
+    + {static} Create(deltaLength:int) : DownloadAgentHelperUpdateLengthEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- DownloadAgentHelperUpdateLengthEventArgs
+@enduml

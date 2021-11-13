@@ -1,0 +1,9 @@
+@startuml
+class GameFrameworkException {
+    + GameFrameworkException()
+    + GameFrameworkException(message:string)
+    + GameFrameworkException(message:string, innerException:Exception)
+    # GameFrameworkException(info:SerializationInfo, context:StreamingContext)
+}
+Exception <|-- GameFrameworkException
+@enduml

@@ -1,0 +1,31 @@
+@startuml
+interface ISettingManager {
+    Count : int <<get>>
+    SetSettingHelper(settingHelper:ISettingHelper) : void
+    Load() : bool
+    Save() : bool
+    GetAllSettingNames() : string[]
+    GetAllSettingNames(results:List<string>) : void
+    HasSetting(settingName:string) : bool
+    RemoveSetting(settingName:string) : bool
+    RemoveAllSettings() : void
+    GetBool(settingName:string) : bool
+    GetBool(settingName:string, defaultValue:bool) : bool
+    SetBool(settingName:string, value:bool) : void
+    GetInt(settingName:string) : int
+    GetInt(settingName:string, defaultValue:int) : int
+    SetInt(settingName:string, value:int) : void
+    GetFloat(settingName:string) : float
+    GetFloat(settingName:string, defaultValue:float) : float
+    SetFloat(settingName:string, value:float) : void
+    GetString(settingName:string) : string
+    GetString(settingName:string, defaultValue:string) : string
+    SetString(settingName:string, value:string) : void
+    GetObject(settingName:string) : T
+    GetObject(objectType:Type, settingName:string) : object
+    GetObject(settingName:string, defaultObj:T) : T
+    GetObject(objectType:Type, settingName:string, defaultObj:object) : object
+    SetObject(settingName:string, obj:T) : void
+    SetObject(settingName:string, obj:object) : void
+}
+@enduml

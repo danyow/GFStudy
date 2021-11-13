@@ -1,0 +1,11 @@
+@startuml
+class ShowEntitySuccessEventArgs <<sealed>> {
+    + ShowEntitySuccessEventArgs()
+    + Entity : IEntity <<get>>
+    + Duration : float <<get>>
+    + UserData : object <<get>>
+    + {static} Create(entity:IEntity, duration:float, userData:object) : ShowEntitySuccessEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- ShowEntitySuccessEventArgs
+@enduml

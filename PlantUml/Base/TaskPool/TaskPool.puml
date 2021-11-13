@@ -1,0 +1,28 @@
+@startuml
+class "TaskPool`1"<T> <<sealed>> {
+    - <<readonly>> m_FreeAgents : Stack<ITaskAgent<T>>
+    - <<readonly>> m_WorkingAgents : GameFrameworkLinkedList<ITaskAgent<T>>
+    - <<readonly>> m_WaitingTasks : GameFrameworkLinkedList<T>
+    - m_Paused : bool
+    + TaskPool()
+    + Paused : bool <<get>> <<set>>
+    + TotalAgentCount : int <<get>>
+    + FreeAgentCount : int <<get>>
+    + WorkingAgentCount : int <<get>>
+    + WaitingTaskCount : int <<get>>
+    + Update(elapseSeconds:float, realElapseSeconds:float) : void
+    + Shutdown() : void
+    + AddAgent(agent:ITaskAgent<T>) : void
+    + GetTaskInfo(serialId:int) : TaskInfo
+    + GetTaskInfos(tag:string) : TaskInfo[]
+    + GetTaskInfos(tag:string, results:List<TaskInfo>) : void
+    + GetAllTaskInfos() : TaskInfo[]
+    + GetAllTaskInfos(results:List<TaskInfo>) : void
+    + AddTask(task:T) : void
+    + RemoveTask(serialId:int) : bool
+    + RemoveTasks(tag:string) : int
+    + RemoveAllTasks() : int
+    - ProcessRunningTasks(elapseSeconds:float, realElapseSeconds:float) : void
+    - ProcessWaitingTasks(elapseSeconds:float, realElapseSeconds:float) : void
+}
+@enduml

@@ -1,0 +1,16 @@
+@startuml
+class EntityManager <<sealed>> <<partial>> {
+}
+class EntityInstanceObject <<sealed>> {
+    - m_EntityAsset : object
+    - m_EntityHelper : IEntityHelper
+    + EntityInstanceObject()
+    + {static} Create(name:string, entityAsset:object, entityInstance:object, entityHelper:IEntityHelper) : EntityInstanceObject
+    + <<override>> Clear() : void
+    # <<internal>> <<override>> Release(isShutdown:bool) : void
+}
+GameFrameworkModule <|-- EntityManager
+IEntityManager <|-- EntityManager
+EntityManager +-- EntityInstanceObject
+ObjectBase <|-- EntityInstanceObject
+@enduml

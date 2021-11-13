@@ -1,0 +1,26 @@
+@startuml
+abstract class ObjectBase {
+    - m_Name : string
+    - m_Target : object
+    - m_Locked : bool
+    - m_Priority : int
+    - m_LastUseTime : DateTime
+    + ObjectBase()
+    + Name : string <<get>>
+    + Target : object <<get>>
+    + Locked : bool <<get>> <<set>>
+    + Priority : int <<get>> <<set>>
+    + <<virtual>> CustomCanReleaseFlag : bool <<get>>
+    + LastUseTime : DateTime <<get>> <<internal set>>
+    # Initialize(target:object) : void
+    # Initialize(name:string, target:object) : void
+    # Initialize(name:string, target:object, locked:bool) : void
+    # Initialize(name:string, target:object, priority:int) : void
+    # Initialize(name:string, target:object, locked:bool, priority:int) : void
+    + <<virtual>> Clear() : void
+    # <<internal>> <<virtual>> OnSpawn() : void
+    # <<internal>> <<virtual>> OnUnspawn() : void
+    # <<internal>> {abstract} Release(isShutdown:bool) : void
+}
+IReference <|-- ObjectBase
+@enduml

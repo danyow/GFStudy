@@ -1,0 +1,55 @@
+@startuml
+interface IUIManager {
+    UIGroupCount : int <<get>>
+    InstanceAutoReleaseInterval : float <<get>> <<set>>
+    InstanceCapacity : int <<get>> <<set>>
+    InstanceExpireTime : float <<get>> <<set>>
+    InstancePriority : int <<get>> <<set>>
+     <<event>> OpenUIFormSuccess : EventHandler<OpenUIFormSuccessEventArgs> 
+     <<event>> OpenUIFormFailure : EventHandler<OpenUIFormFailureEventArgs> 
+     <<event>> OpenUIFormUpdate : EventHandler<OpenUIFormUpdateEventArgs> 
+     <<event>> OpenUIFormDependencyAsset : EventHandler<OpenUIFormDependencyAssetEventArgs> 
+     <<event>> CloseUIFormComplete : EventHandler<CloseUIFormCompleteEventArgs> 
+    SetObjectPoolManager(objectPoolManager:IObjectPoolManager) : void
+    SetResourceManager(resourceManager:IResourceManager) : void
+    SetUIFormHelper(uiFormHelper:IUIFormHelper) : void
+    HasUIGroup(uiGroupName:string) : bool
+    GetUIGroup(uiGroupName:string) : IUIGroup
+    GetAllUIGroups() : IUIGroup[]
+    GetAllUIGroups(results:List<IUIGroup>) : void
+    AddUIGroup(uiGroupName:string, uiGroupHelper:IUIGroupHelper) : bool
+    AddUIGroup(uiGroupName:string, uiGroupDepth:int, uiGroupHelper:IUIGroupHelper) : bool
+    HasUIForm(serialId:int) : bool
+    HasUIForm(uiFormAssetName:string) : bool
+    GetUIForm(serialId:int) : IUIForm
+    GetUIForm(uiFormAssetName:string) : IUIForm
+    GetUIForms(uiFormAssetName:string) : IUIForm[]
+    GetUIForms(uiFormAssetName:string, results:List<IUIForm>) : void
+    GetAllLoadedUIForms() : IUIForm[]
+    GetAllLoadedUIForms(results:List<IUIForm>) : void
+    GetAllLoadingUIFormSerialIds() : int[]
+    GetAllLoadingUIFormSerialIds(results:List<int>) : void
+    IsLoadingUIForm(serialId:int) : bool
+    IsLoadingUIForm(uiFormAssetName:string) : bool
+    IsValidUIForm(uiForm:IUIForm) : bool
+    OpenUIForm(uiFormAssetName:string, uiGroupName:string) : int
+    OpenUIForm(uiFormAssetName:string, uiGroupName:string, priority:int) : int
+    OpenUIForm(uiFormAssetName:string, uiGroupName:string, pauseCoveredUIForm:bool) : int
+    OpenUIForm(uiFormAssetName:string, uiGroupName:string, userData:object) : int
+    OpenUIForm(uiFormAssetName:string, uiGroupName:string, priority:int, pauseCoveredUIForm:bool) : int
+    OpenUIForm(uiFormAssetName:string, uiGroupName:string, priority:int, userData:object) : int
+    OpenUIForm(uiFormAssetName:string, uiGroupName:string, pauseCoveredUIForm:bool, userData:object) : int
+    OpenUIForm(uiFormAssetName:string, uiGroupName:string, priority:int, pauseCoveredUIForm:bool, userData:object) : int
+    CloseUIForm(serialId:int) : void
+    CloseUIForm(serialId:int, userData:object) : void
+    CloseUIForm(uiForm:IUIForm) : void
+    CloseUIForm(uiForm:IUIForm, userData:object) : void
+    CloseAllLoadedUIForms() : void
+    CloseAllLoadedUIForms(userData:object) : void
+    CloseAllLoadingUIForms() : void
+    RefocusUIForm(uiForm:IUIForm) : void
+    RefocusUIForm(uiForm:IUIForm, userData:object) : void
+    SetUIFormInstanceLocked(uiFormInstance:object, locked:bool) : void
+    SetUIFormInstancePriority(uiFormInstance:object, priority:int) : void
+}
+@enduml

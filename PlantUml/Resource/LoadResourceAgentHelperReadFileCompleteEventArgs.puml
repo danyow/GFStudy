@@ -1,0 +1,9 @@
+@startuml
+class LoadResourceAgentHelperReadFileCompleteEventArgs <<sealed>> {
+    + LoadResourceAgentHelperReadFileCompleteEventArgs()
+    + Resource : object <<get>>
+    + {static} Create(resource:object) : LoadResourceAgentHelperReadFileCompleteEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- LoadResourceAgentHelperReadFileCompleteEventArgs
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class ResourceUpdateAllCompleteEventArgs <<sealed>> {
+    + ResourceUpdateAllCompleteEventArgs()
+    + {static} Create() : ResourceUpdateAllCompleteEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- ResourceUpdateAllCompleteEventArgs
+@enduml

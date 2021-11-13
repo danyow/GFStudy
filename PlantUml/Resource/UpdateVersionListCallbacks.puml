@@ -1,0 +1,10 @@
+@startuml
+class UpdateVersionListCallbacks <<sealed>> {
+    - <<readonly>> m_UpdateVersionListSuccessCallback : UpdateVersionListSuccessCallback
+    - <<readonly>> m_UpdateVersionListFailureCallback : UpdateVersionListFailureCallback
+    + UpdateVersionListCallbacks(updateVersionListSuccessCallback:UpdateVersionListSuccessCallback)
+    + UpdateVersionListCallbacks(updateVersionListSuccessCallback:UpdateVersionListSuccessCallback, updateVersionListFailureCallback:UpdateVersionListFailureCallback)
+    + UpdateVersionListSuccessCallback : UpdateVersionListSuccessCallback <<get>>
+    + UpdateVersionListFailureCallback : UpdateVersionListFailureCallback <<get>>
+}
+@enduml

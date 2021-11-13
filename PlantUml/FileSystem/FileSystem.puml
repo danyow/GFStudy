@@ -1,0 +1,73 @@
+@startuml
+class FileSystem <<sealed>> <<partial>> {
+    - <<const>> ClusterSize : int
+    - <<const>> CachedBytesLength : int = 0x1000
+    - {static} <<readonly>> EmptyStringArray : string[]
+    - {static} <<readonly>> s_CachedBytes : byte[]
+    - {static} <<readonly>> HeaderDataSize : int
+    - {static} <<readonly>> BlockDataSize : int
+    - {static} <<readonly>> StringDataSize : int
+    - <<readonly>> m_FullPath : string
+    - <<readonly>> m_Access : FileSystemAccess
+    - <<readonly>> m_Stream : FileSystemStream
+    - <<readonly>> m_FileDatas : Dictionary<string, int>
+    - <<readonly>> m_BlockDatas : List<BlockData>
+    - <<readonly>> m_FreeBlockIndexes : GameFrameworkMultiDictionary<int, int>
+    - <<readonly>> m_StringDatas : SortedDictionary<int, StringData>
+    - <<readonly>> m_FreeStringIndexes : Queue<int>
+    - <<readonly>> m_FreeStringDatas : Queue<StringData>
+    - m_HeaderData : HeaderData
+    - m_BlockDataOffset : int
+    - m_StringDataOffset : int
+    - m_FileDataOffset : int
+    - FileSystem(fullPath:string, access:FileSystemAccess, stream:FileSystemStream)
+    + FullPath : string <<get>>
+    + Access : FileSystemAccess <<get>>
+    + FileCount : int <<get>>
+    + MaxFileCount : int <<get>>
+    + {static} Create(fullPath:string, access:FileSystemAccess, stream:FileSystemStream, maxFileCount:int, maxBlockCount:int) : FileSystem
+    + {static} Load(fullPath:string, access:FileSystemAccess, stream:FileSystemStream) : FileSystem
+    + Shutdown() : void
+    + GetFileInfo(name:string) : FileInfo
+    + GetAllFileInfos() : FileInfo[]
+    + GetAllFileInfos(results:List<FileInfo>) : void
+    + HasFile(name:string) : bool
+    + ReadFile(name:string) : byte[]
+    + ReadFile(name:string, buffer:byte[]) : int
+    + ReadFile(name:string, buffer:byte[], startIndex:int) : int
+    + ReadFile(name:string, buffer:byte[], startIndex:int, length:int) : int
+    + ReadFile(name:string, stream:Stream) : int
+    + ReadFileSegment(name:string, length:int) : byte[]
+    + ReadFileSegment(name:string, offset:int, length:int) : byte[]
+    + ReadFileSegment(name:string, buffer:byte[]) : int
+    + ReadFileSegment(name:string, buffer:byte[], length:int) : int
+    + ReadFileSegment(name:string, buffer:byte[], startIndex:int, length:int) : int
+    + ReadFileSegment(name:string, offset:int, buffer:byte[]) : int
+    + ReadFileSegment(name:string, offset:int, buffer:byte[], length:int) : int
+    + ReadFileSegment(name:string, offset:int, buffer:byte[], startIndex:int, length:int) : int
+    + ReadFileSegment(name:string, stream:Stream, length:int) : int
+    + ReadFileSegment(name:string, offset:int, stream:Stream, length:int) : int
+    + WriteFile(name:string, buffer:byte[]) : bool
+    + WriteFile(name:string, buffer:byte[], startIndex:int) : bool
+    + WriteFile(name:string, buffer:byte[], startIndex:int, length:int) : bool
+    + WriteFile(name:string, stream:Stream) : bool
+    + WriteFile(name:string, filePath:string) : bool
+    + SaveAsFile(name:string, filePath:string) : bool
+    + RenameFile(oldName:string, newName:string) : bool
+    + DeleteFile(name:string) : bool
+    - ProcessWriteFile(name:string, hasFile:bool, oldBlockIndex:int, blockIndex:int, length:int) : void
+    - TryCombineFreeBlocks(freeBlockIndex:int) : bool
+    - GetEmptyBlockIndex() : int
+    - AllocBlock(length:int) : int
+    - AllocString(value:string) : int
+    - WriteHeaderData() : void
+    - WriteBlockData(blockIndex:int) : void
+    - ReadStringData(stringIndex:int) : StringData
+    - WriteStringData(stringIndex:int, stringData:StringData) : void
+    - {static} CalcOffsets(fileSystem:FileSystem) : void
+    - {static} GetUpBoundClusterOffset(offset:long) : long
+    - {static} GetUpBoundClusterCount(length:long) : int
+    - {static} GetClusterOffset(clusterIndex:int) : long
+}
+IFileSystem <|-- FileSystem
+@enduml

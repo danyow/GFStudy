@@ -1,0 +1,11 @@
+@startuml
+interface IDebuggerWindowGroup {
+    DebuggerWindowCount : int <<get>>
+    SelectedIndex : int <<get>> <<set>>
+    SelectedWindow : IDebuggerWindow <<get>>
+    GetDebuggerWindowNames() : string[]
+    GetDebuggerWindow(path:string) : IDebuggerWindow
+    RegisterDebuggerWindow(path:string, debuggerWindow:IDebuggerWindow) : void
+}
+IDebuggerWindow <|-- IDebuggerWindowGroup
+@enduml

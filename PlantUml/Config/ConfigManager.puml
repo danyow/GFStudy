@@ -1,0 +1,43 @@
+@startuml
+class ConfigManager <<sealed>> <<partial>> {
+    - <<readonly>> m_ConfigDatas : Dictionary<string, ConfigData>
+    - <<readonly>> m_DataProvider : DataProvider<IConfigManager>
+    - m_ConfigHelper : IConfigHelper
+    + ConfigManager()
+    + Count : int <<get>>
+    + CachedBytesSize : int <<get>>
+    <<internal>> <<override>> Update(elapseSeconds:float, realElapseSeconds:float) : void
+    <<internal>> <<override>> Shutdown() : void
+    + SetResourceManager(resourceManager:IResourceManager) : void
+    + SetDataProviderHelper(dataProviderHelper:IDataProviderHelper<IConfigManager>) : void
+    + SetConfigHelper(configHelper:IConfigHelper) : void
+    + EnsureCachedBytesSize(ensureSize:int) : void
+    + FreeCachedBytes() : void
+    + ReadData(configAssetName:string) : void
+    + ReadData(configAssetName:string, priority:int) : void
+    + ReadData(configAssetName:string, userData:object) : void
+    + ReadData(configAssetName:string, priority:int, userData:object) : void
+    + ParseData(configString:string) : bool
+    + ParseData(configString:string, userData:object) : bool
+    + ParseData(configBytes:byte[]) : bool
+    + ParseData(configBytes:byte[], userData:object) : bool
+    + ParseData(configBytes:byte[], startIndex:int, length:int) : bool
+    + ParseData(configBytes:byte[], startIndex:int, length:int, userData:object) : bool
+    + HasConfig(configName:string) : bool
+    + GetBool(configName:string) : bool
+    + GetBool(configName:string, defaultValue:bool) : bool
+    + GetInt(configName:string) : int
+    + GetInt(configName:string, defaultValue:int) : int
+    + GetFloat(configName:string) : float
+    + GetFloat(configName:string, defaultValue:float) : float
+    + GetString(configName:string) : string
+    + GetString(configName:string, defaultValue:string) : string
+    + AddConfig(configName:string, configValue:string) : bool
+    + AddConfig(configName:string, boolValue:bool, intValue:int, floatValue:float, stringValue:string) : bool
+    + RemoveConfig(configName:string) : bool
+    + RemoveAllConfigs() : void
+    - GetConfigData(configName:string) : ConfigData?
+}
+GameFrameworkModule <|-- ConfigManager
+IConfigManager <|-- ConfigManager
+@enduml

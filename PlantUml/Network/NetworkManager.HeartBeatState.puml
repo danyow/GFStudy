@@ -1,0 +1,15 @@
+@startuml
+class NetworkManager <<sealed>> <<partial>> {
+}
+class HeartBeatState <<sealed>> {
+    - m_HeartBeatElapseSeconds : float
+    - m_MissHeartBeatCount : int
+    + HeartBeatState()
+    + HeartBeatElapseSeconds : float <<get>> <<set>>
+    + MissHeartBeatCount : int <<get>> <<set>>
+    + Reset(resetHeartBeatElapseSeconds:bool) : void
+}
+GameFrameworkModule <|-- NetworkManager
+INetworkManager <|-- NetworkManager
+NetworkManager +-- HeartBeatState
+@enduml

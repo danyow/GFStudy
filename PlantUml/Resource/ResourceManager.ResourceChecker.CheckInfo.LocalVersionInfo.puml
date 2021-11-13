@@ -1,0 +1,27 @@
+@startuml
+class ResourceManager <<sealed>> <<partial>> {
+}
+class ResourceChecker <<sealed>> <<partial>> {
+}
+class CheckInfo <<sealed>> <<partial>> {
+}
+class LocalVersionInfo <<struct>> {
+    - <<readonly>> m_Exist : bool
+    - <<readonly>> m_FileSystemName : string
+    - <<readonly>> m_LoadType : LoadType
+    - <<readonly>> m_Length : int
+    - <<readonly>> m_HashCode : int
+    + LocalVersionInfo(fileSystemName:string, loadType:LoadType, length:int, hashCode:int)
+    + Exist : bool <<get>>
+    + UseFileSystem : bool <<get>>
+    + FileSystemName : string <<get>>
+    + LoadType : LoadType <<get>>
+    + Length : int <<get>>
+    + HashCode : int <<get>>
+}
+GameFrameworkModule <|-- ResourceManager
+IResourceManager <|-- ResourceManager
+ResourceManager +-- ResourceChecker
+ResourceChecker +-- CheckInfo
+CheckInfo +-- LocalVersionInfo
+@enduml

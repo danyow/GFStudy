@@ -1,0 +1,10 @@
+@startuml
+interface IDebuggerManager {
+    ActiveWindow : bool <<get>> <<set>>
+    DebuggerWindowRoot : IDebuggerWindowGroup <<get>>
+    RegisterDebuggerWindow(path:string, debuggerWindow:IDebuggerWindow, args:object[]) : void
+    UnregisterDebuggerWindow(path:string) : bool
+    GetDebuggerWindow(path:string) : IDebuggerWindow
+    SelectDebuggerWindow(path:string) : bool
+}
+@enduml

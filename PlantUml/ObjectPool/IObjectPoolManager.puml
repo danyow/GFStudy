@@ -1,0 +1,89 @@
+@startuml
+interface IObjectPoolManager {
+    Count : int <<get>>
+    HasObjectPool() : bool
+    HasObjectPool(objectType:Type) : bool
+    HasObjectPool(name:string) : bool
+    HasObjectPool(objectType:Type, name:string) : bool
+    HasObjectPool(condition:Predicate<ObjectPoolBase>) : bool
+    GetObjectPool() : IObjectPool<T>
+    GetObjectPool(objectType:Type) : ObjectPoolBase
+    GetObjectPool(name:string) : IObjectPool<T>
+    GetObjectPool(objectType:Type, name:string) : ObjectPoolBase
+    GetObjectPool(condition:Predicate<ObjectPoolBase>) : ObjectPoolBase
+    GetObjectPools(condition:Predicate<ObjectPoolBase>) : ObjectPoolBase[]
+    GetObjectPools(condition:Predicate<ObjectPoolBase>, results:List<ObjectPoolBase>) : void
+    GetAllObjectPools() : ObjectPoolBase[]
+    GetAllObjectPools(results:List<ObjectPoolBase>) : void
+    GetAllObjectPools(sort:bool) : ObjectPoolBase[]
+    GetAllObjectPools(sort:bool, results:List<ObjectPoolBase>) : void
+    CreateSingleSpawnObjectPool() : IObjectPool<T>
+    CreateSingleSpawnObjectPool(objectType:Type) : ObjectPoolBase
+    CreateSingleSpawnObjectPool(name:string) : IObjectPool<T>
+    CreateSingleSpawnObjectPool(objectType:Type, name:string) : ObjectPoolBase
+    CreateSingleSpawnObjectPool(capacity:int) : IObjectPool<T>
+    CreateSingleSpawnObjectPool(objectType:Type, capacity:int) : ObjectPoolBase
+    CreateSingleSpawnObjectPool(expireTime:float) : IObjectPool<T>
+    CreateSingleSpawnObjectPool(objectType:Type, expireTime:float) : ObjectPoolBase
+    CreateSingleSpawnObjectPool(name:string, capacity:int) : IObjectPool<T>
+    CreateSingleSpawnObjectPool(objectType:Type, name:string, capacity:int) : ObjectPoolBase
+    CreateSingleSpawnObjectPool(name:string, expireTime:float) : IObjectPool<T>
+    CreateSingleSpawnObjectPool(objectType:Type, name:string, expireTime:float) : ObjectPoolBase
+    CreateSingleSpawnObjectPool(capacity:int, expireTime:float) : IObjectPool<T>
+    CreateSingleSpawnObjectPool(objectType:Type, capacity:int, expireTime:float) : ObjectPoolBase
+    CreateSingleSpawnObjectPool(capacity:int, priority:int) : IObjectPool<T>
+    CreateSingleSpawnObjectPool(objectType:Type, capacity:int, priority:int) : ObjectPoolBase
+    CreateSingleSpawnObjectPool(expireTime:float, priority:int) : IObjectPool<T>
+    CreateSingleSpawnObjectPool(objectType:Type, expireTime:float, priority:int) : ObjectPoolBase
+    CreateSingleSpawnObjectPool(name:string, capacity:int, expireTime:float) : IObjectPool<T>
+    CreateSingleSpawnObjectPool(objectType:Type, name:string, capacity:int, expireTime:float) : ObjectPoolBase
+    CreateSingleSpawnObjectPool(name:string, capacity:int, priority:int) : IObjectPool<T>
+    CreateSingleSpawnObjectPool(objectType:Type, name:string, capacity:int, priority:int) : ObjectPoolBase
+    CreateSingleSpawnObjectPool(name:string, expireTime:float, priority:int) : IObjectPool<T>
+    CreateSingleSpawnObjectPool(objectType:Type, name:string, expireTime:float, priority:int) : ObjectPoolBase
+    CreateSingleSpawnObjectPool(capacity:int, expireTime:float, priority:int) : IObjectPool<T>
+    CreateSingleSpawnObjectPool(objectType:Type, capacity:int, expireTime:float, priority:int) : ObjectPoolBase
+    CreateSingleSpawnObjectPool(name:string, capacity:int, expireTime:float, priority:int) : IObjectPool<T>
+    CreateSingleSpawnObjectPool(objectType:Type, name:string, capacity:int, expireTime:float, priority:int) : ObjectPoolBase
+    CreateSingleSpawnObjectPool(name:string, autoReleaseInterval:float, capacity:int, expireTime:float, priority:int) : IObjectPool<T>
+    CreateSingleSpawnObjectPool(objectType:Type, name:string, autoReleaseInterval:float, capacity:int, expireTime:float, priority:int) : ObjectPoolBase
+    CreateMultiSpawnObjectPool() : IObjectPool<T>
+    CreateMultiSpawnObjectPool(objectType:Type) : ObjectPoolBase
+    CreateMultiSpawnObjectPool(name:string) : IObjectPool<T>
+    CreateMultiSpawnObjectPool(objectType:Type, name:string) : ObjectPoolBase
+    CreateMultiSpawnObjectPool(capacity:int) : IObjectPool<T>
+    CreateMultiSpawnObjectPool(objectType:Type, capacity:int) : ObjectPoolBase
+    CreateMultiSpawnObjectPool(expireTime:float) : IObjectPool<T>
+    CreateMultiSpawnObjectPool(objectType:Type, expireTime:float) : ObjectPoolBase
+    CreateMultiSpawnObjectPool(name:string, capacity:int) : IObjectPool<T>
+    CreateMultiSpawnObjectPool(objectType:Type, name:string, capacity:int) : ObjectPoolBase
+    CreateMultiSpawnObjectPool(name:string, expireTime:float) : IObjectPool<T>
+    CreateMultiSpawnObjectPool(objectType:Type, name:string, expireTime:float) : ObjectPoolBase
+    CreateMultiSpawnObjectPool(capacity:int, expireTime:float) : IObjectPool<T>
+    CreateMultiSpawnObjectPool(objectType:Type, capacity:int, expireTime:float) : ObjectPoolBase
+    CreateMultiSpawnObjectPool(capacity:int, priority:int) : IObjectPool<T>
+    CreateMultiSpawnObjectPool(objectType:Type, capacity:int, priority:int) : ObjectPoolBase
+    CreateMultiSpawnObjectPool(expireTime:float, priority:int) : IObjectPool<T>
+    CreateMultiSpawnObjectPool(objectType:Type, expireTime:float, priority:int) : ObjectPoolBase
+    CreateMultiSpawnObjectPool(name:string, capacity:int, expireTime:float) : IObjectPool<T>
+    CreateMultiSpawnObjectPool(objectType:Type, name:string, capacity:int, expireTime:float) : ObjectPoolBase
+    CreateMultiSpawnObjectPool(name:string, capacity:int, priority:int) : IObjectPool<T>
+    CreateMultiSpawnObjectPool(objectType:Type, name:string, capacity:int, priority:int) : ObjectPoolBase
+    CreateMultiSpawnObjectPool(name:string, expireTime:float, priority:int) : IObjectPool<T>
+    CreateMultiSpawnObjectPool(objectType:Type, name:string, expireTime:float, priority:int) : ObjectPoolBase
+    CreateMultiSpawnObjectPool(capacity:int, expireTime:float, priority:int) : IObjectPool<T>
+    CreateMultiSpawnObjectPool(objectType:Type, capacity:int, expireTime:float, priority:int) : ObjectPoolBase
+    CreateMultiSpawnObjectPool(name:string, capacity:int, expireTime:float, priority:int) : IObjectPool<T>
+    CreateMultiSpawnObjectPool(objectType:Type, name:string, capacity:int, expireTime:float, priority:int) : ObjectPoolBase
+    CreateMultiSpawnObjectPool(name:string, autoReleaseInterval:float, capacity:int, expireTime:float, priority:int) : IObjectPool<T>
+    CreateMultiSpawnObjectPool(objectType:Type, name:string, autoReleaseInterval:float, capacity:int, expireTime:float, priority:int) : ObjectPoolBase
+    DestroyObjectPool() : bool
+    DestroyObjectPool(objectType:Type) : bool
+    DestroyObjectPool(name:string) : bool
+    DestroyObjectPool(objectType:Type, name:string) : bool
+    DestroyObjectPool(objectPool:IObjectPool<T>) : bool
+    DestroyObjectPool(objectPool:ObjectPoolBase) : bool
+    Release() : void
+    ReleaseAllUnused() : void
+}
+@enduml

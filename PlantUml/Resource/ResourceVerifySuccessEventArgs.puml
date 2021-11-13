@@ -1,0 +1,10 @@
+@startuml
+class ResourceVerifySuccessEventArgs <<sealed>> {
+    + ResourceVerifySuccessEventArgs()
+    + Name : string <<get>>
+    + Length : int <<get>>
+    + {static} Create(name:string, length:int) : ResourceVerifySuccessEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- ResourceVerifySuccessEventArgs
+@enduml

@@ -1,0 +1,19 @@
+@startuml
+class ResourceManager <<sealed>> <<partial>> {
+}
+class ReadWriteResourceInfo <<struct>> {
+    - <<readonly>> m_FileSystemName : string
+    - <<readonly>> m_LoadType : LoadType
+    - <<readonly>> m_Length : int
+    - <<readonly>> m_HashCode : int
+    + ReadWriteResourceInfo(fileSystemName:string, loadType:LoadType, length:int, hashCode:int)
+    + UseFileSystem : bool <<get>>
+    + FileSystemName : string <<get>>
+    + LoadType : LoadType <<get>>
+    + Length : int <<get>>
+    + HashCode : int <<get>>
+}
+GameFrameworkModule <|-- ResourceManager
+IResourceManager <|-- ResourceManager
+ResourceManager +-- ReadWriteResourceInfo
+@enduml

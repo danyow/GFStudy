@@ -1,0 +1,9 @@
+@startuml
+class Version <<static>> <<partial>> {
+}
+interface IVersionHelper {
+    GameVersion : string <<get>>
+    InternalGameVersion : int <<get>>
+}
+Version +-- IVersionHelper
+@enduml

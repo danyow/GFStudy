@@ -1,0 +1,23 @@
+@startuml
+abstract class ObjectPoolBase {
+    - <<readonly>> m_Name : string
+    + ObjectPoolBase()
+    + ObjectPoolBase(name:string)
+    + Name : string <<get>>
+    + FullName : string <<get>>
+    + {abstract} ObjectType : Type <<get>>
+    + {abstract} Count : int <<get>>
+    + {abstract} CanReleaseCount : int <<get>>
+    + {abstract} AllowMultiSpawn : bool <<get>>
+    + {abstract} AutoReleaseInterval : float <<get>> <<set>>
+    + {abstract} Capacity : int <<get>> <<set>>
+    + {abstract} ExpireTime : float <<get>> <<set>>
+    + {abstract} Priority : int <<get>> <<set>>
+    + {abstract} Release() : void
+    + {abstract} Release(toReleaseCount:int) : void
+    + {abstract} ReleaseAllUnused() : void
+    + {abstract} GetAllObjectInfos() : ObjectInfo[]
+    <<internal>> {abstract} Update(elapseSeconds:float, realElapseSeconds:float) : void
+    <<internal>> {abstract} Shutdown() : void
+}
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+interface IResourceGroup {
+    Name : string <<get>>
+    Ready : bool <<get>>
+    TotalCount : int <<get>>
+    ReadyCount : int <<get>>
+    TotalLength : long <<get>>
+    TotalCompressedLength : long <<get>>
+    ReadyLength : long <<get>>
+    ReadyCompressedLength : long <<get>>
+    Progress : float <<get>>
+    GetResourceNames() : string[]
+    GetResourceNames(results:List<string>) : void
+}
+@enduml

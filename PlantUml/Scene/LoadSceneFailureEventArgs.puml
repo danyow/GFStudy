@@ -1,0 +1,11 @@
+@startuml
+class LoadSceneFailureEventArgs <<sealed>> {
+    + LoadSceneFailureEventArgs()
+    + SceneAssetName : string <<get>>
+    + ErrorMessage : string <<get>>
+    + UserData : object <<get>>
+    + {static} Create(sceneAssetName:string, errorMessage:string, userData:object) : LoadSceneFailureEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- LoadSceneFailureEventArgs
+@enduml

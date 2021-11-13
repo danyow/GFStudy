@@ -1,0 +1,27 @@
+@startuml
+interface "IDataTable`1"<T> {
+    Name : string <<get>>
+    FullName : string <<get>>
+    Type : Type <<get>>
+    Count : int <<get>>
+    MinIdDataRow : T <<get>>
+    MaxIdDataRow : T <<get>>
+    HasDataRow(id:int) : bool
+    HasDataRow(condition:Predicate<T>) : bool
+    GetDataRow(id:int) : T
+    GetDataRow(condition:Predicate<T>) : T
+    GetDataRows(condition:Predicate<T>) : T[]
+    GetDataRows(condition:Predicate<T>, results:List<T>) : void
+    GetDataRows(comparison:Comparison<T>) : T[]
+    GetDataRows(comparison:Comparison<T>, results:List<T>) : void
+    GetDataRows(condition:Predicate<T>, comparison:Comparison<T>) : T[]
+    GetDataRows(condition:Predicate<T>, comparison:Comparison<T>, results:List<T>) : void
+    GetAllDataRows() : T[]
+    GetAllDataRows(results:List<T>) : void
+    AddDataRow(dataRowString:string, userData:object) : bool
+    AddDataRow(dataRowBytes:byte[], startIndex:int, length:int, userData:object) : bool
+    RemoveDataRow(id:int) : bool
+    RemoveAllDataRows() : void
+}
+"IEnumerable`1" "<T>" <|-- "IDataTable`1"
+@enduml

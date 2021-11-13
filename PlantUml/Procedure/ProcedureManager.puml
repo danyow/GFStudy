@@ -1,0 +1,21 @@
+@startuml
+class ProcedureManager <<sealed>> {
+    - m_FsmManager : IFsmManager
+    - m_ProcedureFsm : IFsm<IProcedureManager>
+    + ProcedureManager()
+    <<internal>> <<override>> Priority : int <<get>>
+    + CurrentProcedure : ProcedureBase <<get>>
+    + CurrentProcedureTime : float <<get>>
+    <<internal>> <<override>> Update(elapseSeconds:float, realElapseSeconds:float) : void
+    <<internal>> <<override>> Shutdown() : void
+    + Initialize(fsmManager:IFsmManager, procedures:ProcedureBase[]) : void
+    + StartProcedure() : void
+    + StartProcedure(procedureType:Type) : void
+    + HasProcedure() : bool
+    + HasProcedure(procedureType:Type) : bool
+    + GetProcedure() : ProcedureBase
+    + GetProcedure(procedureType:Type) : ProcedureBase
+}
+GameFrameworkModule <|-- ProcedureManager
+IProcedureManager <|-- ProcedureManager
+@enduml

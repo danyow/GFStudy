@@ -1,0 +1,43 @@
+@startuml
+class DataTableManager <<sealed>> <<partial>> {
+    - <<readonly>> m_DataTables : Dictionary<TypeNamePair, DataTableBase>
+    - m_ResourceManager : IResourceManager
+    - m_DataProviderHelper : IDataProviderHelper<DataTableBase>
+    - m_DataTableHelper : IDataTableHelper
+    + DataTableManager()
+    + Count : int <<get>>
+    + CachedBytesSize : int <<get>>
+    <<internal>> <<override>> Update(elapseSeconds:float, realElapseSeconds:float) : void
+    <<internal>> <<override>> Shutdown() : void
+    + SetResourceManager(resourceManager:IResourceManager) : void
+    + SetDataProviderHelper(dataProviderHelper:IDataProviderHelper<DataTableBase>) : void
+    + SetDataTableHelper(dataTableHelper:IDataTableHelper) : void
+    + EnsureCachedBytesSize(ensureSize:int) : void
+    + FreeCachedBytes() : void
+    + HasDataTable() : bool
+    + HasDataTable(dataRowType:Type) : bool
+    + HasDataTable(name:string) : bool
+    + HasDataTable(dataRowType:Type, name:string) : bool
+    + GetDataTable() : IDataTable<T>
+    + GetDataTable(dataRowType:Type) : DataTableBase
+    + GetDataTable(name:string) : IDataTable<T>
+    + GetDataTable(dataRowType:Type, name:string) : DataTableBase
+    + GetAllDataTables() : DataTableBase[]
+    + GetAllDataTables(results:List<DataTableBase>) : void
+    + CreateDataTable() : IDataTable<T>
+    + CreateDataTable(dataRowType:Type) : DataTableBase
+    + CreateDataTable(name:string) : IDataTable<T>
+    + CreateDataTable(dataRowType:Type, name:string) : DataTableBase
+    + DestroyDataTable() : bool
+    + DestroyDataTable(dataRowType:Type) : bool
+    + DestroyDataTable(name:string) : bool
+    + DestroyDataTable(dataRowType:Type, name:string) : bool
+    + DestroyDataTable(dataTable:IDataTable<T>) : bool
+    + DestroyDataTable(dataTable:DataTableBase) : bool
+    - InternalHasDataTable(typeNamePair:TypeNamePair) : bool
+    - InternalGetDataTable(typeNamePair:TypeNamePair) : DataTableBase
+    - InternalDestroyDataTable(typeNamePair:TypeNamePair) : bool
+}
+GameFrameworkModule <|-- DataTableManager
+IDataTableManager <|-- DataTableManager
+@enduml

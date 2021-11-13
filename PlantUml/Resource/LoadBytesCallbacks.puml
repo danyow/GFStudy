@@ -1,0 +1,10 @@
+@startuml
+class LoadBytesCallbacks <<sealed>> {
+    - <<readonly>> m_LoadBytesSuccessCallback : LoadBytesSuccessCallback
+    - <<readonly>> m_LoadBytesFailureCallback : LoadBytesFailureCallback
+    + LoadBytesCallbacks(loadBinarySuccessCallback:LoadBytesSuccessCallback)
+    + LoadBytesCallbacks(loadBytesSuccessCallback:LoadBytesSuccessCallback, loadBytesFailureCallback:LoadBytesFailureCallback)
+    + LoadBytesSuccessCallback : LoadBytesSuccessCallback <<get>>
+    + LoadBytesFailureCallback : LoadBytesFailureCallback <<get>>
+}
+@enduml

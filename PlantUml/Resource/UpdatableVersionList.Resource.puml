@@ -1,0 +1,27 @@
+@startuml
+class UpdatableVersionList <<struct>> {
+}
+class Resource <<struct>> {
+    - {static} <<readonly>> EmptyIntArray : int[]
+    - <<readonly>> m_Name : string
+    - <<readonly>> m_Variant : string
+    - <<readonly>> m_Extension : string
+    - <<readonly>> m_LoadType : byte
+    - <<readonly>> m_Length : int
+    - <<readonly>> m_HashCode : int
+    - <<readonly>> m_CompressedLength : int
+    - <<readonly>> m_CompressedHashCode : int
+    - <<readonly>> m_AssetIndexes : int[]
+    + Resource(name:string, variant:string, extension:string, loadType:byte, length:int, hashCode:int, compressedLength:int, compressedHashCode:int, assetIndexes:int[])
+    + Name : string <<get>>
+    + Variant : string <<get>>
+    + Extension : string <<get>>
+    + LoadType : byte <<get>>
+    + Length : int <<get>>
+    + HashCode : int <<get>>
+    + CompressedLength : int <<get>>
+    + CompressedHashCode : int <<get>>
+    + GetAssetIndexes() : int[]
+}
+UpdatableVersionList +-- Resource
+@enduml

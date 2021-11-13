@@ -1,0 +1,33 @@
+@startuml
+interface IDownloadManager {
+    Paused : bool <<get>> <<set>>
+    TotalAgentCount : int <<get>>
+    FreeAgentCount : int <<get>>
+    WorkingAgentCount : int <<get>>
+    WaitingTaskCount : int <<get>>
+    FlushSize : int <<get>> <<set>>
+    Timeout : float <<get>> <<set>>
+    CurrentSpeed : float <<get>>
+     <<event>> DownloadStart : EventHandler<DownloadStartEventArgs> 
+     <<event>> DownloadUpdate : EventHandler<DownloadUpdateEventArgs> 
+     <<event>> DownloadSuccess : EventHandler<DownloadSuccessEventArgs> 
+     <<event>> DownloadFailure : EventHandler<DownloadFailureEventArgs> 
+    AddDownloadAgentHelper(downloadAgentHelper:IDownloadAgentHelper) : void
+    GetDownloadInfo(serialId:int) : TaskInfo
+    GetDownloadInfos(tag:string) : TaskInfo[]
+    GetDownloadInfos(tag:string, results:List<TaskInfo>) : void
+    GetAllDownloadInfos() : TaskInfo[]
+    GetAllDownloadInfos(results:List<TaskInfo>) : void
+    AddDownload(downloadPath:string, downloadUri:string) : int
+    AddDownload(downloadPath:string, downloadUri:string, tag:string) : int
+    AddDownload(downloadPath:string, downloadUri:string, priority:int) : int
+    AddDownload(downloadPath:string, downloadUri:string, userData:object) : int
+    AddDownload(downloadPath:string, downloadUri:string, tag:string, priority:int) : int
+    AddDownload(downloadPath:string, downloadUri:string, tag:string, userData:object) : int
+    AddDownload(downloadPath:string, downloadUri:string, priority:int, userData:object) : int
+    AddDownload(downloadPath:string, downloadUri:string, tag:string, priority:int, userData:object) : int
+    RemoveDownload(serialId:int) : bool
+    RemoveDownloads(tag:string) : int
+    RemoveAllDownloads() : int
+}
+@enduml

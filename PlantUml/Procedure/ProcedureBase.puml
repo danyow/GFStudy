@@ -1,0 +1,10 @@
+@startuml
+abstract class ProcedureBase {
+    # <<internal>> <<override>> OnInit(procedureOwner:ProcedureOwner) : void
+    # <<internal>> <<override>> OnEnter(procedureOwner:ProcedureOwner) : void
+    # <<internal>> <<override>> OnUpdate(procedureOwner:ProcedureOwner, elapseSeconds:float, realElapseSeconds:float) : void
+    # <<internal>> <<override>> OnLeave(procedureOwner:ProcedureOwner, isShutdown:bool) : void
+    # <<internal>> <<override>> OnDestroy(procedureOwner:ProcedureOwner) : void
+}
+"FsmState`1" "<IProcedureManager>" <|-- ProcedureBase
+@enduml

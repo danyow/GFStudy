@@ -1,0 +1,9 @@
+@startuml
+class LoadResourceAgentHelperLoadCompleteEventArgs <<sealed>> {
+    + LoadResourceAgentHelperLoadCompleteEventArgs()
+    + Asset : object <<get>>
+    + {static} Create(asset:object) : LoadResourceAgentHelperLoadCompleteEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- LoadResourceAgentHelperLoadCompleteEventArgs
+@enduml

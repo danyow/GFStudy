@@ -1,0 +1,24 @@
+@startuml
+class ResourceManager <<sealed>> <<partial>> {
+}
+class VersionListProcessor <<sealed>> {
+    - <<readonly>> m_ResourceManager : ResourceManager
+    - m_DownloadManager : IDownloadManager
+    - m_VersionListLength : int
+    - m_VersionListHashCode : int
+    - m_VersionListCompressedLength : int
+    - m_VersionListCompressedHashCode : int
+    + VersionListUpdateSuccess : GameFrameworkAction<string, string>
+    + VersionListUpdateFailure : GameFrameworkAction<string, string>
+    + VersionListProcessor(resourceManager:ResourceManager)
+    + Shutdown() : void
+    + SetDownloadManager(downloadManager:IDownloadManager) : void
+    + CheckVersionList(latestInternalResourceVersion:int) : CheckVersionListResult
+    + UpdateVersionList(versionListLength:int, versionListHashCode:int, versionListCompressedLength:int, versionListCompressedHashCode:int) : void
+    - OnDownloadSuccess(sender:object, e:DownloadSuccessEventArgs) : void
+    - OnDownloadFailure(sender:object, e:DownloadFailureEventArgs) : void
+}
+GameFrameworkModule <|-- ResourceManager
+IResourceManager <|-- ResourceManager
+ResourceManager +-- VersionListProcessor
+@enduml

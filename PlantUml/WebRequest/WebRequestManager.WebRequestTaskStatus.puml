@@ -1,0 +1,13 @@
+@startuml
+class WebRequestManager <<sealed>> <<partial>> {
+}
+enum WebRequestTaskStatus {
+    Todo= 0,
+    Doing,
+    Done,
+    Error,
+}
+GameFrameworkModule <|-- WebRequestManager
+IWebRequestManager <|-- WebRequestManager
+WebRequestManager +-- WebRequestTaskStatus
+@enduml

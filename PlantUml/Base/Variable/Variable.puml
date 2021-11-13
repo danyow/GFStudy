@@ -1,0 +1,10 @@
+@startuml
+abstract class Variable {
+    + Variable()
+    + {abstract} Type : Type <<get>>
+    + {abstract} GetValue() : object
+    + {abstract} SetValue(value:object) : void
+    + {abstract} Clear() : void
+}
+IReference <|-- Variable
+@enduml

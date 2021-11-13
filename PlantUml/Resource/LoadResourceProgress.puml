@@ -1,0 +1,9 @@
+@startuml
+enum LoadResourceProgress {
+    Unknown= 0,
+    ReadResource,
+    LoadResource,
+    LoadAsset,
+    LoadScene,
+}
+@enduml

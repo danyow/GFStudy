@@ -1,0 +1,16 @@
+@startuml
+class ResourcePackVersionList <<struct>> {
+    - {static} <<readonly>> EmptyResourceArray : Resource[]
+    - <<readonly>> m_IsValid : bool
+    - <<readonly>> m_Offset : int
+    - <<readonly>> m_Length : long
+    - <<readonly>> m_HashCode : int
+    - <<readonly>> m_Resources : Resource[]
+    + ResourcePackVersionList(offset:int, length:long, hashCode:int, resources:Resource[])
+    + IsValid : bool <<get>>
+    + Offset : int <<get>>
+    + Length : long <<get>>
+    + HashCode : int <<get>>
+    + GetResources() : Resource[]
+}
+@enduml

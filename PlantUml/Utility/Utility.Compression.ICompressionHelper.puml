@@ -1,0 +1,14 @@
+@startuml
+class Utility <<static>> <<partial>> {
+}
+class Compression <<static>> <<partial>> {
+}
+interface ICompressionHelper {
+    Compress(bytes:byte[], offset:int, length:int, compressedStream:Stream) : bool
+    Compress(stream:Stream, compressedStream:Stream) : bool
+    Decompress(bytes:byte[], offset:int, length:int, decompressedStream:Stream) : bool
+    Decompress(stream:Stream, decompressedStream:Stream) : bool
+}
+Utility +-- Compression
+Compression +-- ICompressionHelper
+@enduml

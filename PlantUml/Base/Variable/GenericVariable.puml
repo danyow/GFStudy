@@ -1,0 +1,13 @@
+@startuml
+abstract class "Variable`1"<T> {
+    - m_Value : T
+    + Variable()
+    + <<override>> Type : Type <<get>>
+    + Value : T <<get>> <<set>>
+    + <<override>> GetValue() : object
+    + <<override>> SetValue(value:object) : void
+    + <<override>> Clear() : void
+    + <<override>> ToString() : string
+}
+Variable <|-- "Variable`1"
+@enduml

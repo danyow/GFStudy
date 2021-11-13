@@ -1,0 +1,8 @@
+@startuml
+abstract class GameFrameworkEventArgs {
+    + GameFrameworkEventArgs()
+    + {abstract} Clear() : void
+}
+EventArgs <|-- GameFrameworkEventArgs
+IReference <|-- GameFrameworkEventArgs
+@enduml

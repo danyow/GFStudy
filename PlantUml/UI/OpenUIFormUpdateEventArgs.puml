@@ -1,0 +1,14 @@
+@startuml
+class OpenUIFormUpdateEventArgs <<sealed>> {
+    + OpenUIFormUpdateEventArgs()
+    + SerialId : int <<get>>
+    + UIFormAssetName : string <<get>>
+    + UIGroupName : string <<get>>
+    + PauseCoveredUIForm : bool <<get>>
+    + Progress : float <<get>>
+    + UserData : object <<get>>
+    + {static} Create(serialId:int, uiFormAssetName:string, uiGroupName:string, pauseCoveredUIForm:bool, progress:float, userData:object) : OpenUIFormUpdateEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- OpenUIFormUpdateEventArgs
+@enduml

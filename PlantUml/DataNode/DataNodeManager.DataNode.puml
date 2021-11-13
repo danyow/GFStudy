@@ -1,0 +1,40 @@
+@startuml
+class DataNodeManager <<sealed>> <<partial>> {
+}
+class DataNode <<sealed>> {
+    - {static} <<readonly>> EmptyDataNodeArray : DataNode[]
+    - m_Name : string
+    - m_Data : Variable
+    - m_Parent : DataNode
+    - m_Childs : List<DataNode>
+    + DataNode()
+    + {static} Create(name:string, parent:DataNode) : DataNode
+    + Name : string <<get>>
+    + FullName : string <<get>>
+    + Parent : IDataNode <<get>>
+    + ChildCount : int <<get>>
+    + GetData() : T
+    + GetData() : Variable
+    + SetData(data:T) : void
+    + SetData(data:Variable) : void
+    + HasChild(index:int) : bool
+    + HasChild(name:string) : bool
+    + GetChild(index:int) : IDataNode
+    + GetChild(name:string) : IDataNode
+    + GetOrAddChild(name:string) : IDataNode
+    + GetAllChild() : IDataNode[]
+    + GetAllChild(results:List<IDataNode>) : void
+    + RemoveChild(index:int) : void
+    + RemoveChild(name:string) : void
+    + Clear() : void
+    + <<override>> ToString() : string
+    + ToDataString() : string
+    - {static} IsValidName(name:string) : bool
+    Clear() : void
+}
+GameFrameworkModule <|-- DataNodeManager
+IDataNodeManager <|-- DataNodeManager
+DataNodeManager +-- DataNode
+IDataNode <|-- DataNode
+IReference <|-- DataNode
+@enduml

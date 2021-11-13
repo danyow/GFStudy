@@ -1,0 +1,37 @@
+@startuml
+interface IWebRequestManager {
+    TotalAgentCount : int <<get>>
+    FreeAgentCount : int <<get>>
+    WorkingAgentCount : int <<get>>
+    WaitingTaskCount : int <<get>>
+    Timeout : float <<get>> <<set>>
+     <<event>> WebRequestStart : EventHandler<WebRequestStartEventArgs> 
+     <<event>> WebRequestSuccess : EventHandler<WebRequestSuccessEventArgs> 
+     <<event>> WebRequestFailure : EventHandler<WebRequestFailureEventArgs> 
+    AddWebRequestAgentHelper(webRequestAgentHelper:IWebRequestAgentHelper) : void
+    GetWebRequestInfo(serialId:int) : TaskInfo
+    GetWebRequestInfos(tag:string) : TaskInfo[]
+    GetAllWebRequestInfos(tag:string, results:List<TaskInfo>) : void
+    GetAllWebRequestInfos() : TaskInfo[]
+    GetAllWebRequestInfos(results:List<TaskInfo>) : void
+    AddWebRequest(webRequestUri:string) : int
+    AddWebRequest(webRequestUri:string, postData:byte[]) : int
+    AddWebRequest(webRequestUri:string, tag:string) : int
+    AddWebRequest(webRequestUri:string, priority:int) : int
+    AddWebRequest(webRequestUri:string, userData:object) : int
+    AddWebRequest(webRequestUri:string, postData:byte[], tag:string) : int
+    AddWebRequest(webRequestUri:string, postData:byte[], priority:int) : int
+    AddWebRequest(webRequestUri:string, postData:byte[], userData:object) : int
+    AddWebRequest(webRequestUri:string, tag:string, priority:int) : int
+    AddWebRequest(webRequestUri:string, tag:string, userData:object) : int
+    AddWebRequest(webRequestUri:string, priority:int, userData:object) : int
+    AddWebRequest(webRequestUri:string, postData:byte[], tag:string, priority:int) : int
+    AddWebRequest(webRequestUri:string, postData:byte[], tag:string, userData:object) : int
+    AddWebRequest(webRequestUri:string, postData:byte[], priority:int, userData:object) : int
+    AddWebRequest(webRequestUri:string, tag:string, priority:int, userData:object) : int
+    AddWebRequest(webRequestUri:string, postData:byte[], tag:string, priority:int, userData:object) : int
+    RemoveWebRequest(serialId:int) : bool
+    RemoveWebRequests(tag:string) : int
+    RemoveAllWebRequests() : int
+}
+@enduml

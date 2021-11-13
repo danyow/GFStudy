@@ -1,0 +1,10 @@
+@startuml
+class WebRequestAgentHelperCompleteEventArgs <<sealed>> {
+    - m_WebResponseBytes : byte[]
+    + WebRequestAgentHelperCompleteEventArgs()
+    + {static} Create(webResponseBytes:byte[]) : WebRequestAgentHelperCompleteEventArgs
+    + <<override>> Clear() : void
+    + GetWebResponseBytes() : byte[]
+}
+GameFrameworkEventArgs <|-- WebRequestAgentHelperCompleteEventArgs
+@enduml

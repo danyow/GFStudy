@@ -1,0 +1,18 @@
+@startuml
+abstract class FileSystemStream {
+    # <<const>> CachedBytesLength : int = 0x1000
+    # {static} <<readonly>> s_CachedBytes : byte[]
+    # <<internal>> {abstract} Position : long <<get>> <<set>>
+    # <<internal>> {abstract} Length : long <<get>>
+    # <<internal>> {abstract} SetLength(length:long) : void
+    # <<internal>> {abstract} Seek(offset:long, origin:SeekOrigin) : void
+    # <<internal>> {abstract} ReadByte() : int
+    # <<internal>> {abstract} Read(buffer:byte[], startIndex:int, length:int) : int
+    # <<internal>> Read(stream:Stream, length:int) : int
+    # <<internal>> {abstract} WriteByte(value:byte) : void
+    # <<internal>> {abstract} Write(buffer:byte[], startIndex:int, length:int) : void
+    # <<internal>> Write(stream:Stream, length:int) : void
+    # <<internal>> {abstract} Flush() : void
+    # <<internal>> {abstract} Close() : void
+}
+@enduml

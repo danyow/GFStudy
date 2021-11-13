@@ -1,0 +1,21 @@
+@startuml
+class EntityManager <<sealed>> <<partial>> {
+}
+class ShowEntityInfo <<sealed>> {
+    - m_SerialId : int
+    - m_EntityId : int
+    - m_EntityGroup : EntityGroup
+    - m_UserData : object
+    + ShowEntityInfo()
+    + SerialId : int <<get>>
+    + EntityId : int <<get>>
+    + EntityGroup : EntityGroup <<get>>
+    + UserData : object <<get>>
+    + {static} Create(serialId:int, entityId:int, entityGroup:EntityGroup, userData:object) : ShowEntityInfo
+    + Clear() : void
+}
+GameFrameworkModule <|-- EntityManager
+IEntityManager <|-- EntityManager
+EntityManager +-- ShowEntityInfo
+IReference <|-- ShowEntityInfo
+@enduml

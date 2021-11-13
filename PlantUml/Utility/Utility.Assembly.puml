@@ -1,0 +1,14 @@
+@startuml
+class Utility <<static>> <<partial>> {
+}
+class Assembly <<static>> {
+    - {static} <<readonly>> s_Assemblies : System.Reflection.Assembly[] = null
+    - {static} <<readonly>> s_CachedTypes : Dictionary<string, Type>
+    {static} Assembly()
+    + {static} GetAssemblies() : System.Reflection.Assembly[]
+    + {static} GetTypes() : Type[]
+    + {static} GetTypes(results:List<Type>) : void
+    + {static} GetType(typeName:string) : Type
+}
+Utility +-- Assembly
+@enduml

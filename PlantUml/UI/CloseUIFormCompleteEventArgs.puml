@@ -1,0 +1,12 @@
+@startuml
+class CloseUIFormCompleteEventArgs <<sealed>> {
+    + CloseUIFormCompleteEventArgs()
+    + SerialId : int <<get>>
+    + UIFormAssetName : string <<get>>
+    + UIGroup : IUIGroup <<get>>
+    + UserData : object <<get>>
+    + {static} Create(serialId:int, uiFormAssetName:string, uiGroup:IUIGroup, userData:object) : CloseUIFormCompleteEventArgs
+    + <<override>> Clear() : void
+}
+GameFrameworkEventArgs <|-- CloseUIFormCompleteEventArgs
+@enduml

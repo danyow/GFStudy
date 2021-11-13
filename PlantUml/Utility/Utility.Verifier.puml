@@ -1,0 +1,17 @@
+@startuml
+class Utility <<static>> <<partial>> {
+}
+class Verifier <<static>> <<partial>> {
+    - <<const>> CachedBytesLength : int = 0x1000
+    - {static} <<readonly>> s_CachedBytes : byte[]
+    - {static} <<readonly>> s_Algorithm : Crc32
+    + {static} GetCrc32(bytes:byte[]) : int
+    + {static} GetCrc32(bytes:byte[], offset:int, length:int) : int
+    + {static} GetCrc32(stream:Stream) : int
+    + {static} GetCrc32Bytes(crc32:int) : byte[]
+    + {static} GetCrc32Bytes(crc32:int, bytes:byte[]) : void
+    + {static} GetCrc32Bytes(crc32:int, bytes:byte[], offset:int) : void
+    <<internal>> {static} GetCrc32(stream:Stream, code:byte[], length:int) : int
+}
+Utility +-- Verifier
+@enduml

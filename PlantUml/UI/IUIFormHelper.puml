@@ -1,0 +1,7 @@
+@startuml
+interface IUIFormHelper {
+    InstantiateUIForm(uiFormAsset:object) : object
+    CreateUIForm(uiFormInstance:object, uiGroup:IUIGroup, userData:object) : IUIForm
+    ReleaseUIForm(uiFormAsset:object, uiFormInstance:object) : void
+}
+@enduml

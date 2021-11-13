@@ -1,0 +1,24 @@
+@startuml
+class ResourceManager <<sealed>> <<partial>> {
+}
+class ResourceVerifier <<sealed>> <<partial>> {
+}
+class VerifyInfo <<struct>> {
+    - <<readonly>> m_ResourceName : ResourceName
+    - <<readonly>> m_FileSystemName : string
+    - <<readonly>> m_LoadType : LoadType
+    - <<readonly>> m_Length : int
+    - <<readonly>> m_HashCode : int
+    + VerifyInfo(resourceName:ResourceName, fileSystemName:string, loadType:LoadType, length:int, hashCode:int)
+    + ResourceName : ResourceName <<get>>
+    + UseFileSystem : bool <<get>>
+    + FileSystemName : string <<get>>
+    + LoadType : LoadType <<get>>
+    + Length : int <<get>>
+    + HashCode : int <<get>>
+}
+GameFrameworkModule <|-- ResourceManager
+IResourceManager <|-- ResourceManager
+ResourceManager +-- ResourceVerifier
+ResourceVerifier +-- VerifyInfo
+@enduml

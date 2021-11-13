@@ -1,0 +1,22 @@
+@startuml
+class NetworkManager <<sealed>> <<partial>> {
+}
+class TcpWithSyncReceiveNetworkChannel <<sealed>> {
+    - <<readonly>> m_ConnectCallback : AsyncCallback
+    - <<readonly>> m_SendCallback : AsyncCallback
+    + TcpWithSyncReceiveNetworkChannel(name:string, networkChannelHelper:INetworkChannelHelper)
+    + <<override>> ServiceType : ServiceType <<get>>
+    + <<override>> Connect(ipAddress:IPAddress, port:int, userData:object) : void
+    # <<override>> ProcessSend() : bool
+    # <<override>> ProcessReceive() : void
+    - ConnectAsync(ipAddress:IPAddress, port:int, userData:object) : void
+    - ConnectCallback(ar:IAsyncResult) : void
+    - SendAsync() : void
+    - SendCallback(ar:IAsyncResult) : void
+    - ReceiveSync() : bool
+}
+GameFrameworkModule <|-- NetworkManager
+INetworkManager <|-- NetworkManager
+NetworkManager +-- TcpWithSyncReceiveNetworkChannel
+NetworkChannelBase <|-- TcpWithSyncReceiveNetworkChannel
+@enduml

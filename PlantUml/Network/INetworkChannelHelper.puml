@@ -1,0 +1,12 @@
+@startuml
+interface INetworkChannelHelper {
+    PacketHeaderLength : int <<get>>
+    Initialize(networkChannel:INetworkChannel) : void
+    Shutdown() : void
+    PrepareForConnecting() : void
+    SendHeartBeat() : bool
+    Serialize(packet:T, destination:Stream) : bool
+    DeserializePacketHeader(source:Stream, customErrorData:object) : IPacketHeader
+    DeserializePacket(packetHeader:IPacketHeader, source:Stream, customErrorData:object) : Packet
+}
+@enduml

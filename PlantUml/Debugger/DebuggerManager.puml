@@ -1,0 +1,18 @@
+@startuml
+class DebuggerManager <<sealed>> <<partial>> {
+    - <<readonly>> m_DebuggerWindowRoot : DebuggerWindowGroup
+    - m_ActiveWindow : bool
+    + DebuggerManager()
+    <<internal>> <<override>> Priority : int <<get>>
+    + ActiveWindow : bool <<get>> <<set>>
+    + DebuggerWindowRoot : IDebuggerWindowGroup <<get>>
+    <<internal>> <<override>> Update(elapseSeconds:float, realElapseSeconds:float) : void
+    <<internal>> <<override>> Shutdown() : void
+    + RegisterDebuggerWindow(path:string, debuggerWindow:IDebuggerWindow, args:object[]) : void
+    + UnregisterDebuggerWindow(path:string) : bool
+    + GetDebuggerWindow(path:string) : IDebuggerWindow
+    + SelectDebuggerWindow(path:string) : bool
+}
+GameFrameworkModule <|-- DebuggerManager
+IDebuggerManager <|-- DebuggerManager
+@enduml

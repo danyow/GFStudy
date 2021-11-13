@@ -1,0 +1,18 @@
+@startuml
+interface IUIGroup {
+    Name : string <<get>>
+    Depth : int <<get>> <<set>>
+    Pause : bool <<get>> <<set>>
+    UIFormCount : int <<get>>
+    CurrentUIForm : IUIForm <<get>>
+    Helper : IUIGroupHelper <<get>>
+    HasUIForm(serialId:int) : bool
+    HasUIForm(uiFormAssetName:string) : bool
+    GetUIForm(serialId:int) : IUIForm
+    GetUIForm(uiFormAssetName:string) : IUIForm
+    GetUIForms(uiFormAssetName:string) : IUIForm[]
+    GetUIForms(uiFormAssetName:string, results:List<IUIForm>) : void
+    GetAllUIForms() : IUIForm[]
+    GetAllUIForms(results:List<IUIForm>) : void
+}
+@enduml
